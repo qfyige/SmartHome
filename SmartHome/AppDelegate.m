@@ -7,18 +7,89 @@
 //
 
 #import "AppDelegate.h"
+#import "SocketHelper.h"
+#import "JPUSHService.h"
+
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
-
+{
+    SocketHelper *_socketHelper;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setUpJpushLaunchOptions:launchOptions];
+    _socketHelper = [SocketHelper shareInstance];
+    [_socketHelper setUpWebSocket];
     return YES;
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    /// Required -    DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:
+(NSDictionary *)userInfo {
+    // Required,For systems with less than or equal to iOS6
+    [JPUSHService handleRemoteNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application        didReceiveRemoteNotification:
+(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    // IOS 7 Support Required
+    [JPUSHService handleRemoteNotification:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //Optional
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error
+          );
+}
+
+- (void)setUpJpushLaunchOptions:(NSDictionary *)launchOptions{
+    NSMutableSet *categories = [NSMutableSet set];
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
+        
+        category.identifier = @"identifier";
+        
+        UIMutableUserNotificationAction *action = [[UIMutableUserNotificationAction alloc] init];
+        
+        action.identifier = @"test2";
+        
+        action.title = @"test";
+        
+        action.activationMode = UIUserNotificationActivationModeBackground;
+        
+        action.authenticationRequired = YES;
+        
+        //YES显示为红色，NO显示为蓝色
+        action.destructive = NO;
+        
+        NSArray *actions = @[ action ];
+        
+        [category setActions:actions forContext:UIUserNotificationActionContextMinimal];
+        
+        [categories addObject:category];
+    }
+    if([[UIDevice currentDevice].systemVersion floatValue] >= 8.0){
+        //       categories
+        [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |UIUserNotificationTypeSound |
+                                                          UIUserNotificationTypeAlert)
+                                              categories:categories];
+    }else{
+        [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |UIUserNotificationTypeSound |
+                                                          UIUserNotificationTypeAlert)
+                                              categories:nil];
+    }
+    [JPUSHService setupWithOption:launchOptions appKey:@"b97094dc63a06b00b81aefe1" channel:@"AppStore" apsForProduction:YES];
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
