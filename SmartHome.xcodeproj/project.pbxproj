@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4528B20D1D40C727002599E4 /* SHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B20C1D40C727002599E4 /* SHHomeViewController.m */; };
+		4528B2111D40C79D002599E4 /* SHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B2101D40C79D002599E4 /* SHLoginViewController.m */; };
+		4528B2151D40C7CE002599E4 /* SHSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B2141D40C7CE002599E4 /* SHSettingViewController.m */; };
+		4528B2191D40C851002599E4 /* SHOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B2181D40C851002599E4 /* SHOperationViewController.m */; };
+		4528B2281D40D2CA002599E4 /* Friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B2261D40D2CA002599E4 /* Friends@2x.png */; };
+		4528B2291D40D2CA002599E4 /* Friends@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B2271D40D2CA002599E4 /* Friends@3x.png */; };
+		4528B22E1D40D797002599E4 /* Arrowleft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B22A1D40D797002599E4 /* Arrowleft@2x.png */; };
+		4528B22F1D40D797002599E4 /* Arrowleft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B22B1D40D797002599E4 /* Arrowleft@3x.png */; };
+		4528B2301D40D797002599E4 /* Avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B22C1D40D797002599E4 /* Avatar@2x.png */; };
+		4528B2311D40D797002599E4 /* Avatar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B22D1D40D797002599E4 /* Avatar@3x.png */; };
 		9290D4707E3E489A929F89FF /* libPods-SmartHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BEA5DAC1AFE9EC922D46ED /* libPods-SmartHome.a */; };
 		9D4B050B1D345E10004FBFA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B050A1D345E10004FBFA1 /* main.m */; };
 		9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B050D1D345E10004FBFA1 /* AppDelegate.m */; };
-		9D4B05111D345E10004FBFA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05101D345E10004FBFA1 /* ViewController.m */; };
 		9D4B05141D345E10004FBFA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B05121D345E10004FBFA1 /* Main.storyboard */; };
 		9D4B05171D345E10004FBFA1 /* SmartHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05151D345E10004FBFA1 /* SmartHome.xcdatamodeld */; };
 		9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B05181D345E10004FBFA1 /* Assets.xcassets */; };
@@ -40,14 +49,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4528B20B1D40C727002599E4 /* SHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHomeViewController.h; sourceTree = "<group>"; };
+		4528B20C1D40C727002599E4 /* SHHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHomeViewController.m; sourceTree = "<group>"; };
+		4528B20F1D40C79D002599E4 /* SHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLoginViewController.h; sourceTree = "<group>"; };
+		4528B2101D40C79D002599E4 /* SHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginViewController.m; sourceTree = "<group>"; };
+		4528B2131D40C7CE002599E4 /* SHSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingViewController.h; sourceTree = "<group>"; };
+		4528B2141D40C7CE002599E4 /* SHSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingViewController.m; sourceTree = "<group>"; };
+		4528B2171D40C851002599E4 /* SHOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOperationViewController.h; sourceTree = "<group>"; };
+		4528B2181D40C851002599E4 /* SHOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOperationViewController.m; sourceTree = "<group>"; };
+		4528B21A1D40C934002599E4 /* SHServerDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SHServerDefine.h; path = ../SHServerDefine.h; sourceTree = "<group>"; };
+		4528B21C1D40C98C002599E4 /* SHDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHDefine.h; sourceTree = "<group>"; };
+		4528B2261D40D2CA002599E4 /* Friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Friends@2x.png"; sourceTree = "<group>"; };
+		4528B2271D40D2CA002599E4 /* Friends@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Friends@3x.png"; sourceTree = "<group>"; };
+		4528B22A1D40D797002599E4 /* Arrowleft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrowleft@2x.png"; sourceTree = "<group>"; };
+		4528B22B1D40D797002599E4 /* Arrowleft@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrowleft@3x.png"; sourceTree = "<group>"; };
+		4528B22C1D40D797002599E4 /* Avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Avatar@2x.png"; sourceTree = "<group>"; };
+		4528B22D1D40D797002599E4 /* Avatar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Avatar@3x.png"; sourceTree = "<group>"; };
 		80BEA5DAC1AFE9EC922D46ED /* libPods-SmartHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589DDE9AC2B19FE22ACCFBA /* Pods-SmartHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome.release.xcconfig"; sourceTree = "<group>"; };
 		9D4B05061D345E10004FBFA1 /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4B050A1D345E10004FBFA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D4B050C1D345E10004FBFA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9D4B050D1D345E10004FBFA1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9D4B050F1D345E10004FBFA1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9D4B05101D345E10004FBFA1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9D4B05131D345E10004FBFA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D4B05161D345E10004FBFA1 /* SmartHome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartHome.xcdatamodel; sourceTree = "<group>"; };
 		9D4B05181D345E10004FBFA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +127,93 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4528B2051D40BE63002599E4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4528B20B1D40C727002599E4 /* SHHomeViewController.h */,
+				4528B20C1D40C727002599E4 /* SHHomeViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		4528B2061D40BE70002599E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4528B2071D40BE7B002599E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4528B2081D40BED2002599E4 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4528B2121D40C7B2002599E4 /* ViewController */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		4528B2091D40BED6002599E4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4528B20E1D40C74C002599E4 /* ViewController */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		4528B20A1D40BEDA002599E4 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				4528B2161D40C7D6002599E4 /* ViewController */,
+			);
+			name = Operation;
+			sourceTree = "<group>";
+		};
+		4528B20E1D40C74C002599E4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4528B20F1D40C79D002599E4 /* SHLoginViewController.h */,
+				4528B2101D40C79D002599E4 /* SHLoginViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		4528B2121D40C7B2002599E4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4528B2131D40C7CE002599E4 /* SHSettingViewController.h */,
+				4528B2141D40C7CE002599E4 /* SHSettingViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		4528B2161D40C7D6002599E4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4528B2171D40C851002599E4 /* SHOperationViewController.h */,
+				4528B2181D40C851002599E4 /* SHOperationViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		4528B21D1D40D1D1002599E4 /* imges */ = {
+			isa = PBXGroup;
+			children = (
+				4528B22A1D40D797002599E4 /* Arrowleft@2x.png */,
+				4528B22B1D40D797002599E4 /* Arrowleft@3x.png */,
+				4528B22C1D40D797002599E4 /* Avatar@2x.png */,
+				4528B22D1D40D797002599E4 /* Avatar@3x.png */,
+				4528B2261D40D2CA002599E4 /* Friends@2x.png */,
+				4528B2271D40D2CA002599E4 /* Friends@3x.png */,
+			);
+			name = imges;
+			sourceTree = "<group>";
+		};
 		9D4B04FD1D345E10004FBFA1 = {
 			isa = PBXGroup;
 			children = (
@@ -129,13 +239,17 @@
 		9D4B05081D345E10004FBFA1 /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
+				4528B21D1D40D1D1002599E4 /* imges */,
 				9D4B05501D356050004FBFA1 /* Lib */,
 				9D4B05461D350DC5004FBFA1 /* Utility */,
 				9D4B05411D3501A7004FBFA1 /* HomeViewController */,
+				4528B2091D40BED6002599E4 /* Login */,
+				4528B2081D40BED2002599E4 /* Setting */,
+				4528B20A1D40BEDA002599E4 /* Operation */,
 				9D4B050C1D345E10004FBFA1 /* AppDelegate.h */,
 				9D4B050D1D345E10004FBFA1 /* AppDelegate.m */,
-				9D4B050F1D345E10004FBFA1 /* ViewController.h */,
-				9D4B05101D345E10004FBFA1 /* ViewController.m */,
+				4528B21A1D40C934002599E4 /* SHServerDefine.h */,
+				4528B21C1D40C98C002599E4 /* SHDefine.h */,
 				9D4B05121D345E10004FBFA1 /* Main.storyboard */,
 				9D4B05181D345E10004FBFA1 /* Assets.xcassets */,
 				9D4B051A1D345E10004FBFA1 /* LaunchScreen.storyboard */,
@@ -184,6 +298,9 @@
 		9D4B05411D3501A7004FBFA1 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4528B2071D40BE7B002599E4 /* Model */,
+				4528B2061D40BE70002599E4 /* View */,
+				4528B2051D40BE63002599E4 /* ViewController */,
 			);
 			name = HomeViewController;
 			sourceTree = "<group>";
@@ -331,9 +448,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4528B22E1D40D797002599E4 /* Arrowleft@2x.png in Resources */,
+				4528B2311D40D797002599E4 /* Avatar@3x.png in Resources */,
+				4528B2301D40D797002599E4 /* Avatar@2x.png in Resources */,
 				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
 				9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */,
+				4528B2291D40D2CA002599E4 /* Friends@3x.png in Resources */,
+				4528B2281D40D2CA002599E4 /* Friends@2x.png in Resources */,
 				9D4B05141D345E10004FBFA1 /* Main.storyboard in Resources */,
+				4528B22F1D40D797002599E4 /* Arrowleft@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,10 +529,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D4B05111D345E10004FBFA1 /* ViewController.m in Sources */,
 				9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */,
 				9D4B05441D3503CD004FBFA1 /* SocketHelper.m in Sources */,
+				4528B20D1D40C727002599E4 /* SHHomeViewController.m in Sources */,
+				4528B2191D40C851002599E4 /* SHOperationViewController.m in Sources */,
 				9D4B05171D345E10004FBFA1 /* SmartHome.xcdatamodeld in Sources */,
+				4528B2151D40C7CE002599E4 /* SHSettingViewController.m in Sources */,
+				4528B2111D40C79D002599E4 /* SHLoginViewController.m in Sources */,
 				9D4B050B1D345E10004FBFA1 /* main.m in Sources */,
 				9D4B054A1D350DF5004FBFA1 /* DeviceHelper.m in Sources */,
 			);

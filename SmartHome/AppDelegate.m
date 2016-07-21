@@ -20,6 +20,8 @@
     SocketHelper *_socketHelper;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    application.applicationIconBadgeNumber = 0;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [self setUpJpushLaunchOptions:launchOptions];
     _socketHelper = [SocketHelper shareInstance];
     [_socketHelper setUpWebSocket];
@@ -51,6 +53,7 @@
 }
 
 - (void)setUpJpushLaunchOptions:(NSDictionary *)launchOptions{
+
     NSMutableSet *categories = [NSMutableSet set];
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
         UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
@@ -69,7 +72,6 @@
         
         //YES显示为红色，NO显示为蓝色
         action.destructive = NO;
-        
         NSArray *actions = @[ action ];
         
         [category setActions:actions forContext:UIUserNotificationActionContextMinimal];
