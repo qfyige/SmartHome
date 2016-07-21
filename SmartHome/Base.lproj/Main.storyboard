@@ -179,8 +179,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TPn-v6-RNr">
-                                <rect key="frame" x="0.0" y="20" width="125" height="355"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TPn-v6-RNr">
+                                <rect key="frame" x="0.0" y="0.0" width="125" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJh-71-t5N">
@@ -194,8 +194,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1764705882" green="0.19215686269999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TPn-v6-RNr" secondAttribute="trailing" constant="542" id="30h-CM-4p3"/>
+                            <constraint firstItem="TPn-v6-RNr" firstAttribute="leading" secondItem="TVM-qg-6FZ" secondAttribute="leading" id="6EW-yB-re6"/>
+                            <constraint firstItem="WVk-t4-Bjq" firstAttribute="top" secondItem="TPn-v6-RNr" secondAttribute="bottom" id="762-nQ-D4f"/>
                             <constraint firstItem="dJh-71-t5N" firstAttribute="top" secondItem="TVM-qg-6FZ" secondAttribute="top" constant="10" id="Lwn-t8-lbA"/>
                             <constraint firstItem="dJh-71-t5N" firstAttribute="leading" secondItem="TVM-qg-6FZ" secondAttribute="leading" constant="10" id="ira-oy-fc7"/>
+                            <constraint firstItem="TPn-v6-RNr" firstAttribute="top" secondItem="TVM-qg-6FZ" secondAttribute="top" id="nKh-R2-hz2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e4m-s5-ocX"/>
