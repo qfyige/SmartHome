@@ -18,20 +18,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+//个人中心
+- (IBAction)peopleCenter:(id)sender {
+    
+}
+
+// 消息
+- (IBAction)notification:(id)sender {
+}
+//个人家具
+- (IBAction)clickHomeButton:(id)sender {
+}
+- (IBAction)clickCameraButton:(id)sender {
+}
+- (IBAction)clickPhoneButton:(id)sender {
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
