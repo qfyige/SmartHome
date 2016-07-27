@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451E962F1D485C7400626519 /* SHSetingInputTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 451E962E1D485C7400626519 /* SHSetingInputTextCell.m */; };
+		451E96321D485D0B00626519 /* SHSetingItemTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 451E96311D485D0B00626519 /* SHSetingItemTextCell.m */; };
+		451E96351D485D3F00626519 /* SHSetingInputTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451E96341D485D3F00626519 /* SHSetingInputTextCell.xib */; };
+		451E96371D485D6E00626519 /* SHSetingItemTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451E96361D485D6E00626519 /* SHSetingItemTextCell.xib */; };
+		451E96401D48884100626519 /* Bell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E96381D48884100626519 /* Bell@2x.png */; };
+		451E96411D48884100626519 /* Bell@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E96391D48884100626519 /* Bell@3x.png */; };
+		451E96421D48884100626519 /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963A1D48884100626519 /* Home@2x.png */; };
+		451E96431D48884100626519 /* Home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963B1D48884100626519 /* Home@3x.png */; };
+		451E96441D48884100626519 /* Phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963C1D48884100626519 /* Phone@2x.png */; };
+		451E96451D48884100626519 /* Phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963D1D48884100626519 /* Phone@3x.png */; };
+		451E96461D48884100626519 /* projector_L@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963E1D48884100626519 /* projector_L@2x.png */; };
+		451E96471D48884100626519 /* projector_L@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963F1D48884100626519 /* projector_L@3x.png */; };
 		4528B20D1D40C727002599E4 /* SHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B20C1D40C727002599E4 /* SHHomeViewController.m */; };
 		4528B2111D40C79D002599E4 /* SHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B2101D40C79D002599E4 /* SHLoginViewController.m */; };
 		4528B2151D40C7CE002599E4 /* SHSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B2141D40C7CE002599E4 /* SHSettingViewController.m */; };
@@ -49,6 +61,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		451E962D1D485C7400626519 /* SHSetingInputTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetingInputTextCell.h; sourceTree = "<group>"; };
+		451E962E1D485C7400626519 /* SHSetingInputTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetingInputTextCell.m; sourceTree = "<group>"; };
+		451E96301D485D0B00626519 /* SHSetingItemTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetingItemTextCell.h; sourceTree = "<group>"; };
+		451E96311D485D0B00626519 /* SHSetingItemTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetingItemTextCell.m; sourceTree = "<group>"; };
+		451E96341D485D3F00626519 /* SHSetingInputTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingInputTextCell.xib; sourceTree = "<group>"; };
+		451E96361D485D6E00626519 /* SHSetingItemTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingItemTextCell.xib; sourceTree = "<group>"; };
+		451E96381D48884100626519 /* Bell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bell@2x.png"; sourceTree = "<group>"; };
+		451E96391D48884100626519 /* Bell@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bell@3x.png"; sourceTree = "<group>"; };
+		451E963A1D48884100626519 /* Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@2x.png"; sourceTree = "<group>"; };
+		451E963B1D48884100626519 /* Home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@3x.png"; sourceTree = "<group>"; };
+		451E963C1D48884100626519 /* Phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone@2x.png"; sourceTree = "<group>"; };
+		451E963D1D48884100626519 /* Phone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone@3x.png"; sourceTree = "<group>"; };
+		451E963E1D48884100626519 /* projector_L@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projector_L@2x.png"; sourceTree = "<group>"; };
+		451E963F1D48884100626519 /* projector_L@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projector_L@3x.png"; sourceTree = "<group>"; };
 		4528B20B1D40C727002599E4 /* SHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHomeViewController.h; sourceTree = "<group>"; };
 		4528B20C1D40C727002599E4 /* SHHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHomeViewController.m; sourceTree = "<group>"; };
 		4528B20F1D40C79D002599E4 /* SHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLoginViewController.h; sourceTree = "<group>"; };
@@ -127,6 +153,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		451E96331D485D1200626519 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				451E962D1D485C7400626519 /* SHSetingInputTextCell.h */,
+				451E962E1D485C7400626519 /* SHSetingInputTextCell.m */,
+				451E96341D485D3F00626519 /* SHSetingInputTextCell.xib */,
+				451E96301D485D0B00626519 /* SHSetingItemTextCell.h */,
+				451E96311D485D0B00626519 /* SHSetingItemTextCell.m */,
+				451E96361D485D6E00626519 /* SHSetingItemTextCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		4528B2051D40BE63002599E4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +192,7 @@
 		4528B2081D40BED2002599E4 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				451E96331D485D1200626519 /* View */,
 				4528B2121D40C7B2002599E4 /* ViewController */,
 			);
 			name = Setting;
@@ -210,6 +250,14 @@
 				4528B22D1D40D797002599E4 /* Avatar@3x.png */,
 				4528B2261D40D2CA002599E4 /* Friends@2x.png */,
 				4528B2271D40D2CA002599E4 /* Friends@3x.png */,
+				451E96381D48884100626519 /* Bell@2x.png */,
+				451E96391D48884100626519 /* Bell@3x.png */,
+				451E963A1D48884100626519 /* Home@2x.png */,
+				451E963B1D48884100626519 /* Home@3x.png */,
+				451E963C1D48884100626519 /* Phone@2x.png */,
+				451E963D1D48884100626519 /* Phone@3x.png */,
+				451E963E1D48884100626519 /* projector_L@2x.png */,
+				451E963F1D48884100626519 /* projector_L@3x.png */,
 			);
 			name = imges;
 			sourceTree = "<group>";
@@ -448,15 +496,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451E96351D485D3F00626519 /* SHSetingInputTextCell.xib in Resources */,
 				4528B22E1D40D797002599E4 /* Arrowleft@2x.png in Resources */,
 				4528B2311D40D797002599E4 /* Avatar@3x.png in Resources */,
+				451E96441D48884100626519 /* Phone@2x.png in Resources */,
+				451E96461D48884100626519 /* projector_L@2x.png in Resources */,
+				451E96451D48884100626519 /* Phone@3x.png in Resources */,
+				451E96411D48884100626519 /* Bell@3x.png in Resources */,
 				4528B2301D40D797002599E4 /* Avatar@2x.png in Resources */,
 				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
 				9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */,
 				4528B2291D40D2CA002599E4 /* Friends@3x.png in Resources */,
 				4528B2281D40D2CA002599E4 /* Friends@2x.png in Resources */,
+				451E96471D48884100626519 /* projector_L@3x.png in Resources */,
+				451E96421D48884100626519 /* Home@2x.png in Resources */,
+				451E96371D485D6E00626519 /* SHSetingItemTextCell.xib in Resources */,
 				9D4B05141D345E10004FBFA1 /* Main.storyboard in Resources */,
 				4528B22F1D40D797002599E4 /* Arrowleft@3x.png in Resources */,
+				451E96401D48884100626519 /* Bell@2x.png in Resources */,
+				451E96431D48884100626519 /* Home@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,9 +587,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451E962F1D485C7400626519 /* SHSetingInputTextCell.m in Sources */,
 				9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */,
 				9D4B05441D3503CD004FBFA1 /* SocketHelper.m in Sources */,
 				4528B20D1D40C727002599E4 /* SHHomeViewController.m in Sources */,
+				451E96321D485D0B00626519 /* SHSetingItemTextCell.m in Sources */,
 				4528B2191D40C851002599E4 /* SHOperationViewController.m in Sources */,
 				9D4B05171D345E10004FBFA1 /* SmartHome.xcdatamodeld in Sources */,
 				4528B2151D40C7CE002599E4 /* SHSettingViewController.m in Sources */,

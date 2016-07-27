@@ -7,6 +7,8 @@
 //
 
 #import "SHHomeViewController.h"
+#import "SHSettingViewController.h"
+#import "SHDefine.h"
 
 @interface SHHomeViewController ()
 
@@ -20,18 +22,25 @@
 }
 //个人中心
 - (IBAction)peopleCenter:(id)sender {
-    
+    SHSettingViewController *set = GetStoryBoardWithViewControllerName(@"SHSettingViewController");
+    [self.navigationController pushViewController:set animated:YES];
 }
 
 // 消息
 - (IBAction)notification:(id)sender {
+    
 }
 //个人家具
 - (IBAction)clickHomeButton:(id)sender {
+    
 }
+
 - (IBAction)clickCameraButton:(id)sender {
+    
 }
+
 - (IBAction)clickPhoneButton:(id)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {

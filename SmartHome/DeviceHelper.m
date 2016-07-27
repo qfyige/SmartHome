@@ -11,7 +11,7 @@
 @implementation DeviceHelper
 
 +(NSString *)getUdid{
-    
+    return nil;
 }
 
 @end
