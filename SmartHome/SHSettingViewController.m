@@ -10,15 +10,18 @@
 #import "SHSetingItemTextCell.h"
 #import "SHSetingInputTextCell.h"
 #import "SHDefine.h"
+#import "SHHeaderView.h"
+#import "SHSettingTitleView.h"
 
 @interface SHSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *sumTableView;
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 @property (strong, nonatomic) NSArray *sumArr;
-@property (strong, nonatomic) NSMutableArray *operationSettings;
-@property (strong, nonatomic) NSMutableArray *monitorSetting;
-@property (strong, nonatomic) NSMutableArray *chatSetting;
-@property (strong, nonatomic) NSMutableArray *messageSetting;
+@property (strong, nonatomic) NSArray *operationSettings;//中控
+@property (strong, nonatomic) NSArray *monitorSetting;//监控
+@property (strong, nonatomic) NSArray *chatSetting;//聊天
+@property (strong, nonatomic) NSArray *messageSetting;//消息
+@property (strong, nonatomic) SHHeaderView *headerView;
 
 
 @end
@@ -27,19 +30,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     _sumTableView.delegate = self;
     _sumTableView.dataSource = self;
+    _sumTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _settingTableView.delegate = self;
     _settingTableView.dataSource = self;
+    _settingTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _sumTableView.backgroundColor = BackgroundColor;
     [_sumTableView registerNib:[UINib nibWithNibName:@"SHSetingItemTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSetingItemTextCell"];
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHSetingInputTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSetingInputTextCell"];
+    [_settingTableView registerNib:[UINib nibWithNibName:@"SHSettingTitleView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"SHSettingTitleView"];
     [self creatInfo];
 }
 
 - (void)creatInfo{
     _sumArr = [NSArray arrayWithObjects:@{@"image":@"Home",@"title":@"中控设置"},@{@"image":@"projector_L",@"title":@"监控设置"},@{@"image":@"Bell",@"title":@"消息设置"},@{@"image":@"Phone",@"title":@"对讲设置"},nil];
-    
+    _operationSettings = @[
+                            @{@"title":@"本地链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写您的端口"}]}
+                            ,@{@"title":@"远程链接",@"content":@[@{@"title":@"端口",@"placeholder":@"请填写您的端口"},@{@"title":@"端 口",@"placeholder":@"请填写您的端口"}]}
+                            ];
     
 }
 
@@ -57,11 +67,26 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0;
+    if(tableView == _sumTableView){
+        return ScreenWidth*125/667;
+    }else{
+        return 30;
+    }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    return nil;
+    if(tableView == _sumTableView){
+        _headerView = [[[NSBundle mainBundle] loadNibNamed:@"SHHeaderView" owner:nil options:nil] lastObject];
+        NSLog(@"%@",NSStringFromCGRect([UIScreen mainScreen].bounds));
+        _headerView.frame = CGRectMake(0, 0, ScreenWidth*125/667, ScreenWidth*125/667);
+        return _headerView;
+    }else{
+        NSDictionary *dic = [_operationSettings objectAtIndex:section];
+        SHSettingTitleView *titleView = [[[NSBundle mainBundle] loadNibNamed:@"SHSettingTitleView" owner:nil options:nil] lastObject];
+        titleView.frame =CGRectMake(0, 0, ScreenWidth - ScreenWidth*125/667, 30);
+        titleView.showLabel.text = [dic objectForKey:@"title"];
+        return  titleView;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -71,26 +96,41 @@
         itemCell.showImageView.image = [UIImage imageNamed:[dic objectForKey:@"image"]];
         itemCell.showTittle.text = [dic objectForKey:@"title"];
         itemCell.backgroundColor = BackgroundColor;
+        itemCell.selectionStyle = UITableViewCellSelectionStyleGray;
         return itemCell;
+    }else if(tableView == _settingTableView){
+        NSDictionary *dic = [[[_operationSettings objectAtIndex:indexPath.section] objectForKey:@"content"] objectAtIndex:indexPath.row];
+        SHSetingInputTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHSetingInputTextCell"];
+        cell.showLabel.text = [dic objectForKey:@"title"];
+        cell.showTextFeild.placeholder = [dic objectForKey:@"placeholder"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
     }
-    
-    
-    return nil;
+    return  nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if(tableView == _sumTableView){
+        
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    if(tableView == _sumTableView){
+        return 1;
+    }else{
+        return _operationSettings.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == _sumTableView){
         return _sumArr.count;
+    }else{
+        NSArray *arr = [[_operationSettings objectAtIndex:section] objectForKey:@"content"];
+        return arr.count;
+  
     }
-    return 0;
 }
 
 - (void)didReceiveMemoryWarning {

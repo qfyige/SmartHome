@@ -19,6 +19,10 @@
 		451E96451D48884100626519 /* Phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963D1D48884100626519 /* Phone@3x.png */; };
 		451E96461D48884100626519 /* projector_L@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963E1D48884100626519 /* projector_L@2x.png */; };
 		451E96471D48884100626519 /* projector_L@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E963F1D48884100626519 /* projector_L@3x.png */; };
+		451E96951D499CDD00626519 /* SHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 451E96941D499CDD00626519 /* SHHeaderView.m */; };
+		451E96971D499D0500626519 /* SHHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451E96961D499D0500626519 /* SHHeaderView.xib */; };
+		451E969A1D49B1FF00626519 /* SHSettingTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 451E96991D49B1FF00626519 /* SHSettingTitleView.m */; };
+		451E969C1D49B21600626519 /* SHSettingTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451E969B1D49B21600626519 /* SHSettingTitleView.xib */; };
 		4528B20D1D40C727002599E4 /* SHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B20C1D40C727002599E4 /* SHHomeViewController.m */; };
 		4528B2111D40C79D002599E4 /* SHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B2101D40C79D002599E4 /* SHLoginViewController.m */; };
 		4528B2151D40C7CE002599E4 /* SHSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528B2141D40C7CE002599E4 /* SHSettingViewController.m */; };
@@ -75,6 +79,12 @@
 		451E963D1D48884100626519 /* Phone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone@3x.png"; sourceTree = "<group>"; };
 		451E963E1D48884100626519 /* projector_L@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projector_L@2x.png"; sourceTree = "<group>"; };
 		451E963F1D48884100626519 /* projector_L@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projector_L@3x.png"; sourceTree = "<group>"; };
+		451E96931D499CDD00626519 /* SHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHeaderView.h; sourceTree = "<group>"; };
+		451E96941D499CDD00626519 /* SHHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHeaderView.m; sourceTree = "<group>"; };
+		451E96961D499D0500626519 /* SHHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHHeaderView.xib; sourceTree = "<group>"; };
+		451E96981D49B1FF00626519 /* SHSettingTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingTitleView.h; sourceTree = "<group>"; };
+		451E96991D49B1FF00626519 /* SHSettingTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingTitleView.m; sourceTree = "<group>"; };
+		451E969B1D49B21600626519 /* SHSettingTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingTitleView.xib; sourceTree = "<group>"; };
 		4528B20B1D40C727002599E4 /* SHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHomeViewController.h; sourceTree = "<group>"; };
 		4528B20C1D40C727002599E4 /* SHHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHomeViewController.m; sourceTree = "<group>"; };
 		4528B20F1D40C79D002599E4 /* SHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLoginViewController.h; sourceTree = "<group>"; };
@@ -162,6 +172,12 @@
 				451E96301D485D0B00626519 /* SHSetingItemTextCell.h */,
 				451E96311D485D0B00626519 /* SHSetingItemTextCell.m */,
 				451E96361D485D6E00626519 /* SHSetingItemTextCell.xib */,
+				451E96931D499CDD00626519 /* SHHeaderView.h */,
+				451E96941D499CDD00626519 /* SHHeaderView.m */,
+				451E96961D499D0500626519 /* SHHeaderView.xib */,
+				451E96981D49B1FF00626519 /* SHSettingTitleView.h */,
+				451E96991D49B1FF00626519 /* SHSettingTitleView.m */,
+				451E969B1D49B21600626519 /* SHSettingTitleView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -504,10 +520,12 @@
 				451E96451D48884100626519 /* Phone@3x.png in Resources */,
 				451E96411D48884100626519 /* Bell@3x.png in Resources */,
 				4528B2301D40D797002599E4 /* Avatar@2x.png in Resources */,
+				451E969C1D49B21600626519 /* SHSettingTitleView.xib in Resources */,
 				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
 				9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */,
 				4528B2291D40D2CA002599E4 /* Friends@3x.png in Resources */,
 				4528B2281D40D2CA002599E4 /* Friends@2x.png in Resources */,
+				451E96971D499D0500626519 /* SHHeaderView.xib in Resources */,
 				451E96471D48884100626519 /* projector_L@3x.png in Resources */,
 				451E96421D48884100626519 /* Home@2x.png in Resources */,
 				451E96371D485D6E00626519 /* SHSetingItemTextCell.xib in Resources */,
@@ -587,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451E96951D499CDD00626519 /* SHHeaderView.m in Sources */,
 				451E962F1D485C7400626519 /* SHSetingInputTextCell.m in Sources */,
 				9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */,
 				9D4B05441D3503CD004FBFA1 /* SocketHelper.m in Sources */,
@@ -595,6 +614,7 @@
 				4528B2191D40C851002599E4 /* SHOperationViewController.m in Sources */,
 				9D4B05171D345E10004FBFA1 /* SmartHome.xcdatamodeld in Sources */,
 				4528B2151D40C7CE002599E4 /* SHSettingViewController.m in Sources */,
+				451E969A1D49B1FF00626519 /* SHSettingTitleView.m in Sources */,
 				4528B2111D40C79D002599E4 /* SHLoginViewController.m in Sources */,
 				9D4B050B1D345E10004FBFA1 /* main.m in Sources */,
 				9D4B054A1D350DF5004FBFA1 /* DeviceHelper.m in Sources */,

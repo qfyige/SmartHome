@@ -233,6 +233,14 @@
                             <constraint firstItem="TPn-v6-RNr" firstAttribute="top" secondItem="TVM-qg-6FZ" secondAttribute="top" id="nKh-R2-hz2"/>
                             <constraint firstItem="HBI-Lr-Btj" firstAttribute="top" secondItem="TVM-qg-6FZ" secondAttribute="top" id="uBo-KR-ITy"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="30h-CM-4p3"/>
+                                <exclude reference="3vX-2u-co8"/>
+                                <exclude reference="5iF-Vi-Nl8"/>
+                                <exclude reference="1JW-x4-Sef"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="e4m-s5-ocX"/>
                     <connections>
