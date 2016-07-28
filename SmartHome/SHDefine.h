@@ -16,7 +16,8 @@
 
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height;
 
-#define RGBColor(red,green,blue) [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:blue/255.0f alpha:alpha]
+#define RGBColor(r,g,b,a) \
+[UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:b/255.0f alpha:a]
 //常用绿色
 #define GreenColor RGBColor(36,213,195,1)
 //常用灰色
@@ -27,6 +28,8 @@
 #define WhiteColor [UIColor whiteColor]
 //常用深灰色背景色
 #define BackgroundColor RGBColor(45,49,58,1)
+//常用选中深灰色背景色
+#define SelectBackgroundColor RGBColor(50,56,54,1)
 //常用浅灰色背景色
 #define TableBackgroundColor RGBColor(248,248,248,1)
 

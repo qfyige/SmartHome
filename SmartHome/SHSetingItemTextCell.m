@@ -7,7 +7,12 @@
 //
 
 #import "SHSetingItemTextCell.h"
-
+#import "SHDefine.h"
 @implementation SHSetingItemTextCell
+-(void)aweakFromNib{
+    self.backgroundColor = BackgroundColor;
+    self.contentView.backgroundColor = BackgroundColor;
+}
+
 
 @end

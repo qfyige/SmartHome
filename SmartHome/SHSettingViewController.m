@@ -9,6 +9,7 @@
 #import "SHSettingViewController.h"
 #import "SHSetingItemTextCell.h"
 #import "SHSetingInputTextCell.h"
+#import "SHDefine.h"
 
 @interface SHSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *sumTableView;
@@ -30,6 +31,7 @@
     _sumTableView.dataSource = self;
     _settingTableView.delegate = self;
     _settingTableView.dataSource = self;
+    _sumTableView.backgroundColor = BackgroundColor;
     [_sumTableView registerNib:[UINib nibWithNibName:@"SHSetingItemTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSetingItemTextCell"];
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHSetingInputTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSetingInputTextCell"];
     [self creatInfo];
@@ -54,6 +56,10 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0;
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return nil;
 }
@@ -64,11 +70,16 @@
         NSDictionary *dic = [_sumArr objectAtIndex:indexPath.row];
         itemCell.showImageView.image = [UIImage imageNamed:[dic objectForKey:@"image"]];
         itemCell.showTittle.text = [dic objectForKey:@"title"];
+        itemCell.backgroundColor = BackgroundColor;
         return itemCell;
     }
     
     
     return nil;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
