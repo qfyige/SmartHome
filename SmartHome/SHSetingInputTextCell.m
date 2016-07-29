@@ -9,5 +9,7 @@
 #import "SHSetingInputTextCell.h"
 
 @implementation SHSetingInputTextCell
+-(void)awakeFromNib{
+}
 
 @end

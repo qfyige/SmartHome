@@ -13,6 +13,7 @@
 #import "SHHeaderView.h"
 #import "SHSettingTitleView.h"
 
+
 @interface SHSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *sumTableView;
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
@@ -48,8 +49,21 @@
     _sumArr = [NSArray arrayWithObjects:@{@"image":@"Home",@"title":@"中控设置"},@{@"image":@"projector_L",@"title":@"监控设置"},@{@"image":@"Bell",@"title":@"消息设置"},@{@"image":@"Phone",@"title":@"对讲设置"},nil];
     _operationSettings = @[
                             @{@"title":@"本地链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写您的端口"}]}
-                            ,@{@"title":@"远程链接",@"content":@[@{@"title":@"端口",@"placeholder":@"请填写您的端口"},@{@"title":@"端 口",@"placeholder":@"请填写您的端口"}]}
+                            ,@{@"title":@"远程链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写您的端口"}]}
                             ];
+    _monitorSetting = @[
+                           @{@"title":@"本地链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端 口",@"placeholder":@"请填写您的端口"},@{@"title":@"用户名",@"placeholder":@"请填写您的用户名"},@{@"title":@"密 码",@"placeholder":@"请填写您的密码"}]}
+                           ,@{@"title":@"远程链接",@"content":@[@{@"title":@"账 号",@"placeholder":@"请填写您的远程账户"},@{@"title":@"密 码",@"placeholder":@"请填写您的远程密码"}]}
+                           ];
+
+    _chatSetting = @[
+                           @{@"title":@"门口机一",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机一的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机一的端口"}]}
+                           ,@{@"title":@"门口机二",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机二的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机二的端口"}]}
+                           ];
+    _messageSetting = @[
+                        @{@"title":@"门口机一",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机一的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机一的端口"}]}
+                        ,@{@"title":@"门口机二",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机二的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机二的端口"}]}
+                        ];
     
 }
 
@@ -110,6 +124,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"dianji cell");
+    
     if(tableView == _sumTableView){
         
     }

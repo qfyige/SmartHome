@@ -9,10 +9,11 @@
 #import "SHSetingItemTextCell.h"
 #import "SHDefine.h"
 @implementation SHSetingItemTextCell
--(void)aweakFromNib{
-    self.backgroundColor = BackgroundColor;
-    self.contentView.backgroundColor = BackgroundColor;
-}
 
+-(void)awakeFromNib{
+    self.backgroundColor = BackgroundColor;
+    self.showImageView.contentMode = UIViewContentModeScaleAspectFit;
+ 
+}
 
 @end
