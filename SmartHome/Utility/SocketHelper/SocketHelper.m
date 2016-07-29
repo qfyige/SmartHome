@@ -29,7 +29,6 @@
 -(instancetype)init{
     self = [super init];
     if(self) {
-        [self setUpWebSocket];
         return self;
     }
     return nil;
@@ -49,14 +48,26 @@
 //接收消息 存储数据
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
     NSLog(@"%@",message);
+    if(_complete){
+        _complete(message);
+    }
 }
+
+
 //连接成功
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{
+    if(_complete){
+        _complete(@{@"data":@"success"});
+    }
+
     NSLog(@"connect success");
 }
 //连接失败
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error{
     NSLog(@"%@",error.description);
+    if(_fail){
+        _fail(error);
+    }
 }
 //关闭websocket
 

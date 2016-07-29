@@ -16,6 +16,7 @@
 		9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B051A1D345E10004FBFA1 /* LaunchScreen.storyboard */; };
 		9D4B05271D345E10004FBFA1 /* SmartHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05261D345E10004FBFA1 /* SmartHomeTests.m */; };
 		9D4B05321D345E10004FBFA1 /* SmartHomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05311D345E10004FBFA1 /* SmartHomeUITests.m */; };
+		9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADB21D4C1FDC00B63C1B /* SHRequestHelper.m */; };
 		A04C1DD91D4B8C2C005A3BAE /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */; };
 		A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DDE1D4B8CC8005A3BAE /* DeviceHelper.m */; };
 		A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */; };
@@ -68,6 +69,8 @@
 		9D4B052D1D345E10004FBFA1 /* SmartHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4B05311D345E10004FBFA1 /* SmartHomeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeUITests.m; sourceTree = "<group>"; };
 		9D4B05331D345E10004FBFA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D8AADB11D4C1FDC00B63C1B /* SHRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRequestHelper.h; sourceTree = "<group>"; };
+		9D8AADB21D4C1FDC00B63C1B /* SHRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRequestHelper.m; sourceTree = "<group>"; };
 		A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
 		A04C1DD81D4B8C2C005A3BAE /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		A04C1DDB1D4B8CC8005A3BAE /* ChangeSeverDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeSeverDefine.h; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 			children = (
 				A04C1DE01D4B8CC8005A3BAE /* SocketHelper.h */,
 				A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */,
+				9D8AADB11D4C1FDC00B63C1B /* SHRequestHelper.h */,
+				9D8AADB21D4C1FDC00B63C1B /* SHRequestHelper.m */,
 			);
 			path = SocketHelper;
 			sourceTree = "<group>";
@@ -589,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */,
 				A04C1DEA1D4B8D38005A3BAE /* SHHomeViewController.m in Sources */,
 				A04C1E0C1D4B8E86005A3BAE /* SHSetingItemTextCell.m in Sources */,
 				A04C1DF11D4B8DA5005A3BAE /* SHLoginViewController.m in Sources */,
@@ -756,6 +762,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -775,6 +782,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

@@ -8,6 +8,7 @@
 
 #ifndef SHDefine_h
 #define SHDefine_h
+
 //获取storyboard 上的VC
 #define GetStoryBoardWithViewControllerName(ControllerName)    \
         [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:ControllerName]

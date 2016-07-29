@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SocketHelper.h"
+#import "SHRequestHelper.h"
 #import "JPUSHService.h"
 #import <IQKeyboardManager.h>
 
@@ -24,8 +25,13 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [self setUpJpushLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].enable = YES;
-    _socketHelper = [SocketHelper shareInstance];
-    [_socketHelper setUpWebSocket];
+    [SHRequestHelper connectComplete:^(NSDictionary *requestDictionary) {
+        NSLog(@"%@",requestDictionary);
+    } fail:^(NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+//    _socketHelper = [SocketHelper shareInstance];
+//    [_socketHelper setUpWebSocket];
     return YES;
 }
 

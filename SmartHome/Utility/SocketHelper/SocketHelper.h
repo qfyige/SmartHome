@@ -9,7 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <SRWebSocket.h>
 
+typedef void(^CompleteBlock) (NSDictionary *requestDictionary);
+typedef void(^FailBlock) (NSError *error);
+
 @interface SocketHelper : NSObject<SRWebSocketDelegate>
+
+@property(nonatomic,copy) CompleteBlock complete;
+@property(nonatomic,copy) FailBlock fail;
+
 
 //通过单利创建
 + (SocketHelper *)shareInstance;
