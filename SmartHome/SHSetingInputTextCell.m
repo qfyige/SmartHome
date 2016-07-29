@@ -7,13 +7,14 @@
 //
 
 #import "SHSetingInputTextCell.h"
-
+#import <Masonry.h>
 @implementation SHSetingInputTextCell
 -(void)awakeFromNib{
+    self.mTextFeild.frame =CGRectMake(80, 8, 220, 31);
+    [self.contentView addSubview:self.mTextFeild];
     self.mTextFeild.enabled = YES;
     self.mTextFeild.userInteractionEnabled = YES;
-    NSLog(@"%ld",self.mTextFeild.canBecomeFocused);
-    NSLog(@"%@",self.mTextFeild.superview);
+    self.mTextFeild.delegate= self;
 }
 
 @end

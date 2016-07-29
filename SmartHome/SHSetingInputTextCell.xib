@@ -20,7 +20,7 @@
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请输入IP地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNJ-5o-czx">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请输入IP地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNJ-5o-czx">
                     <rect key="frame" x="80" y="8" width="220" height="31"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -29,12 +29,8 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="bNJ-5o-czx" secondAttribute="bottom" constant="7" id="2FL-9D-XLe"/>
                 <constraint firstAttribute="bottom" secondItem="JlX-9V-rUV" secondAttribute="bottom" constant="12" id="6sw-d8-wQ7"/>
-                <constraint firstItem="bNJ-5o-czx" firstAttribute="leading" secondItem="JlX-9V-rUV" secondAttribute="trailing" constant="9" id="8Ja-ki-AKQ"/>
                 <constraint firstItem="JlX-9V-rUV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="LYO-P8-0zg"/>
-                <constraint firstAttribute="trailing" secondItem="bNJ-5o-czx" secondAttribute="trailing" constant="20" id="Os4-8p-by3"/>
-                <constraint firstItem="bNJ-5o-czx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="eoV-I6-6Ai"/>
                 <constraint firstItem="JlX-9V-rUV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="fvG-ie-eZe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -11,4 +11,6 @@
 @interface SHSettingTitleView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *showLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *showSwitch;
+
 @end
