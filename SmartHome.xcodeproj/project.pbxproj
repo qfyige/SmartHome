@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		451E962F1D485C7400626519 /* SHSetingInputTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 451E962E1D485C7400626519 /* SHSetingInputTextCell.m */; };
 		451E96321D485D0B00626519 /* SHSetingItemTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 451E96311D485D0B00626519 /* SHSetingItemTextCell.m */; };
-		451E96351D485D3F00626519 /* SHSetingInputTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451E96341D485D3F00626519 /* SHSetingInputTextCell.xib */; };
 		451E96371D485D6E00626519 /* SHSetingItemTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451E96361D485D6E00626519 /* SHSetingItemTextCell.xib */; };
 		451E96401D48884100626519 /* Bell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E96381D48884100626519 /* Bell@2x.png */; };
 		451E96411D48884100626519 /* Bell@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E96391D48884100626519 /* Bell@3x.png */; };
@@ -33,6 +32,11 @@
 		4528B22F1D40D797002599E4 /* Arrowleft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B22B1D40D797002599E4 /* Arrowleft@3x.png */; };
 		4528B2301D40D797002599E4 /* Avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B22C1D40D797002599E4 /* Avatar@2x.png */; };
 		4528B2311D40D797002599E4 /* Avatar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4528B22D1D40D797002599E4 /* Avatar@3x.png */; };
+		452F777B1D4B26FD000EA7FC /* Add to group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 452F77771D4B26FD000EA7FC /* Add to group@2x.png */; };
+		452F777C1D4B26FD000EA7FC /* Add to group@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 452F77781D4B26FD000EA7FC /* Add to group@3x.png */; };
+		452F777D1D4B26FD000EA7FC /* Logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 452F77791D4B26FD000EA7FC /* Logout@2x.png */; };
+		452F777E1D4B26FD000EA7FC /* Logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 452F777A1D4B26FD000EA7FC /* Logout@3x.png */; };
+		45EB64A61D4B4107001EAA4E /* SHSetingInputTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45EB64A51D4B4107001EAA4E /* SHSetingInputTextCell.xib */; };
 		9290D4707E3E489A929F89FF /* libPods-SmartHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BEA5DAC1AFE9EC922D46ED /* libPods-SmartHome.a */; };
 		9D4B050B1D345E10004FBFA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B050A1D345E10004FBFA1 /* main.m */; };
 		9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B050D1D345E10004FBFA1 /* AppDelegate.m */; };
@@ -69,7 +73,6 @@
 		451E962E1D485C7400626519 /* SHSetingInputTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetingInputTextCell.m; sourceTree = "<group>"; };
 		451E96301D485D0B00626519 /* SHSetingItemTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetingItemTextCell.h; sourceTree = "<group>"; };
 		451E96311D485D0B00626519 /* SHSetingItemTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetingItemTextCell.m; sourceTree = "<group>"; };
-		451E96341D485D3F00626519 /* SHSetingInputTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingInputTextCell.xib; sourceTree = "<group>"; };
 		451E96361D485D6E00626519 /* SHSetingItemTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingItemTextCell.xib; sourceTree = "<group>"; };
 		451E96381D48884100626519 /* Bell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bell@2x.png"; sourceTree = "<group>"; };
 		451E96391D48884100626519 /* Bell@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bell@3x.png"; sourceTree = "<group>"; };
@@ -101,6 +104,11 @@
 		4528B22B1D40D797002599E4 /* Arrowleft@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrowleft@3x.png"; sourceTree = "<group>"; };
 		4528B22C1D40D797002599E4 /* Avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Avatar@2x.png"; sourceTree = "<group>"; };
 		4528B22D1D40D797002599E4 /* Avatar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Avatar@3x.png"; sourceTree = "<group>"; };
+		452F77771D4B26FD000EA7FC /* Add to group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add to group@2x.png"; sourceTree = "<group>"; };
+		452F77781D4B26FD000EA7FC /* Add to group@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add to group@3x.png"; sourceTree = "<group>"; };
+		452F77791D4B26FD000EA7FC /* Logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout@2x.png"; sourceTree = "<group>"; };
+		452F777A1D4B26FD000EA7FC /* Logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout@3x.png"; sourceTree = "<group>"; };
+		45EB64A51D4B4107001EAA4E /* SHSetingInputTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingInputTextCell.xib; sourceTree = "<group>"; };
 		80BEA5DAC1AFE9EC922D46ED /* libPods-SmartHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589DDE9AC2B19FE22ACCFBA /* Pods-SmartHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome.release.xcconfig"; sourceTree = "<group>"; };
 		9D4B05061D345E10004FBFA1 /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,7 +176,7 @@
 			children = (
 				451E962D1D485C7400626519 /* SHSetingInputTextCell.h */,
 				451E962E1D485C7400626519 /* SHSetingInputTextCell.m */,
-				451E96341D485D3F00626519 /* SHSetingInputTextCell.xib */,
+				45EB64A51D4B4107001EAA4E /* SHSetingInputTextCell.xib */,
 				451E96301D485D0B00626519 /* SHSetingItemTextCell.h */,
 				451E96311D485D0B00626519 /* SHSetingItemTextCell.m */,
 				451E96361D485D6E00626519 /* SHSetingItemTextCell.xib */,
@@ -260,6 +268,10 @@
 		4528B21D1D40D1D1002599E4 /* imges */ = {
 			isa = PBXGroup;
 			children = (
+				452F77771D4B26FD000EA7FC /* Add to group@2x.png */,
+				452F77781D4B26FD000EA7FC /* Add to group@3x.png */,
+				452F77791D4B26FD000EA7FC /* Logout@2x.png */,
+				452F777A1D4B26FD000EA7FC /* Logout@3x.png */,
 				4528B22A1D40D797002599E4 /* Arrowleft@2x.png */,
 				4528B22B1D40D797002599E4 /* Arrowleft@3x.png */,
 				4528B22C1D40D797002599E4 /* Avatar@2x.png */,
@@ -512,19 +524,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				451E96351D485D3F00626519 /* SHSetingInputTextCell.xib in Resources */,
 				4528B22E1D40D797002599E4 /* Arrowleft@2x.png in Resources */,
 				4528B2311D40D797002599E4 /* Avatar@3x.png in Resources */,
 				451E96441D48884100626519 /* Phone@2x.png in Resources */,
+				452F777E1D4B26FD000EA7FC /* Logout@3x.png in Resources */,
+				452F777D1D4B26FD000EA7FC /* Logout@2x.png in Resources */,
 				451E96461D48884100626519 /* projector_L@2x.png in Resources */,
 				451E96451D48884100626519 /* Phone@3x.png in Resources */,
 				451E96411D48884100626519 /* Bell@3x.png in Resources */,
+				452F777C1D4B26FD000EA7FC /* Add to group@3x.png in Resources */,
 				4528B2301D40D797002599E4 /* Avatar@2x.png in Resources */,
 				451E969C1D49B21600626519 /* SHSettingTitleView.xib in Resources */,
 				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
 				9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */,
 				4528B2291D40D2CA002599E4 /* Friends@3x.png in Resources */,
 				4528B2281D40D2CA002599E4 /* Friends@2x.png in Resources */,
+				45EB64A61D4B4107001EAA4E /* SHSetingInputTextCell.xib in Resources */,
 				451E96971D499D0500626519 /* SHHeaderView.xib in Resources */,
 				451E96471D48884100626519 /* projector_L@3x.png in Resources */,
 				451E96421D48884100626519 /* Home@2x.png in Resources */,
@@ -533,6 +548,7 @@
 				4528B22F1D40D797002599E4 /* Arrowleft@3x.png in Resources */,
 				451E96401D48884100626519 /* Bell@2x.png in Resources */,
 				451E96431D48884100626519 /* Home@3x.png in Resources */,
+				452F777B1D4B26FD000EA7FC /* Add to group@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

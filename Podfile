@@ -1,6 +1,7 @@
 platform :ios, '8.0'
 
 target 'SmartHome' do
+    pod 'IQKeyboardManager'
     pod 'AFNetworking'
     pod 'Masonry'
     pod 'SocketRocket'

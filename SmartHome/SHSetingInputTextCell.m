@@ -10,6 +10,10 @@
 
 @implementation SHSetingInputTextCell
 -(void)awakeFromNib{
+    self.mTextFeild.enabled = YES;
+    self.mTextFeild.userInteractionEnabled = YES;
+    NSLog(@"%ld",self.mTextFeild.canBecomeFocused);
+    NSLog(@"%@",self.mTextFeild.superview);
 }
 
 @end

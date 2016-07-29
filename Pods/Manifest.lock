@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - IQKeyboardManager (4.0.4)
   - JSONModel (1.2.0)
   - Masonry (1.0.1)
   - MJExtension (2.3.1)
@@ -29,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - IQKeyboardManager
   - JSONModel
   - Masonry
   - MJExtension (= 2.3.1)
@@ -42,6 +44,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  IQKeyboardManager: 4a6f83b540283c2645aaeba2bd8dc0f09b5c77f8
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJExtension: c7e345f6c2e016e547ea9cd9ea486995cfed9bc6
@@ -53,6 +56,6 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d
   UIViewController+KeyboardAnimation: 5beaa558cabe3353c37fdd5476c68dac8dc507d5
 
-PODFILE CHECKSUM: 01813347a67f7cc8a47b7bd73b56abf94153b609
+PODFILE CHECKSUM: a1a51cc99b35ef8351ce2d51e54328c825d7ee0b
 
 COCOAPODS: 1.0.1

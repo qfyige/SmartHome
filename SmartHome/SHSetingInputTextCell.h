@@ -10,6 +10,6 @@
 
 @interface SHSetingInputTextCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *showLabel;
-@property (weak, nonatomic) IBOutlet UITextField *showTextFeild;
+@property (weak, nonatomic) IBOutlet UITextField *mTextFeild;
 
 @end

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "SocketHelper.h"
 #import "JPUSHService.h"
-
+#import <IQKeyboardManager.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +23,7 @@
     application.applicationIconBadgeNumber = 0;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [self setUpJpushLaunchOptions:launchOptions];
+    [IQKeyboardManager sharedManager].enable = YES;
     _socketHelper = [SocketHelper shareInstance];
     [_socketHelper setUpWebSocket];
     return YES;
