@@ -28,9 +28,12 @@
 @end
 
 @implementation SHSettingViewController
-
+{
+    NSIndexPath *_selectIndexPath;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _selectIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     self.automaticallyAdjustsScrollViewInsets = NO;
     _sumTableView.delegate = self;
     _sumTableView.dataSource = self;
