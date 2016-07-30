@@ -33,7 +33,9 @@
 }
 
 - (void)back{
-    if(self.navigationController.presentingViewController){
+    BOOL isPresent = self.navigationController.presentingViewController;
+    NSArray *array = self.navigationController.viewControllers;
+    if(isPresent && [array count] == 1){
         [self dismissViewControllerAnimated:YES completion:nil];
     }else{
         [self.navigationController popViewControllerAnimated:YES];

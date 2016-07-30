@@ -10,8 +10,14 @@
 
 @interface SHRegisterViewController ()<UITextFieldDelegate>
 {
-    UITextField *phoneTextField;
+    UITextField *accountTextField;
     UITextField *passwordTextField;
+    UITextField *confirmPasswordTextField;
+    UITextField *contactTextField;
+    UITextField *phoneTextField;
+    UITextField *SNTextField;
+    UITextField *locationTextField;
+    UITextField *detailTextField;
 }
 
 @end
@@ -25,7 +31,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = WhiteColor;
     [self setUpViewContent];
-    [self backButton];
+    [self addBackButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,7 +45,12 @@
     CGFloat top = height*0.1;
     CGFloat labelW = width*0.5;
     CGFloat labelH = 50.0;
-    CGFloat lineViewH = 0.5;
+    CGFloat lineViewH = 5;
+    CGFloat textFieldX = width*0.225;
+    CGFloat textFieldY = width*0.2;
+    CGFloat textFieldW = width*0.25;
+    CGFloat textFieldH = labelH;
+    CGFloat textFieldPadding = width*0.05;
     NSInteger fontNum = 17;
     Weakly(ws)
     
@@ -57,93 +68,25 @@
         make.size.mas_equalTo(CGSizeMake(labelW, labelH));
     }];
     
-    phoneTextField = [[UITextField alloc] init];
-    phoneTextField.font = SH_SYSTEM_FONT_(fontNum);
-    phoneTextField.placeholder = @"请输入账号";
-    phoneTextField.textColor = BlackColor;
-    phoneTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    phoneTextField.textAlignment = NSTextAlignmentCenter;
-    [phoneTextField setKeyboardType:UIKeyboardTypeNumberPad];
-    NSString *phoneText = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_phone"];
-    if (phoneText.length > 0) {
-        phoneTextField.text = phoneText;
-    }else{
-        [phoneTextField becomeFirstResponder];
+    NSMutableArray *placeArray = [NSMutableArray arrayWithCapacity:4];
+    [placeArray addObject:@[@"账号",@"密码"]];
+    [placeArray addObject:@[@"确认密码",@"联系人"]];
+    [placeArray addObject:@[@"手机号",@"SN注册码"]];
+    [placeArray addObject:@[@"所在地",@"详细地址"]];
+    
+    for (NSInteger i = 0; i < 4; i++) {
+        NSArray *array = [placeArray objectAtIndex:i];
+        UITextField *fTextField = nil;
+        CGFloat x = textFieldX;
+        for (NSUInteger j = 0; j < 2; j++) {
+            NSInteger index = i*4 + j;
+            fTextField = [self getDefaultTextField:[array objectAtIndex:j] fontNum:fontNum index:index];
+            fTextField.frame = CGRectMake(x, textFieldY, textFieldW, textFieldH);
+            [self.view addSubview:fTextField];
+            x = fTextField.maxX + textFieldPadding;
+        }
+        textFieldY = fTextField.maxY + textFieldH;
     }
-    [self.view addSubview:phoneTextField];
-    
-    [phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(ws.view);
-        make.top.equalTo(label.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(labelW, labelH));
-    }];
-    
-    UILabel *phoneLineView = [[UILabel alloc] init];
-    phoneLineView.backgroundColor = BlackColor;
-    [self.view addSubview:phoneLineView];
-    
-    [phoneLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(ws.view);
-        make.top.equalTo(phoneTextField.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(labelW, lineViewH));
-    }];
-    
-    passwordTextField = [[UITextField alloc] init];
-    passwordTextField.placeholder = @"请输入密码";
-    passwordTextField.secureTextEntry = YES;
-    passwordTextField.textColor = BlackColor;
-    passwordTextField.font = SH_SYSTEM_FONT_(fontNum);
-    passwordTextField.textAlignment = NSTextAlignmentCenter;
-    passwordTextField.delegate = self;
-    passwordTextField.keyboardType = UIKeyboardTypeASCIICapable;
-    if (phoneText.length > 0) {
-        [passwordTextField becomeFirstResponder];
-    }
-    [self.view addSubview:passwordTextField];
-    
-    [passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(ws.view);
-        make.top.equalTo(phoneLineView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(labelW, labelH));
-    }];
-    
-    UILabel *passwordLineView = [[UILabel alloc] init];
-    passwordLineView.backgroundColor = BlackColor;
-    [self.view addSubview:passwordLineView];
-    
-    [passwordLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(ws.view);
-        make.top.equalTo(passwordTextField.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(labelW, lineViewH));
-    }];
-    
-    UIButton *registerButton = [[UIButton alloc] init];
-    registerButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
-    [registerButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [registerButton setTitle:@"立即注册" forState:UIControlStateNormal];
-    [registerButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-    [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:registerButton];
-    
-    [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(passwordLineView);
-        make.top.equalTo(passwordLineView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
-    }];
-    
-    UIButton *frogetPasswordButton = [[UIButton alloc] init];
-    frogetPasswordButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
-    [frogetPasswordButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [frogetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal];
-    [frogetPasswordButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-    [frogetPasswordButton addTarget:self action:@selector(frogetPasswordButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:frogetPasswordButton];
-    
-    [frogetPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(passwordLineView);
-        make.top.equalTo(passwordLineView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
-    }];
     
     UIButton *loginButton = [[UIButton alloc] init];
     loginButton.backgroundColor = BlackColor;
@@ -152,7 +95,7 @@
     loginButton.layer.borderWidth = 0.5f;
     loginButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     [loginButton setTitleColor:WhiteColor forState:UIControlStateNormal];
-    [loginButton setTitle:@"登录" forState:UIControlStateNormal];
+    [loginButton setTitle:@"注册账号" forState:UIControlStateNormal];
     loginButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
     [loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginButton];
@@ -167,6 +110,60 @@
     [self.view addGestureRecognizer:tap];
 }
 
+- (NSMutableArray *)getTextFieldArray:(id)obejct1 object2:(id)object2
+{
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    [array addObject:obejct1];
+    [array addObject:object2];
+    return array;
+}
+
+- (UITextField *)getDefaultTextField:(NSString *)placeholder fontNum:(NSInteger)fontNum index:(NSInteger)index
+{
+    UITextField *textField = [[UITextField alloc] init];
+    textField.font = SH_SYSTEM_FONT_(fontNum);
+    textField.placeholder = placeholder;
+    textField.textColor = BlackColor;
+    textField.layer.cornerRadius = 2.0;
+    textField.layer.masksToBounds = YES;
+    textField.layer.borderWidth = 0.5f;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    textField.keyboardType = UIKeyboardTypeASCIICapable;
+    textField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 0)];
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    textField.delegate = self;
+    switch (index) {
+        case 0:
+            accountTextField = textField;
+            break;
+        case 1:
+            passwordTextField = textField;
+            break;
+        case 2:
+            confirmPasswordTextField = textField;
+            break;
+        case 3:
+            contactTextField = textField;
+            break;
+        case 4:
+            phoneTextField = textField;
+            break;
+        case 5:
+            SNTextField = textField;
+            break;
+        case 6:
+            locationTextField = textField;
+            break;
+        case 7:
+            detailTextField = textField;
+            break;
+            
+        default:
+            break;
+    }
+    return textField;
+}
+
 #pragma mark -
 #pragma mark - btnClick
 
@@ -178,11 +175,29 @@
 
 - (void)tapClick:(UITapGestureRecognizer *)tap
 {
-    if([phoneTextField canResignFirstResponder]) {
-        [phoneTextField resignFirstResponder];
+    if([accountTextField canResignFirstResponder]) {
+        [accountTextField resignFirstResponder];
     }
     if ([passwordTextField canResignFirstResponder]) {
         [passwordTextField resignFirstResponder];
+    }
+    if([confirmPasswordTextField canResignFirstResponder]) {
+        [confirmPasswordTextField resignFirstResponder];
+    }
+    if ([contactTextField canResignFirstResponder]) {
+        [contactTextField resignFirstResponder];
+    }
+    if([phoneTextField canResignFirstResponder]) {
+        [phoneTextField resignFirstResponder];
+    }
+    if ([SNTextField canResignFirstResponder]) {
+        [SNTextField resignFirstResponder];
+    }
+    if([locationTextField canResignFirstResponder]) {
+        [locationTextField resignFirstResponder];
+    }
+    if ([detailTextField canResignFirstResponder]) {
+        [detailTextField resignFirstResponder];
     }
 }
 
@@ -198,19 +213,19 @@
 
 - (void)loginButtonAction:(id)sender
 {
-    [self.view endEditing:YES];
-    if ( phoneTextField.text.length == 0 ) {
-        [SVProgressHUD showErrorWithStatus:@"手机号不能为空"];
-        return;
-    } else if (passwordTextField.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"密码不能为空"];
-        return;
-    } else if (passwordTextField.text.length < 6) {
-        [SVProgressHUD showErrorWithStatus:@"密码应该为6-18位"];
-        return;
-    }else{
-        [SVProgressHUD showWithStatus:@"登录中..."];
-    }
+//    [self.view endEditing:YES];
+//    if (phoneTextField.text.length == 0 ) {
+//        [SVProgressHUD showErrorWithStatus:@"手机号不能为空"];
+//        return;
+//    } else if (passwordTextField.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"密码不能为空"];
+//        return;
+//    } else if (passwordTextField.text.length < 6) {
+//        [SVProgressHUD showErrorWithStatus:@"密码应该为6-18位"];
+//        return;
+//    }else{
+//        [SVProgressHUD showWithStatus:@"登录中..."];
+//    }
     
     //    NSDictionary *parameters = @{@"account":phoneTextField.text,
     //                                 @"password":passwordTextField.text};

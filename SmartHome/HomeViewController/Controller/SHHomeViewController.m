@@ -8,8 +8,8 @@
 
 #import "SHHomeViewController.h"
 #import "SHSettingViewController.h"
-#import "SHCommonHeader.h"
 #import "SHOperationViewController.h"
+#import "SHCommonHeader.h"
 
 @interface SHHomeViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
@@ -44,6 +44,7 @@
     if ([self isLogin]) {
     }
 }
+
 //本地连接
 - (IBAction)clickHomeButton:(id)sender {
 //    if ([self isLogin]) {
@@ -81,6 +82,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end
