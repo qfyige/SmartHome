@@ -19,7 +19,6 @@
     CGSize detailSize = [self sizeWithFont:font constrainedToSize:CGSizeMake(width, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
     
     return detailSize;
-
 }
 
 @end
