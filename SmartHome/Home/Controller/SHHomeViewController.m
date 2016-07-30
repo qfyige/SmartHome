@@ -8,6 +8,7 @@
 
 #import "SHHomeViewController.h"
 #import "SHSettingViewController.h"
+#import "SHMessageViewController.h"
 #import "SHOperationViewController.h"
 #import "SHCommonHeader.h"
 
@@ -47,8 +48,10 @@
 
 // 消息
 - (IBAction)notification:(id)sender {
-    if ([self isLogin]) {
-    }
+//    if ([self isLogin]) {
+//    }
+    SHMessageViewController *messageVC = [[SHMessageViewController alloc] init];
+    [self.navigationController pushViewController:messageVC animated:YES];
 }
 
 //本地连接
