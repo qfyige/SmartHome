@@ -22,9 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.barBottomConstraint.constant = -ScreenWidth * 55 /667;
+    [self uiConfig];
+}
+
+-(void)uiConfig{
+    self.barBottomConstraint.constant = -ScreenWidth * 55 /667;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapclick)];
     [self.view addGestureRecognizer:tap];
+
 }
 
 -(void)tapclick{

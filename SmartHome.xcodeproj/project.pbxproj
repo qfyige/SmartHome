@@ -30,6 +30,7 @@
 		9D8AADD31D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADD11D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib */; };
 		9D8AADD71D4D432B00B63C1B /* SHAboutUsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */; };
 		9D8AADD81D4D432B00B63C1B /* SHAboutUsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */; };
+		9D8AADDB1D4D52D100B63C1B /* SHSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADDA1D4D52D100B63C1B /* SHSetModel.m */; };
 		A04C1DD91D4B8C2C005A3BAE /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */; };
 		A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DDE1D4B8CC8005A3BAE /* DeviceHelper.m */; };
 		A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */; };
@@ -43,7 +44,6 @@
 		A04C1E0D1D4B8E86005A3BAE /* SHSetingItemTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1E021D4B8E86005A3BAE /* SHSetingItemTextCell.xib */; };
 		A04C1E0E1D4B8E86005A3BAE /* SHSettingTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1E041D4B8E86005A3BAE /* SHSettingTitleView.m */; };
 		A04C1E0F1D4B8E86005A3BAE /* SHSettingTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1E051D4B8E86005A3BAE /* SHSettingTitleView.xib */; };
-		A04C1E161D4B8F1B005A3BAE /* SHOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1E131D4B8F1B005A3BAE /* SHOperationViewController.m */; };
 		A0D9CB901D4C5D1C0035289D /* SHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB8F1D4C5D1C0035289D /* SHUserModel.m */; };
 		A0D9CB931D4C5D320035289D /* SHUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB921D4C5D320035289D /* SHUserManager.m */; };
 		A0D9CB9F1D4C63C50035289D /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB9C1D4C63C50035289D /* NSArray+Extension.m */; };
@@ -110,6 +110,8 @@
 		9D8AADD41D4D432B00B63C1B /* SHAboutUsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAboutUsTableViewCell.h; sourceTree = "<group>"; };
 		9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAboutUsTableViewCell.m; sourceTree = "<group>"; };
 		9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHAboutUsTableViewCell.xib; sourceTree = "<group>"; };
+		9D8AADD91D4D52D100B63C1B /* SHSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetModel.h; sourceTree = "<group>"; };
+		9D8AADDA1D4D52D100B63C1B /* SHSetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetModel.m; sourceTree = "<group>"; };
 		A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
 		A04C1DD81D4B8C2C005A3BAE /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		A04C1DDD1D4B8CC8005A3BAE /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
@@ -478,6 +480,8 @@
 		A0D9CB951D4C603D0035289D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9D8AADD91D4D52D100B63C1B /* SHSetModel.h */,
+				9D8AADDA1D4D52D100B63C1B /* SHSetModel.m */,
 				A0D9CBA41D4CB7EE0035289D /* SHCommonFun.h */,
 				A0D9CBA51D4CB7EE0035289D /* SHCommonFun.m */,
 				A0D9CBA71D4CB9E30035289D /* SHLoginManager.h */,
@@ -721,6 +725,7 @@
 				A0D9CB901D4C5D1C0035289D /* SHUserModel.m in Sources */,
 				A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */,
 				9D4B050B1D345E10004FBFA1 /* main.m in Sources */,
+				9D8AADDB1D4D52D100B63C1B /* SHSetModel.m in Sources */,
 				9D8AADCE1D4D2CF900B63C1B /* NSString+getSize.m in Sources */,
 				A04C1E071D4B8E86005A3BAE /* SHHeaderView.m in Sources */,
 				A04C1E061D4B8E86005A3BAE /* SHSettingViewController.m in Sources */,
