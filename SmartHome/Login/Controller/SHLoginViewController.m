@@ -217,7 +217,7 @@
 {
     [self.view endEditing:YES];
     if ( phoneTextField.text.length == 0 ) {
-        [SVProgressHUD showErrorWithStatus:@"手机号不能为空"];
+        [SVProgressHUD showErrorWithStatus:@"账号不能为空"];
         return;
     } else if (passwordTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"密码不能为空"];

@@ -47,4 +47,6 @@
 #define SH_BOLD_FONT_(A) [UIFont boldSystemFontOfSize:A]
 #define SH_SYSTEM_FONT_(A) [UIFont systemFontOfSize:A]
 
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
 #endif /* SHDefine_h */

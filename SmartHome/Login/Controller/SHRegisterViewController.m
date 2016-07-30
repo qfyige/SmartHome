@@ -44,14 +44,19 @@
     CGFloat height = self.view.height;
     CGFloat top = height*0.1;
     CGFloat labelW = width*0.5;
-    CGFloat labelH = 50.0;
-    CGFloat lineViewH = 5;
+    CGFloat labelH = 30.0;
     CGFloat textFieldX = width*0.225;
-    CGFloat textFieldY = width*0.2;
+    CGFloat textFieldY = height*0.25;
     CGFloat textFieldW = width*0.25;
     CGFloat textFieldH = labelH;
     CGFloat textFieldPadding = width*0.05;
+    CGFloat padding = 20;
     NSInteger fontNum = 17;
+    if (IS_IPAD) {
+        labelH = 50;
+        textFieldH = labelH;
+        padding = labelH;
+    }
     Weakly(ws)
     
     UILabel *label = [[UILabel alloc] init];
@@ -85,7 +90,7 @@
             [self.view addSubview:fTextField];
             x = fTextField.maxX + textFieldPadding;
         }
-        textFieldY = fTextField.maxY + textFieldH;
+        textFieldY = fTextField.maxY + padding;
     }
     
     UIButton *loginButton = [[UIButton alloc] init];
@@ -103,7 +108,7 @@
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(ws.view);
         make.bottom.equalTo(ws.view).offset(-top);
-        make.size.mas_equalTo(CGSizeMake(labelW, labelH));
+        make.size.mas_equalTo(CGSizeMake(labelW, 50));
     }];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
@@ -214,21 +219,45 @@
 - (void)loginButtonAction:(id)sender
 {
 //    [self.view endEditing:YES];
-//    if (phoneTextField.text.length == 0 ) {
-//        [SVProgressHUD showErrorWithStatus:@"手机号不能为空"];
+//    if (accountTextField.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"账号不能为空"];
 //        return;
 //    } else if (passwordTextField.text.length == 0) {
 //        [SVProgressHUD showErrorWithStatus:@"密码不能为空"];
 //        return;
+//    } else if (confirmPasswordTextField.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"确认密码不能为空"];
+//        return;
+//    } else if (contactTextField.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"联系人不能为空"];
+//        return;
+//    } else if (phoneTextField.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"手机不能为空"];
+//        return;
+//    } else if (SNTextField.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"SN注册码不能为空"];
+//        return;
+//    } else if (locationTextField.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"所在地不能为空"];
+//        return;
+//    } else if (detailTextField.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"详细地址不能为空"];
+//        return;
 //    } else if (passwordTextField.text.length < 6) {
 //        [SVProgressHUD showErrorWithStatus:@"密码应该为6-18位"];
 //        return;
+//    } else if (confirmPasswordTextField.text.length < 6) {
+//        [SVProgressHUD showErrorWithStatus:@"确认密码应该为6-18位"];
+//        return;
+//    } else if (![confirmPasswordTextField.text isEqualToString:passwordTextField.text]) {
+//        [SVProgressHUD showErrorWithStatus:@"密码和确认密码应该一致"];
+//        return;
 //    }else{
-//        [SVProgressHUD showWithStatus:@"登录中..."];
+//        [SVProgressHUD showWithStatus:@"注册中..."];
 //    }
-    
-    //    NSDictionary *parameters = @{@"account":phoneTextField.text,
-    //                                 @"password":passwordTextField.text};
+//    NSDictionary *parameters = @{@"account":accountTextField.text,
+//                                     @"password":passwordTextField.text};
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
