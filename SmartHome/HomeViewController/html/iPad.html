@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<!-- Html脚本 -->
+<head>
+<title>iPad.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="css/iPad.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+html,body{
+	width:1024px;
+	height:768px;
+	margin:0px 0px;
+	background-color:#000000;
+	overflow:hidden;
+}
+#content{
+	width:3072px;
+	height:768px;
+}
+#content > div{
+	width:1024px;
+	height:768px;
+	float:left;display:block;
+	-moz-transition: marginLeft 0.4s ease-in-out;
+   	-webkit-transition: marginLeft 0.4s ease-in-out;
+   	-ms-transition: marginLeft 0.4s ease-in-out;
+   	-o-transition: marginLeft 0.4s ease-in-out;
+   	transition: marginLeft 0.4s ease-in-out;
+   	margin:0px 0px;position:relative;overflow:hidden;
+}
+audio{
+	position:absolute;
+}
+</style>
+<script type="text/javascript" src="script/ldinfo.js"></script>
+<script src="script/jquery/jquery-1.6.1.min.js"></script>
+<script src="script/jquery/jquery-ui-1.8.13.custom.min.js"></script>
+<script src="script/jquery/jquery.mobile-1.0a4.1.min.js"></script>
+<script src="script/jquery/jquery.timers-1.2.js"></script>
+<script type="text/javascript" src="script/button.js"></script>
+<script type="text/javascript" src="script/info.js"></script>
+<script type="text/javascript" src="script/time.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+		showtime();
+		INFO_QUERY_JOINT = 1; 
+		startAllNet();
+		function startAllNet(){
+			console.log('denet');
+			if(ldInfo.netenv=='lan'){
+				setInterval(queryAllInfo,500);
+				console.log('queryAllInfo');
+			}
+			else if(ldInfo.netenv=='internet'){
+				ldWebSocket();
+			}
+			else{
+				setTimeout(startAllNet,5000);
+			}
+		}	
+};
+window.pages = {
+	'1800':'iPad.html?0',
+	'1801':'iPad.html?1',
+	'1802':'iPad.html?2'
+}
+</script>
+</head>
+<body><div id="content">
+<div class="hbody1" style="background:#ffffff  url(images/103-11110p9240099-P.png)  no-repeat  0px 0px  ;-webkit-background-size:100% 100%;">
+						        
+		<div><table class="text_1">
+		<tr><td valign="middle" align="center">
+			<span>数字量测试</span>
+		</td></tr></table></div>
+			        
+			<button class="JND_1_0" id="JND_1" onClick="javascript:sendJoinNumber(1);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>1</span>
+				</td></tr></table>
+			</button>
+			        
+			<button class="JND_2_0" id="JND_2" onClick="javascript:sendJoinNumber(2);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>2</span>
+				</td></tr></table>
+			</button>
+			        
+			<button class="JND_3_0" id="JND_3" onClick="javascript:sendJoinNumber(3);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>3</span>
+				</td></tr></table>
+			</button>
+			        
+			<button class="JND_4_0" id="JND_4" onClick="javascript:sendJoinNumber(4);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>4</span>
+				</td></tr></table>
+			</button>
+			        
+			<button class="JND_5_0" id="JND_5" onClick="javascript:sendJoinNumber(5);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>5</span>
+				</td></tr></table>
+			</button>
+			        
+			<button class="JND_6_0" id="JND_6" onClick="javascript:sendJoinNumber(6);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>6</span>
+				</td></tr></table>
+			</button>
+			        
+			<button class="JND_7_0" id="JND_7" onClick="javascript:sendJoinNumber(7);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>7</span>
+				</td></tr></table>
+			</button>
+			        
+			<button class="JND_8_0" id="JND_8" onClick="javascript:sendJoinNumber(8);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>8</span>
+				</td></tr></table>
+			</button>
+			        
+			<button class="JND_9_0" id="JND_9" onClick="javascript:sendJoinNumber(9);" >
+				<table style="width:73px;height:49px;">
+				<tr><td valign="middle" align="center">
+					<span>9</span>
+				</td></tr></table>
+			</button>
+			        
+			<div>
+				<table class="JNL_13_1" id="JNL_13_1">
+				<tr><td valign="middle" align="center">
+					<span>一区激活</span>
+				</td></tr></table>
+				<table class="JNL_13_0" id="JNL_13_0" >
+				<tr><td valign="middle" align="center">
+					<span>区域一</span>
+				</td></tr></table>
+			</div>
+			        
+			<div>
+				<table class="JNL_12_1" id="JNL_12_1">
+				<tr><td valign="middle" align="center">
+					<span>二区激活</span>
+				</td></tr></table>
+				<table class="JNL_12_0" id="JNL_12_0" >
+				<tr><td valign="middle" align="center">
+					<span>区域二</span>
+				</td></tr></table>
+			</div>
+			        
+		<div class="JNS_10" id="JNS_10">
+			<iframe src="Subpage1-P.html" scrolling="no" frameborder="0" height="256px" width="256px" marginheight="0" marginwidth="0"></iframe>
+		</div>
+			        
+		<div class="JNS_11" id="JNS_11">
+			<iframe src="Subpage3-P.html" scrolling="no" frameborder="0" height="50px" width="80px" marginheight="0" marginwidth="0"></iframe>
+		</div>
+			        
+		<div><table class="CLOCK_1">
+		<tr><td valign="middle" align="center">
+			<span id="CLOCK_0" data-set="24 second blinking" >
+				24:00:00
+			</span>
+		</td></tr></table></div>
+		</div>
+<div class="hbody2" style="background:#ffffff  url(images/9345d688d43f879427aa309ed21b0ef41bd53a2c-P.png)  no-repeat  0px 0px  ;-webkit-background-size:100% 100%;">
+						        
+		<div><table class="CLOCK_2">
+		<tr><td valign="middle" align="center">
+			<span id="CLOCK_0" data-set="24 second blinking" >
+				24:00:00
+			</span>
+		</td></tr></table></div>
+			        
+		<div><table class="text_2">
+		<tr><td valign="middle" align="center">
+			<span>模拟量测试</span>
+		</td></tr></table></div>
+			        
+		<div><table class="JNAH_4"  >
+			<tr><td valign="middle" align="center">
+				<span id="JNAH_4">H</span>
+		</td></tr></table></div>
+			        
+		<div class="BJNV_3" id="BJNV_3">
+			<div class="JNV_3" id="JNV_3"></div>
+		</div>
+			        
+			<div class="BJNH_1" id="BJNH_1">
+				<div class="JNH_1" id="JNH_1"></div>
+			</div>
+			        		<div class="SLV_5" id="SLV_5" >
+	    	<span></span></div>
+			        		<div class="SLH_2" id="SLH_2" >
+	    	<span></span></div>
+		</div>
+<div class="hbody3" style="background:#ccffff  url(images/20121009215629116-P.png)  no-repeat  0px 0px  ;-webkit-background-size:100% 100%;">
+						        
+		<div><table class="CLOCK_3">
+		<tr><td valign="middle" align="center">
+			<span id="CLOCK_0" data-set="24 second blinking" >
+				24:00:00
+			</span>
+		</td></tr></table></div>
+			        		<div class="div_DTEXT_1">
+			<p class="DTEXT_1" id="DTEXT_1" contenteditable="true"></p>
+		</div>
+		        		<div class="div_DTEXT_2">
+			<p class="DTEXT_2" id="DTEXT_2" contenteditable="true"></p>
+		</div>
+		        		<div class="div_DTEXT_3">
+			<p class="DTEXT_3" id="DTEXT_3" contenteditable="true"></p>
+		</div>
+		        		<div class="div_DTEXT_4">
+			<p class="DTEXT_4" id="DTEXT_4" contenteditable="true"></p>
+		</div>
+		        		<div class="div_DTEXT_5">
+			<p class="DTEXT_5" id="DTEXT_5" contenteditable="true"></p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="script/websocket.js"></script>
+<script type="text/javascript" src="script/event.js"></script>
+<script type="text/javascript" src="script/slide.js"></script>
+</body>
+</html>

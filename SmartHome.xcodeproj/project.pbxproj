@@ -17,6 +17,12 @@
 		9D4B05271D345E10004FBFA1 /* SmartHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05261D345E10004FBFA1 /* SmartHomeTests.m */; };
 		9D4B05321D345E10004FBFA1 /* SmartHomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05311D345E10004FBFA1 /* SmartHomeUITests.m */; };
 		9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADB21D4C1FDC00B63C1B /* SHRequestHelper.m */; };
+		9D8AADB71D4CB19200B63C1B /* html in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADB61D4CB19200B63C1B /* html */; };
+		9D8AADBB1D4CB21900B63C1B /* operation.html in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADBA1D4CB21900B63C1B /* operation.html */; };
+		9D8AADBE1D4CB67300B63C1B /* PAIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADBD1D4CB67300B63C1B /* PAIWebViewController.m */; };
+		9D8AADC11D4CB6F300B63C1B /* SHOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADC01D4CB6F300B63C1B /* SHOperationViewController.m */; };
+		9D8AADC41D4D0A9E00B63C1B /* SHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */; };
+		9D8AADC61D4D0F1E00B63C1B /* SHSetingInputTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADC51D4D0F1E00B63C1B /* SHSetingInputTextCell.xib */; };
 		A04C1DD91D4B8C2C005A3BAE /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */; };
 		A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DDE1D4B8CC8005A3BAE /* DeviceHelper.m */; };
 		A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */; };
@@ -26,12 +32,10 @@
 		A04C1E071D4B8E86005A3BAE /* SHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DF91D4B8E86005A3BAE /* SHHeaderView.m */; };
 		A04C1E081D4B8E86005A3BAE /* SHHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1DFA1D4B8E86005A3BAE /* SHHeaderView.xib */; };
 		A04C1E0A1D4B8E86005A3BAE /* SHSetingInputTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DFE1D4B8E86005A3BAE /* SHSetingInputTextCell.m */; };
-		A04C1E0B1D4B8E86005A3BAE /* SHSetingInputTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1DFF1D4B8E86005A3BAE /* SHSetingInputTextCell.xib */; };
 		A04C1E0C1D4B8E86005A3BAE /* SHSetingItemTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1E011D4B8E86005A3BAE /* SHSetingItemTextCell.m */; };
 		A04C1E0D1D4B8E86005A3BAE /* SHSetingItemTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1E021D4B8E86005A3BAE /* SHSetingItemTextCell.xib */; };
 		A04C1E0E1D4B8E86005A3BAE /* SHSettingTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1E041D4B8E86005A3BAE /* SHSettingTitleView.m */; };
 		A04C1E0F1D4B8E86005A3BAE /* SHSettingTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1E051D4B8E86005A3BAE /* SHSettingTitleView.xib */; };
-		A04C1E161D4B8F1B005A3BAE /* SHOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1E131D4B8F1B005A3BAE /* SHOperationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,15 @@
 		9D4B05331D345E10004FBFA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D8AADB11D4C1FDC00B63C1B /* SHRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRequestHelper.h; sourceTree = "<group>"; };
 		9D8AADB21D4C1FDC00B63C1B /* SHRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRequestHelper.m; sourceTree = "<group>"; };
+		9D8AADB61D4CB19200B63C1B /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		9D8AADBA1D4CB21900B63C1B /* operation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = operation.html; sourceTree = "<group>"; };
+		9D8AADBC1D4CB66F00B63C1B /* PAIWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAIWebViewController.h; sourceTree = "<group>"; };
+		9D8AADBD1D4CB67300B63C1B /* PAIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAIWebViewController.m; sourceTree = "<group>"; };
+		9D8AADBF1D4CB6F300B63C1B /* SHOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOperationViewController.h; sourceTree = "<group>"; };
+		9D8AADC01D4CB6F300B63C1B /* SHOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOperationViewController.m; sourceTree = "<group>"; };
+		9D8AADC21D4D0A9E00B63C1B /* SHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHBaseViewController.h; sourceTree = "<group>"; };
+		9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHBaseViewController.m; sourceTree = "<group>"; };
+		9D8AADC51D4D0F1E00B63C1B /* SHSetingInputTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingInputTextCell.xib; sourceTree = "<group>"; };
 		A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
 		A04C1DD81D4B8C2C005A3BAE /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		A04C1DDB1D4B8CC8005A3BAE /* ChangeSeverDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeSeverDefine.h; sourceTree = "<group>"; };
@@ -89,15 +102,12 @@
 		A04C1DFA1D4B8E86005A3BAE /* SHHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHHeaderView.xib; sourceTree = "<group>"; };
 		A04C1DFD1D4B8E86005A3BAE /* SHSetingInputTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetingInputTextCell.h; sourceTree = "<group>"; };
 		A04C1DFE1D4B8E86005A3BAE /* SHSetingInputTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetingInputTextCell.m; sourceTree = "<group>"; };
-		A04C1DFF1D4B8E86005A3BAE /* SHSetingInputTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingInputTextCell.xib; sourceTree = "<group>"; };
 		A04C1E001D4B8E86005A3BAE /* SHSetingItemTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetingItemTextCell.h; sourceTree = "<group>"; };
 		A04C1E011D4B8E86005A3BAE /* SHSetingItemTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetingItemTextCell.m; sourceTree = "<group>"; };
 		A04C1E021D4B8E86005A3BAE /* SHSetingItemTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingItemTextCell.xib; sourceTree = "<group>"; };
 		A04C1E031D4B8E86005A3BAE /* SHSettingTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingTitleView.h; sourceTree = "<group>"; };
 		A04C1E041D4B8E86005A3BAE /* SHSettingTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingTitleView.m; sourceTree = "<group>"; };
 		A04C1E051D4B8E86005A3BAE /* SHSettingTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingTitleView.xib; sourceTree = "<group>"; };
-		A04C1E121D4B8F1B005A3BAE /* SHOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOperationViewController.h; sourceTree = "<group>"; };
-		A04C1E131D4B8F1B005A3BAE /* SHOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOperationViewController.m; sourceTree = "<group>"; };
 		A04C1E181D4B8F2C005A3BAE /* SHDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDefine.h; sourceTree = "<group>"; };
 		A04C1E191D4B8F2C005A3BAE /* SHServerDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHServerDefine.h; sourceTree = "<group>"; };
 		CF3B2D3398881A30D2AEAFAD /* Pods-SmartHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +233,8 @@
 				A04C1DDB1D4B8CC8005A3BAE /* ChangeSeverDefine.h */,
 				A04C1DDC1D4B8CC8005A3BAE /* DeviceHelper */,
 				A04C1DDF1D4B8CC8005A3BAE /* SocketHelper */,
+				9D8AADC21D4D0A9E00B63C1B /* SHBaseViewController.h */,
+				9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -250,6 +262,8 @@
 		A04C1DE41D4B8D38005A3BAE /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9D8AADBA1D4CB21900B63C1B /* operation.html */,
+				9D8AADB61D4CB19200B63C1B /* html */,
 				A04C1DE51D4B8D38005A3BAE /* Controller */,
 				A04C1DE81D4B8D38005A3BAE /* Model */,
 				A04C1DE91D4B8D38005A3BAE /* View */,
@@ -347,7 +361,7 @@
 				A04C1DFA1D4B8E86005A3BAE /* SHHeaderView.xib */,
 				A04C1DFD1D4B8E86005A3BAE /* SHSetingInputTextCell.h */,
 				A04C1DFE1D4B8E86005A3BAE /* SHSetingInputTextCell.m */,
-				A04C1DFF1D4B8E86005A3BAE /* SHSetingInputTextCell.xib */,
+				9D8AADC51D4D0F1E00B63C1B /* SHSetingInputTextCell.xib */,
 				A04C1E001D4B8E86005A3BAE /* SHSetingItemTextCell.h */,
 				A04C1E011D4B8E86005A3BAE /* SHSetingItemTextCell.m */,
 				A04C1E021D4B8E86005A3BAE /* SHSetingItemTextCell.xib */,
@@ -371,8 +385,10 @@
 		A04C1E111D4B8F1B005A3BAE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A04C1E121D4B8F1B005A3BAE /* SHOperationViewController.h */,
-				A04C1E131D4B8F1B005A3BAE /* SHOperationViewController.m */,
+				9D8AADBC1D4CB66F00B63C1B /* PAIWebViewController.h */,
+				9D8AADBD1D4CB67300B63C1B /* PAIWebViewController.m */,
+				9D8AADBF1D4CB6F300B63C1B /* SHOperationViewController.h */,
+				9D8AADC01D4CB6F300B63C1B /* SHOperationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -516,10 +532,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04C1E0D1D4B8E86005A3BAE /* SHSetingItemTextCell.xib in Resources */,
+				9D8AADB71D4CB19200B63C1B /* html in Resources */,
 				A04C1E0F1D4B8E86005A3BAE /* SHSettingTitleView.xib in Resources */,
-				A04C1E0B1D4B8E86005A3BAE /* SHSetingInputTextCell.xib in Resources */,
 				A04C1E081D4B8E86005A3BAE /* SHHeaderView.xib in Resources */,
+				9D8AADC61D4D0F1E00B63C1B /* SHSetingInputTextCell.xib in Resources */,
 				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
+				9D8AADBB1D4CB21900B63C1B /* operation.html in Resources */,
 				9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */,
 				9D4B05141D345E10004FBFA1 /* Main.storyboard in Resources */,
 			);
@@ -594,15 +612,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D8AADC11D4CB6F300B63C1B /* SHOperationViewController.m in Sources */,
 				9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */,
 				A04C1DEA1D4B8D38005A3BAE /* SHHomeViewController.m in Sources */,
 				A04C1E0C1D4B8E86005A3BAE /* SHSetingItemTextCell.m in Sources */,
 				A04C1DF11D4B8DA5005A3BAE /* SHLoginViewController.m in Sources */,
 				9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */,
+				9D8AADC41D4D0A9E00B63C1B /* SHBaseViewController.m in Sources */,
 				A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */,
+				9D8AADBE1D4CB67300B63C1B /* PAIWebViewController.m in Sources */,
 				A04C1E0A1D4B8E86005A3BAE /* SHSetingInputTextCell.m in Sources */,
 				A04C1E0E1D4B8E86005A3BAE /* SHSettingTitleView.m in Sources */,
-				A04C1E161D4B8F1B005A3BAE /* SHOperationViewController.m in Sources */,
 				9D4B05171D345E10004FBFA1 /* SmartHome.xcdatamodeld in Sources */,
 				A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */,
 				9D4B050B1D345E10004FBFA1 /* main.m in Sources */,
@@ -762,7 +782,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -782,7 +802,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

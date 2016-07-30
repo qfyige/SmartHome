@@ -2,12 +2,12 @@
 //  SHOperationViewController.h
 //  SmartHome
 //
-//  Created by tong li on 16/7/21.
+//  Created by tong lele on 16/7/30.
 //  Copyright © 2016年 tong. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PAIWebViewController.h"
 
-@interface SHOperationViewController : UIViewController
+@interface SHOperationViewController : PAIWebViewController
 
 @end

@@ -9,6 +9,7 @@
 #import "SHHomeViewController.h"
 #import "SHSettingViewController.h"
 #import "SHDefine.h"
+#import "SHOperationViewController.h"
 
 @interface SHHomeViewController ()
 
@@ -30,11 +31,14 @@
 - (IBAction)notification:(id)sender {
     
 }
-//个人家具
+//本地连接
 - (IBAction)clickHomeButton:(id)sender {
-    
+    SHOperationViewController *operation = [[SHOperationViewController alloc] init];
+    NSString *url = [[NSBundle mainBundle] pathForResource:@"operation" ofType:@"html"];
+    operation.urlString = url;
+    [self.navigationController pushViewController:operation animated:YES];
 }
-
+//远程连接
 - (IBAction)clickCameraButton:(id)sender {
     
 }

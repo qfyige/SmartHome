@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中控设备</title>
+	<style>
+	*{margin:0;
+	padding:0;}
+	li{list-style: none}
+	.login{
+		width: 360px;
+		height: 220px; 
+		margin: 100px auto;
+		position: relative; 
+		border-radius: 20px;
+		background:rgba(0,204,204,0.5);
+	 }
+	.login h3{
+		text-align: center;
+		/* position: absolute; */
+		padding-top:30px;
+		font-size: 20px;
+		color: #990066 ;
+		margin-bottom: 28px;
+	}
+
+	.login input{
+		width: 200px;
+		height: 30px;
+		border: 1px solid pink;
+		border-radius: 8px;
+		padding-left: 16px;
+		margin-left:72px; 
+	}
+	.login button{
+		width: 216px;
+		height: 36px;
+		border: 1px solid pink;
+		margin-left:72px; 
+		border-radius: 8px;
+		margin-top: 10px;
+		background: #66CC66 ;
+	}
+	section{
+		width: 366px;
+		height: 300px;
+		background:rgba(0,204,204,0.5); 
+		border-radius: 10px;
+		margin:100px auto;
+		display: none;
+	}
+	section a{
+		text-decoration: none;
+		background: pink;
+		display: block;
+		width: 80px;
+		height: 21px;
+		text-align: center;
+		color: #000;
+		border-radius:10px; 
+	}
+	section h3{
+	text-align: center;
+	/* position: absolute; */
+	padding-top:30px;
+	font-size: 20px;
+	color: #990066 ;   
+	margin-bottom: 28px;
+	}
+
+	.test-area .choice{
+		margin-bottom:20px; 
+	}
+
+	.test-area .choice input{
+		width: 116px;
+		height: 30px;
+		border: 2px dashed pink;
+	}
+	.test-area .choice input.active{
+		background: #66FF99 ;
+	}
+	.test-area .cont{
+		display: none;
+	}
+
+	.test-area .cont.active{
+		display: block;
+	}
+
+
+	.test-area .cont input{
+		width: 236px;
+		height: 30px;
+		margin: 10px 0px 0px 2px;
+		border-radius: 8px;
+		border: 1px solid pink;
+	}
+
+	.test-area .cont  button{
+		width: 80px;
+		height: 30px;
+		border: 1px solid pink;
+		background:  #66CC66;
+		border-radius:5px; 
+		margin:30px 0 0 235px;
+	}
+
+	.test-area .cont span{
+		/* color: red; */
+		font-size: 13px;
+		transition:all 1s ease;
+		opacity: 0
+	}
+	.debug{
+		background: #FFCCFF ;
+		width: 768px;
+		display: none;
+	}
+	.debug button{
+		width: 60px;
+		height: 30px;
+		border: 1px dashed pink;
+		margin-left:708px;
+	}
+  .debug hr{
+   
+   	color:#00ffff;
+   	size:1; 
+   }
+   .debug ul{
+   	height: 240px;
+   	overflow:auto
+   }
+   .debug ul li{
+   	height: 30px;
+   	font-size: 18px;
+   	color:#333333 ; 
+   	overflow: hidden;
+   	padding-left: 10px;
+   }
+   .debug ul li i{
+   	font-weight: bold;
+   
+   }
+	</style>
+	<script>
+	window.onload=function(){
+
+		var ws=null;
+		var seckey='';
+		var debugInfoNum=0;
+		var wssAddr='ws://101.201.209.42:8080/ldnet/evermobws';
+		var wssConnect={
+			fromid:'',
+			fromtype:'d',
+			version:'1.0.8',
+			clientmodel:'XXX',
+			clienttype:'ddd',
+			authkey:'0B51D241121C19364C9D0EC3BC8CA417',
+			appid:'appid0001'
+		}
+
+
+		function json2str(json){
+			var str='';
+			for(var name in json){
+				str+=name+'='+json[name]+'&';
+			}
+			return str.substring(0,str.length-1);
+		}
+
+		login();
+		/*设备登录*/
+		function login(){
+			var login=document.querySelector('.login');
+			var debug=document.querySelector('section');
+			var devId=document.querySelector('.login input');
+			var logBtn=document.querySelector('.login button');
+			var devName=document.querySelector('section h3');
+
+			logBtn.onclick=function(){
+				wssConnect.fromid=devId.value;
+				var wssUrl=wssAddr+'?'+json2str(wssConnect);
+				ws=new WebSocket(wssUrl); //创建WebSocket通道连接
+
+				ws.onopen=function(){
+					console.log('连接成功');
+				}
+
+				ws.onmessage=function(event){
+					debugInfoNum++;
+					insertDebugInfo(event.data);
+					var dataPackage=JSON.parse(event.data);
+					switch (dataPackage.result){
+						case '1000':
+							devName.innerHTML='设备:'+wssConnect.fromid;
+							seckey=dataPackage.backinfo[0].seckey;
+							login.style.display='none';
+							debug.style.display='block';
+							break;
+						case '1001':
+						    var oSpan=document.querySelector('.test-area .cont span');
+						    oSpan.style.opacity=1;
+						    setTimeout(function(){
+						    	 oSpan.style.opacity=0;
+						    },1000);
+							break;	
+						default:
+							console.log(dataPackage.result);
+							break;
+					}
+				}
+			}
+		}
+
+		function debug(){
+			var aBtn=document.querySelectorAll('.cont button');
+			var aInp=document.querySelectorAll('.cont input');
+			console.log(aInp.length);
+			for(var i=0; i<aBtn.length; i++){
+				(function(index){
+					aBtn[index].onclick=function(){
+						var id=aInp[index*2].value;
+						var value=aInp[index*2+1].value;
+						console.log('id='+id+'value='+value);
+						ws.send(JSON.stringify({
+							'seckey':seckey,
+							'method':'send2M',
+							'infopackage':{
+								'feedback':{
+									'items':[
+										{
+											'type':(index+1),
+											'joinnum':id,
+											'value':value
+										}
+									]
+								}
+							}
+						}))
+					}
+				})(i)
+
+			}
+		}
+		debugInin();
+
+		/*调试信息初始化*/
+		function debugInin(){
+			debug();
+			debugShow();
+			clearDebugInfo();
+			tab();
+		}
+
+		/*创建调试信息元素*/
+		function insertDebugInfo(backdata){
+			var oUl=document.querySelector('.debug ul');
+			var oLi=document.createElement('li');
+			oLi.innerHTML='<i>'+debugInfoNum+'. </i>'+backdata;
+			oUl.appendChild(oLi);
+		}
+		/*调试隐藏与显示*/
+		function debugShow(){
+			var debugBtn=document.querySelector('section a');
+			var debugArea=document.querySelector('.debug');
+			debugBtn.onclick=function(){
+				console.log(debugBtn.getAttribute("show"));
+				if(debugBtn.getAttribute("show") == 'off'){
+					debugArea.style.display='block';
+					debugBtn.setAttribute("show","on");
+				}
+				else{
+					debugArea.style.display='none';
+					debugBtn.setAttribute("show","off");
+				}
+			}
+		}
+		/*清楚调试信息*/
+		function clearDebugInfo(){
+			var clear=document.querySelector('.debug button');
+			var clearCont=document.querySelector('.debug ul');
+			clear.onclick=function(){
+				clearCont.innerHTML='';
+				debugInfoNum=0;
+			}
+		}
+		/*选项卡函数*/
+		function tab(){
+			var aBtn=document.querySelectorAll('.test-area .choice input');
+
+			var aDiv=document.querySelectorAll('section .cont');
+			for(var i=0; i<aBtn.length; i++){
+				(function(index){
+					aBtn[index].onclick=function(){
+
+						for (var i=0; i<aBtn.length; i++) {
+						 aBtn[i].className = '';
+						 aDiv[i].className = 'cont';
+						 }
+						 this.className='active';
+						 aDiv[index].className='active cont';
+					}
+				})(i)
+
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+<div class="login">
+	<h3>中控设备登录</h3>
+	<input type="text"  placeholder="中控设备ID">
+	<button>登录</button>
+</div>
+<section>
+<h3>设备:my name is control</h3>
+	<div class="test-area">
+	    <div class="choice">
+		<input type="button" value="数字量测试" class="active" />
+		<input type="button" value="模拟量测试"/>
+		<input type="button" value="串行量测试"/>
+		</div>
+		<div class="active cont">
+		<input type="text" placeholder="控件ID(1-2000)"><br>
+		<input type="text" placeholder="值(0/1)"><br>
+		<button>发送</button>
+		<span>成功</span>
+		</div>
+		<div class="cont">
+		<input type="text" placeholder="控件ID(1-2000)" ><br>
+		<input type="text" placeholder="值(0-65535)"><br>
+		<button>发送</button>
+		<span>成功</span>
+		</div>
+		<div class="cont">
+		<input type="text" placeholder="控件ID(1-2000)"><br>
+		<input type="text" placeholder="值(字符串)"><br>
+		<button>发送</button>
+		<span>成功</span>       
+		</div>
+		<a href="javascript:;" show="off">调试</a>
+</section>
+<div class="debug">
+	<button>清除信息</button>
+	<hr>
+	<ul>
+	<!-- 	<li>1.{gasdakdasklklsdkfsfsnkfsdjkkjsfdsdhfjksdkjfsdhkdshfhkjs}<span>2016-7-22 15:09</span></li> -->
+		
+	</ul>
+</div>
+</body>
+</html>

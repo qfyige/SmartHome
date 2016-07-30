@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHBaseViewController.h"
 #warning 需要播放视频。
 
 
-@interface SHHomeViewController : UIViewController
+@interface SHHomeViewController : SHBaseViewController
 
 @end
