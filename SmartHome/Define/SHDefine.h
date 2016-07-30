@@ -9,12 +9,20 @@
 #ifndef SHDefine_h
 #define SHDefine_h
 
+#define Weakly(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+/** presentViewController的宏 */
+#define PRESENTNAVVC(name) [self presentViewController:[[KMNavigationViewController alloc] initWithRootViewController:(name)] animated:YES completion:nil];
+
+#define PRESENTVC(name) [self presentViewController:(name) animated:YES completion:nil];
+
+#define DISMISSVC [self dismissViewControllerAnimated:YES completion:nil];
+
 //获取storyboard 上的VC
 #define GetStoryBoardWithViewControllerName(ControllerName)    \
         [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:ControllerName]
 
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
-
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height;
 
 #define RGBColor(r,g,b,a) \
@@ -34,5 +42,9 @@
 //常用浅灰色背景色
 #define TableBackgroundColor RGBColor(248,248,248,1)
 
+#define SH_NAV_HEIGHT 64
+
+#define SH_BOLD_FONT_(A) [UIFont boldSystemFontOfSize:A]
+#define SH_SYSTEM_FONT_(A) [UIFont systemFontOfSize:A]
 
 #endif /* SHDefine_h */

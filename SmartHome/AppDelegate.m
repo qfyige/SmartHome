@@ -11,6 +11,8 @@
 #import "JPUSHService.h"
 #import <IQKeyboardManager.h>
 
+#import "SHLoginViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -55,29 +57,20 @@
 }
 
 - (void)setUpJpushLaunchOptions:(NSDictionary *)launchOptions{
-
+    
     NSMutableSet *categories = [NSMutableSet set];
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
         UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
-        
         category.identifier = @"identifier";
-        
         UIMutableUserNotificationAction *action = [[UIMutableUserNotificationAction alloc] init];
-        
         action.identifier = @"test2";
-        
         action.title = @"test";
-        
         action.activationMode = UIUserNotificationActivationModeBackground;
-        
         action.authenticationRequired = YES;
-        
         //YES显示为红色，NO显示为蓝色
         action.destructive = NO;
         NSArray *actions = @[ action ];
-        
         [category setActions:actions forContext:UIUserNotificationActionContextMinimal];
-        
         [categories addObject:category];
     }
     if([[UIDevice currentDevice].systemVersion floatValue] >= 8.0){
@@ -92,8 +85,6 @@
     }
     [JPUSHService setupWithOption:launchOptions appKey:@"b97094dc63a06b00b81aefe1" channel:@"AppStore" apsForProduction:YES];
 }
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

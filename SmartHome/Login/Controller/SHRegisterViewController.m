@@ -1,17 +1,15 @@
 //
-//  SHLoginViewController.m
+//  SHRegisterViewController.m
 //  SmartHome
 //
-//  Created by tong li on 16/7/21.
+//  Created by hui.li on 16/7/30.
 //  Copyright © 2016年 tong. All rights reserved.
 //
 
-#import "SHLoginViewController.h"
 #import "SHRegisterViewController.h"
-#import "SHHomeViewController.h"
 #import "SHCommonHeader.h"
 
-@interface SHLoginViewController ()<UITextFieldDelegate>
+@interface SHRegisterViewController ()<UITextFieldDelegate>
 {
     UITextField *phoneTextField;
     UITextField *passwordTextField;
@@ -19,7 +17,7 @@
 
 @end
 
-@implementation SHLoginViewController
+@implementation SHRegisterViewController
 
 #pragma mark -
 #pragma mark - initView
@@ -28,12 +26,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = WhiteColor;
     [self setUpViewContent];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,18 +43,9 @@
     NSInteger fontNum = 17;
     Weakly(ws)
     
-    UIImage *image = [UIImage imageNamed:@"loginIcon"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    [self.view addSubview:imageView];
-    
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(ws.view);
-        make.top.equalTo(ws.view).offset(top);
-    }];
-    
     UILabel *label = [[UILabel alloc] init];
-    label.text = @"欢迎进入联电国际智能家居\nV0.2";
-    label.font = SH_SYSTEM_FONT_(fontNum);
+    label.text = @"填写信息";
+    label.font = SH_SYSTEM_FONT_(25);
     label.textColor = BlackColor;
     label.textAlignment = NSTextAlignmentCenter;
     label.numberOfLines = 0;
@@ -70,7 +53,7 @@
     
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(ws.view);
-        make.top.equalTo(imageView.mas_bottom);
+        make.top.equalTo(ws.view).offset(top);
         make.size.mas_equalTo(CGSizeMake(labelW, labelH));
     }];
     
@@ -229,10 +212,8 @@
         [SVProgressHUD showWithStatus:@"登录中..."];
     }
     
-//    NSDictionary *parameters = @{@"account":phoneTextField.text,
-//                                 @"password":passwordTextField.text};
-    [SVProgressHUD dismiss];
-    [self close];
+    //    NSDictionary *parameters = @{@"account":phoneTextField.text,
+    //                                 @"password":passwordTextField.text};
 }
 
 #pragma mark -

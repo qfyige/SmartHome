@@ -8,7 +8,7 @@
 
 #import "SHHomeViewController.h"
 #import "SHSettingViewController.h"
-#import "SHDefine.h"
+#import "SHCommonHeader.h"
 
 @interface SHHomeViewController ()
 
@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 //个人中心
 - (IBAction)peopleCenter:(id)sender {
@@ -28,24 +27,36 @@
 
 // 消息
 - (IBAction)notification:(id)sender {
-    
+    if ([self isLogin]) {
+    }
 }
 //个人家具
 - (IBAction)clickHomeButton:(id)sender {
-    
+    if ([self isLogin]) {
+    }
 }
 
 - (IBAction)clickCameraButton:(id)sender {
-    
+    if ([self isLogin]) {
+    }
 }
 
 - (IBAction)clickPhoneButton:(id)sender {
-    
+    if ([self isLogin]) {
+    }
+}
+
+- (BOOL)isLogin {
+    if ([SHLoginManager isLogin]) {
+        return YES;
+    }else{
+        [SHLoginManager userPresentLogin:self];
+        return NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
