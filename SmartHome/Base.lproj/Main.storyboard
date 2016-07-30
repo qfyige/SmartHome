@@ -50,7 +50,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1zr-mk-dx3" secondAttribute="height" multiplier="1:1" id="vcm-XQ-W8E"/>
                                         </constraints>
-                                        <state key="normal" image="Friends.png"/>
+                                        <state key="normal" image="Friends"/>
                                         <connections>
                                             <action selector="peopleCenter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="af7-hf-4rm"/>
                                         </connections>
@@ -61,7 +61,7 @@
                                             <constraint firstAttribute="width" secondItem="Tt1-UA-pgM" secondAttribute="height" multiplier="1:1" id="D4Y-7l-rIc"/>
                                             <constraint firstAttribute="width" secondItem="Tt1-UA-pgM" secondAttribute="height" multiplier="1:1" id="nK3-kx-Vzn"/>
                                         </constraints>
-                                        <state key="normal" image="Friends.png"/>
+                                        <state key="normal" image="Phone"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="D4Y-7l-rIc"/>
@@ -73,11 +73,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djr-Be-jtH">
-                                        <rect key="frame" x="556" y="16" width="22" height="23"/>
+                                        <rect key="frame" x="556" y="16" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Djr-Be-jtH" secondAttribute="height" multiplier="1:1" id="f0d-Fj-m3G"/>
                                         </constraints>
-                                        <state key="normal" image="Friends.png"/>
+                                        <state key="normal" image="projector_L"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="f0d-Fj-m3G"/>
@@ -107,7 +107,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="uZR-Od-MmK" secondAttribute="height" multiplier="1:1" id="Oav-PW-643"/>
                                         </constraints>
-                                        <state key="normal" image="Friends.png"/>
+                                        <state key="normal" image="Comment"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Oav-PW-643"/>
@@ -274,7 +274,10 @@
     </scenes>
     <resources>
         <image name="Arrowleft.png" width="6" height="10"/>
-        <image name="Friends.png" width="22" height="23"/>
-        <image name="Home" width="13" height="13"/>
+        <image name="Comment" width="23" height="22"/>
+        <image name="Friends" width="22" height="23"/>
+        <image name="Home" width="23" height="23"/>
+        <image name="Phone" width="14" height="21"/>
+        <image name="projector_L" width="22" height="14"/>
     </resources>
 </document>
