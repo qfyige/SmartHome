@@ -7,10 +7,15 @@
 //
 
 #import "SHSetingInputTextCell.h"
-#import <Masonry.h>
+#import "SHDefine.h"
+
 @implementation SHSetingInputTextCell
 -(void)awakeFromNib{
-    self.mTextFeild.frame =CGRectMake(80, 8, 220, 31);
+
+    self.mTextFeild = [[UITextField alloc] initWithFrame:CGRectMake(80, 8, 200, 31)];
+    self.mTextFeild.placeholder = @"请输入您的IP地址";
+    self.mTextFeild.font = [UIFont systemFontOfSize:12];
+    self.mTextFeild.textColor = RGBColor(189, 189, 189, 1);
     [self.contentView addSubview:self.mTextFeild];
     self.mTextFeild.enabled = YES;
     self.mTextFeild.userInteractionEnabled = YES;

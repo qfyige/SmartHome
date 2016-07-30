@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<!-- Html脚本 -->
+<head>
+<title>Subpage1-P.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="css/Subpage1-P.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body{
+	margin:0px 0px;
+}
+.hbody{
+	width:256px;
+	height:256px;
+	background:#00ffff  url(images/09e58picupb_1024-P.png)  no-repeat  0px 0px  ;-webkit-background-size:100% 100%;
+	margin:0px 0px;
+	overflow:hidden;
+	position:relative;
+}
+</style>
+<script src="script/jquery/jquery-1.6.1.min.js"></script>
+<script src="script/jquery/jquery-ui-1.8.13.custom.min.js"></script>
+<script src="script/jquery/jquery.mobile-1.0a4.1.min.js"></script>
+<script src="script/jquery/jquery.timers-1.2.js"></script>
+<script type="text/javascript" src="script/button.js"></script>
+<script type="text/javascript" src="script/info.js"></script>
+<script type="text/javascript" src="script/time.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+showtime();
+INFO_QUERY_JOINT = 1; 
+};
+window.pages = {
+	'1800':'iPad.html?0',
+	'1801':'iPad.html?1',
+	'1802':'iPad.html?2'
+}
+</script>
+</head>
+<body><div class="hbody">
+        
+		<button class="JND_17_0" id="JND_17" onClick="javascript:sendJoinNumber(17);" >
+			<table style="width:74px;height:47px;">
+			<tr><td valign="middle" align="center">
+				<span>三</span>
+			</td></tr></table>
+		</button>
+        
+		<button class="JND_16_0" id="JND_16" onClick="javascript:sendJoinNumber(16);" >
+			<table style="width:74px;height:47px;">
+			<tr><td valign="middle" align="center">
+				<span>二</span>
+			</td></tr></table>
+		</button>
+        
+		<button class="JND_15_0" id="JND_15" onClick="javascript:sendJoinNumber(15);" >
+			<table style="width:74px;height:47px;">
+			<tr><td valign="middle" align="center">
+				<span>一</span>
+			</td></tr></table>
+		</button>
+</div>
+
+<script type="text/javascript" src="script/event.js"></script>
+</body>
+</html>
