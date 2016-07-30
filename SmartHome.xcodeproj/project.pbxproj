@@ -843,11 +843,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-<<<<<<< HEAD
-				TARGETED_DEVICE_FAMILY = 1;
-=======
 				TARGETED_DEVICE_FAMILY = "1,2";
->>>>>>> origin/master
 			};
 			name = Debug;
 		};
@@ -867,11 +863,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-<<<<<<< HEAD
-				TARGETED_DEVICE_FAMILY = 1;
-=======
 				TARGETED_DEVICE_FAMILY = "1,2";
->>>>>>> origin/master
 			};
 			name = Release;
 		};
