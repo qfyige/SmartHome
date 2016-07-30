@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "SocketHelper.h"
 #import "SHRequestHelper.h"
 #import "JPUSHService.h"
 #import <IQKeyboardManager.h>
@@ -17,9 +16,7 @@
 @end
 
 @implementation AppDelegate
-{
-    SocketHelper *_socketHelper;
-}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     application.applicationIconBadgeNumber = 0;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
@@ -30,8 +27,6 @@
     } fail:^(NSError *error) {
         NSLog(@"%@",error.description);
     }];
-//    _socketHelper = [SocketHelper shareInstance];
-//    [_socketHelper setUpWebSocket];
     return YES;
 }
 

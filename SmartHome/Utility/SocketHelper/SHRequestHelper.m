@@ -22,11 +22,12 @@
 
 
 
-+ (void)sendMessageComplete:(CompleteBlock)complete fail:(FailBlock)fail{
-        SocketHelper *helper = [SocketHelper shareInstance];
-        helper.complete = complete;
-        helper.fail = fail;
-    [helper sendMessage:@""];
++ (void)sendMessage:(id)message complete:(CompleteBlock)complete fail:(FailBlock)fail{
+    SocketHelper *helper = [SocketHelper shareInstance];
+    helper.complete = complete;
+    helper.fail = fail;
+    //待补充message 格式问题 
+    [helper sendMessage:message];
 }
 
 @end

@@ -13,7 +13,7 @@ typedef void(^FailBlock) (NSError *error);
 
 @interface SHRequestHelper : NSObject
 
-+ (void)sendMessageComplete:(CompleteBlock)complete fail:(FailBlock)fail;
++ (void)sendMessage:(id)message complete:(CompleteBlock)complete fail:(FailBlock)fail;
 
 + (void)connectComplete:(CompleteBlock)complete fail:(FailBlock)fail;
 
