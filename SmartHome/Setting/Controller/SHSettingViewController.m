@@ -12,7 +12,10 @@
 #import "SHDefine.h"
 #import "SHHeaderView.h"
 #import "SHSettingTitleView.h"
-
+#import "SHSettingTextTableViewCell.h"
+#import "SHSettingFaceBackTableViewCell.h"
+#import "SHAboutUsTableViewCell.h"
+#import "NSString+getSize.h"
 
 @interface SHSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *sumTableView;
@@ -22,6 +25,10 @@
 @property (strong, nonatomic) NSArray *monitorSetting;//监控
 @property (strong, nonatomic) NSArray *chatSetting;//聊天
 @property (strong, nonatomic) NSArray *messageSetting;//消息
+@property (strong, nonatomic) NSArray *feedbackSetting;//反馈
+@property (strong, nonatomic) NSArray *aboutUsSetting;//反馈
+
+
 @property (strong, nonatomic) NSArray *datasource;//datasource
 
 @property (strong, nonatomic) SHHeaderView *headerView;
@@ -45,13 +52,17 @@
     _settingTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _sumTableView.backgroundColor = BackgroundColor;
     [_sumTableView registerNib:[UINib nibWithNibName:@"SHSetingItemTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSetingItemTextCell"];
+    [_settingTableView registerNib:[UINib nibWithNibName:@"SHSettingTextTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSettingTextTableViewCell"];
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHSetingInputTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSetingInputTextCell"];
+    [_settingTableView registerNib:[UINib nibWithNibName:@"SHAboutUsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHAboutUsTableViewCell"];
+
+    [_settingTableView registerNib:[UINib nibWithNibName:@"SHSettingFaceBackTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSettingFaceBackTableViewCell"];
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHSettingTitleView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"SHSettingTitleView"];
     [self creatInfo];
 }
 
 - (void)creatInfo{
-    _sumArr = [NSArray arrayWithObjects:@[@{@"image":@"Home",@"title":@"中控设置"},@{@"image":@"projector_L",@"title":@"监控设置"},@{@"image":@"Bell",@"title":@"消息设置"},@{@"image":@"Phone",@"title":@"对讲设置"}],@[@{@"image":@"Add to group",@"title":@"售后服务"},@{@"image":@"Logout",@"title":@"关于我们"}],nil];
+    _sumArr = [NSArray arrayWithObjects:@[@{@"image":@"Home",@"title":@"中控设置"},@{@"image":@"projector_L",@"title":@"监控设置"},@{@"image":@"Phone",@"title":@"对讲设置"},@{@"image":@"Bell",@"title":@"消息设置"}],@[@{@"image":@"Add to group",@"title":@"售后服务"},@{@"image":@"Logout",@"title":@"关于我们"}],nil];
     _operationSettings = @[
                             @{@"title":@"本地链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写您的端口"}]}
                             ,@{@"title":@"远程链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写您的端口"}]}
@@ -66,9 +77,12 @@
                            ,@{@"title":@"门口机二",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机二的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机二的端口"}]}
                            ];
     _messageSetting = @[
-                        @{@"title":@"门口机一",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机一的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机一的端口"}]}
-                        ,@{@"title":@"门口机二",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机二的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机二的端口"}]}
+                        @{@"subtitle":@"已开启",@"title":@"接受新消息通知",@"content":@[@{@"title":@"如果你要关闭或开启联电智能宅的新消息通知，请在设备的“设备”-“通知”功能中，找到应用程序“联电智宅”更改"}]}
+                        ,@{@"title":@"通知显示消息详情",@"content":@[@{@"title":@"若关闭，当收到联电智宅信息时，通知提示就不会显示发消息人，和内容摘要"}]}
+                        ,@{@"title":@"声音",@"content":@[@{@"title":@"当联电智宅在运行时，你可以设置是否需要声音"}]}
                         ];
+    _feedbackSetting = @[@{@"title":@"服务需求"}];
+    _aboutUsSetting = @[@{@"title":@"关于我们"}];
     _datasource = _operationSettings;
     
 }
@@ -82,6 +96,14 @@
     if(tableView == _sumTableView){
         return 31;
     }else{
+        if(_selectIndexPath.row == 3){
+            NSDictionary *dic = [[[_datasource objectAtIndex:indexPath.section] objectForKey:@"content"] objectAtIndex:indexPath.row];
+            NSString *str = [dic objectForKey:@"title"];
+            CGSize size = [str getSizeWithFont:[UIFont systemFontOfSize:12] width:_settingTableView.bounds.size.width - 40];
+            return size.height + 24;
+        }else if(_selectIndexPath.section == 1 && _selectIndexPath.row == 0){
+            return  240;
+        }
         return 46;
     }
 }
@@ -136,6 +158,19 @@
             itemCell.showTittle.textColor = WhiteColor;
         }
         return itemCell;
+    }else if(_selectIndexPath.row == 3){
+        NSDictionary *dic = [[[_datasource objectAtIndex:indexPath.section] objectForKey:@"content"] objectAtIndex:indexPath.row];
+        SHSettingTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHSettingTextTableViewCell"];
+        cell.showLabel.text = [dic objectForKey:@"title"];
+        return cell;
+    }else if(_selectIndexPath.row == 0 && _selectIndexPath.section ==1){
+        SHSettingFaceBackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHSettingFaceBackTableViewCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }else if(_selectIndexPath.row == 1 && _selectIndexPath.section ==1){
+        SHAboutUsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHAboutUsTableViewCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
     }else if(tableView == _settingTableView){
         NSDictionary *dic = [[[_datasource objectAtIndex:indexPath.section] objectForKey:@"content"] objectAtIndex:indexPath.row];
         SHSetingInputTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHSetingInputTextCell"];
@@ -152,30 +187,48 @@
     
     if(tableView == _sumTableView){
         _selectIndexPath = indexPath;
-        switch (indexPath.row) {
-            case 0:
-            {
-                _datasource = _operationSettings;
-            }
-                break;
-            case 1:
-            {
-                _datasource = _monitorSetting;
-            }
-                break;
-            case 2:
-            {
-                _datasource = _chatSetting;
-            }
-                break;
-            case 3:
-            {
-                _datasource = _messageSetting;
-            }
-                break;
+        if(indexPath.section == 0){
+            switch (indexPath.row) {
+                case 0:
+                {
+                    _datasource = _operationSettings;
+                }
+                    break;
+                case 1:
+                {
+                    _datasource = _monitorSetting;
+                }
+                    break;
+                case 2:
+                {
+                    _datasource = _chatSetting;
+                }
+                    break;
+                case 3:
+                {
+                    _datasource = _messageSetting;
+                }
+                    break;
                 
-            default:
-                break;
+                default:
+                    break;
+            }
+        }else if(indexPath.section == 1){
+            switch (indexPath.row) {
+                case 0:
+                {
+                    _datasource = _feedbackSetting;
+                }
+                    break;
+                case 1:
+                {
+                    _datasource = _aboutUsSetting;
+                }
+                    break;
+                default:
+                    break;
+            }
+
         }
         [_settingTableView reloadData];
         [_sumTableView reloadData];
@@ -195,8 +248,12 @@
         NSArray *arr = [_sumArr objectAtIndex:section];
         return  arr.count;
     }else{
-        NSArray *arr = [[_datasource objectAtIndex:section] objectForKey:@"content"];
-        return arr.count;
+        if(_selectIndexPath.section == 1){
+            return 1;
+        }else{
+            NSArray *arr = [[_datasource objectAtIndex:section] objectForKey:@"content"];
+            return arr.count;
+        }
   
     }
 }

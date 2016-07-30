@@ -23,6 +23,13 @@
 		9D8AADC11D4CB6F300B63C1B /* SHOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADC01D4CB6F300B63C1B /* SHOperationViewController.m */; };
 		9D8AADC41D4D0A9E00B63C1B /* SHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */; };
 		9D8AADC61D4D0F1E00B63C1B /* SHSetingInputTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADC51D4D0F1E00B63C1B /* SHSetingInputTextCell.xib */; };
+		9D8AADCA1D4D229500B63C1B /* SHSettingTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADC81D4D229500B63C1B /* SHSettingTextTableViewCell.m */; };
+		9D8AADCB1D4D229500B63C1B /* SHSettingTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADC91D4D229500B63C1B /* SHSettingTextTableViewCell.xib */; };
+		9D8AADCE1D4D2CF900B63C1B /* NSString+getSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADCD1D4D2CF900B63C1B /* NSString+getSize.m */; };
+		9D8AADD21D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADD01D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m */; };
+		9D8AADD31D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADD11D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib */; };
+		9D8AADD71D4D432B00B63C1B /* SHAboutUsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */; };
+		9D8AADD81D4D432B00B63C1B /* SHAboutUsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */; };
 		A04C1DD91D4B8C2C005A3BAE /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */; };
 		A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DDE1D4B8CC8005A3BAE /* DeviceHelper.m */; };
 		A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */; };
@@ -92,6 +99,17 @@
 		9D8AADC21D4D0A9E00B63C1B /* SHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHBaseViewController.h; sourceTree = "<group>"; };
 		9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHBaseViewController.m; sourceTree = "<group>"; };
 		9D8AADC51D4D0F1E00B63C1B /* SHSetingInputTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingInputTextCell.xib; sourceTree = "<group>"; };
+		9D8AADC71D4D229500B63C1B /* SHSettingTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingTextTableViewCell.h; sourceTree = "<group>"; };
+		9D8AADC81D4D229500B63C1B /* SHSettingTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingTextTableViewCell.m; sourceTree = "<group>"; };
+		9D8AADC91D4D229500B63C1B /* SHSettingTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingTextTableViewCell.xib; sourceTree = "<group>"; };
+		9D8AADCC1D4D2CF900B63C1B /* NSString+getSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+getSize.h"; sourceTree = "<group>"; };
+		9D8AADCD1D4D2CF900B63C1B /* NSString+getSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+getSize.m"; sourceTree = "<group>"; };
+		9D8AADCF1D4D333100B63C1B /* SHSettingFaceBackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingFaceBackTableViewCell.h; sourceTree = "<group>"; };
+		9D8AADD01D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingFaceBackTableViewCell.m; sourceTree = "<group>"; };
+		9D8AADD11D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingFaceBackTableViewCell.xib; sourceTree = "<group>"; };
+		9D8AADD41D4D432B00B63C1B /* SHAboutUsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAboutUsTableViewCell.h; sourceTree = "<group>"; };
+		9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAboutUsTableViewCell.m; sourceTree = "<group>"; };
+		9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHAboutUsTableViewCell.xib; sourceTree = "<group>"; };
 		A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
 		A04C1DD81D4B8C2C005A3BAE /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		A04C1DDD1D4B8CC8005A3BAE /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
@@ -258,6 +276,8 @@
 				A04C1DDF1D4B8CC8005A3BAE /* SocketHelper */,
 				9D8AADC21D4D0A9E00B63C1B /* SHBaseViewController.h */,
 				9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */,
+				9D8AADCC1D4D2CF900B63C1B /* NSString+getSize.h */,
+				9D8AADCD1D4D2CF900B63C1B /* NSString+getSize.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -397,6 +417,15 @@
 				A04C1E031D4B8E86005A3BAE /* SHSettingTitleView.h */,
 				A04C1E041D4B8E86005A3BAE /* SHSettingTitleView.m */,
 				A04C1E051D4B8E86005A3BAE /* SHSettingTitleView.xib */,
+				9D8AADC71D4D229500B63C1B /* SHSettingTextTableViewCell.h */,
+				9D8AADC81D4D229500B63C1B /* SHSettingTextTableViewCell.m */,
+				9D8AADC91D4D229500B63C1B /* SHSettingTextTableViewCell.xib */,
+				9D8AADCF1D4D333100B63C1B /* SHSettingFaceBackTableViewCell.h */,
+				9D8AADD01D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m */,
+				9D8AADD11D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib */,
+				9D8AADD41D4D432B00B63C1B /* SHAboutUsTableViewCell.h */,
+				9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */,
+				9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -586,11 +615,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04C1E0D1D4B8E86005A3BAE /* SHSetingItemTextCell.xib in Resources */,
+				9D8AADD31D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib in Resources */,
 				9D8AADB71D4CB19200B63C1B /* html in Resources */,
 				A04C1E0F1D4B8E86005A3BAE /* SHSettingTitleView.xib in Resources */,
 				A04C1E081D4B8E86005A3BAE /* SHHeaderView.xib in Resources */,
+				9D8AADCB1D4D229500B63C1B /* SHSettingTextTableViewCell.xib in Resources */,
 				9D8AADC61D4D0F1E00B63C1B /* SHSetingInputTextCell.xib in Resources */,
 				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
+				9D8AADD81D4D432B00B63C1B /* SHAboutUsTableViewCell.xib in Resources */,
 				9D8AADBB1D4CB21900B63C1B /* operation.html in Resources */,
 				9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */,
 				9D4B05141D345E10004FBFA1 /* Main.storyboard in Resources */,
@@ -669,11 +701,14 @@
 				A0D9CBA01D4C63C50035289D /* UIView+Extension.m in Sources */,
 				A0D9CBA91D4CB9EF0035289D /* SHLoginManager.m in Sources */,
 				A0D9CBA61D4CB7EE0035289D /* SHCommonFun.m in Sources */,
+				9D8AADD71D4D432B00B63C1B /* SHAboutUsTableViewCell.m in Sources */,
 				9D8AADC11D4CB6F300B63C1B /* SHOperationViewController.m in Sources */,
 				9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */,
 				A04C1DEA1D4B8D38005A3BAE /* SHHomeViewController.m in Sources */,
 				A04C1E0C1D4B8E86005A3BAE /* SHSetingItemTextCell.m in Sources */,
 				A04C1DF11D4B8DA5005A3BAE /* SHLoginViewController.m in Sources */,
+				9D8AADD21D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m in Sources */,
+				9D8AADCA1D4D229500B63C1B /* SHSettingTextTableViewCell.m in Sources */,
 				9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */,
 				9D8AADC41D4D0A9E00B63C1B /* SHBaseViewController.m in Sources */,
 				A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */,
@@ -686,6 +721,7 @@
 				A0D9CB901D4C5D1C0035289D /* SHUserModel.m in Sources */,
 				A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */,
 				9D4B050B1D345E10004FBFA1 /* main.m in Sources */,
+				9D8AADCE1D4D2CF900B63C1B /* NSString+getSize.m in Sources */,
 				A04C1E071D4B8E86005A3BAE /* SHHeaderView.m in Sources */,
 				A04C1E061D4B8E86005A3BAE /* SHSettingViewController.m in Sources */,
 				A0D9CB931D4C5D320035289D /* SHUserManager.m in Sources */,
