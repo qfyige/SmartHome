@@ -33,12 +33,17 @@
 }
 
 - (void)back{
-    UIViewController *parentVC = self.navigationController.parentViewController;
-    NSArray *array = self.navigationController.viewControllers;
-    if(parentVC && [array count] == 1){
-        [self dismissViewControllerAnimated:YES completion:nil];
+    if(self.navigationController){
+        NSArray *array = self.navigationController.viewControllers;
+        if([array count] == 1){
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }else{
-        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
     }
 }
 

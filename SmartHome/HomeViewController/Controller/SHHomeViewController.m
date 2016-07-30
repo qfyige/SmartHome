@@ -28,8 +28,8 @@
 }
 
 -(void)tapclick{
-    [UIView animateWithDuration:1.0f animations:^{
-        self.barView.y = -self.barView.frame.size.height;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.barView.y = self.view.maxY;
     }];
 }
 
@@ -74,8 +74,8 @@
     }
 }
 - (IBAction)clickMenuButton:(id)sender {
-    [UIView animateWithDuration:1.0f animations:^{
-        self.barBottomConstraint.constant = 0;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.barView.y = self.view.maxY - self.barView.height;
     }];
 }
 

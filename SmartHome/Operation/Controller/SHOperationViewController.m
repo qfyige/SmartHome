@@ -15,8 +15,6 @@
     [self addBackButton];
 }
 
-
-
 - (void)load{
     [self configUrlString];
     if(self.urlString){
