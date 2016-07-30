@@ -12,6 +12,9 @@
 #import "SHOperationViewController.h"
 
 @interface SHHomeViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *barBottomConstraint;
+@property (weak, nonatomic) IBOutlet UIView *barView;
 
 @end
 
@@ -19,7 +22,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.barBottomConstraint.constant = -self.barView.frame.size.height;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapclick)];
+    [self.view addGestureRecognizer:tap];
 }
+
+-(void)tapclick{
+    [UIView animateWithDuration:1.0f animations:^{
+        self.barBottomConstraint.constant = -self.barView.frame.size.height;
+    }];
+}
+
 //个人中心
 - (IBAction)peopleCenter:(id)sender {
     SHSettingViewController *set = GetStoryBoardWithViewControllerName(@"SHSettingViewController");
@@ -58,6 +71,11 @@
         [SHLoginManager userPresentLogin:self];
         return NO;
     }
+}
+- (IBAction)clickMenuButton:(id)sender {
+    [UIView animateWithDuration:1.0f animations:^{
+        self.barBottomConstraint.constant = 0;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
