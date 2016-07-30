@@ -29,7 +29,7 @@
 
 -(void)tapclick{
     [UIView animateWithDuration:1.0f animations:^{
-        self.barBottomConstraint.constant = -self.barView.frame.size.height;
+        self.barView.y = -self.barView.frame.size.height;
     }];
 }
 
