@@ -7,7 +7,6 @@
 //
 
 #import "SHRegisterViewController.h"
-#import "SHCommonHeader.h"
 
 @interface SHRegisterViewController ()<UITextFieldDelegate>
 {
@@ -26,6 +25,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = WhiteColor;
     [self setUpViewContent];
+    [self backButton];
 }
 
 - (void)didReceiveMemoryWarning {

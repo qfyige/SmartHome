@@ -9,7 +9,6 @@
 #import "SHLoginViewController.h"
 #import "SHRegisterViewController.h"
 #import "SHHomeViewController.h"
-#import "SHCommonHeader.h"
 
 @interface SHLoginViewController ()<UITextFieldDelegate>
 {
@@ -28,6 +27,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = WhiteColor;
     [self setUpViewContent];
+    [self addBackButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated

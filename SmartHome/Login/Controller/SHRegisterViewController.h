@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHCommonHeader.h"
 
-@interface SHRegisterViewController : UIViewController
+@interface SHRegisterViewController : SHBaseViewController
 
 @end

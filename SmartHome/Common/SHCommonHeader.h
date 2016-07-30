@@ -24,4 +24,6 @@
 #import "SHCommonFun.h"
 #import "SHLoginManager.h"
 
+#import "SHBaseViewController.h"
+
 #endif /* SHCommonHeader_h */

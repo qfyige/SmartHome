@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHCommonHeader.h"
 
-@interface SHLoginViewController : UIViewController
+@interface SHLoginViewController : SHBaseViewController
 
 @end

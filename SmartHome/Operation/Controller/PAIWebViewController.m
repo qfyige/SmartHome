@@ -22,7 +22,6 @@
     [self.webView removeObserver:self forKeyPath:@"loading"];
     [self.webView removeObserver:self forKeyPath:@"title"];
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
-
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -156,8 +155,6 @@
         }
     }
 }
-
-
 
 #pragma mark - WKScriptMessageHandler
 - (void)userContentController:(WKUserContentController *)userContentController
