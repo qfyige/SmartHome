@@ -11,14 +11,13 @@
 #define VerifyString(string) string == nil?@"":string
 
 @implementation SHSetModel
-
-static SHSetModel *setModel = nil;
+static SHSetModel *setmodel;
 +(SHSetModel *)shareInstance{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        setModel = [[SHSetModel alloc] init];
+        setmodel = [[SHSetModel alloc] init];
     });
-    return setModel;
+    return setmodel;
 }
 
 -(instancetype)init{
@@ -138,6 +137,7 @@ static SHSetModel *setModel = nil;
     [[NSUserDefaults standardUserDefaults] setObject:remoteMonitoruser forKey:@"remoteMonitoruser"];
 }
 
+
 /*
  //监控设置 远程 密码
  @property (copy,nonatomic) NSString *remoteMonitorPassword;
@@ -219,7 +219,6 @@ static SHSetModel *setModel = nil;
 -(void)setIsOpenNotification:(NSString *)isOpenNotification{
     _isOpenNotification = [isOpenNotification copy];
     [[NSUserDefaults standardUserDefaults] setObject:isOpenNotification forKey:@"isOpenNotification"];
-\
 }
 
 

@@ -72,7 +72,7 @@
 //关闭websocket
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean{
-    NSLog(@"%@code——%ld",reason,code);
+   // NSLog(@"%@code——%ld",reason,code);
 }
 
 

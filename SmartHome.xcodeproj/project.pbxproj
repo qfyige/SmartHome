@@ -30,6 +30,7 @@
 		9D8AADD31D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADD11D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib */; };
 		9D8AADD71D4D432B00B63C1B /* SHAboutUsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */; };
 		9D8AADD81D4D432B00B63C1B /* SHAboutUsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */; };
+		9D8AADDE1D4EA75F00B63C1B /* SHMarkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADDD1D4EA75F00B63C1B /* SHMarkButton.m */; };
 		A04C1DD91D4B8C2C005A3BAE /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */; };
 		A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DDE1D4B8CC8005A3BAE /* DeviceHelper.m */; };
 		A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */; };
@@ -116,6 +117,8 @@
 		9D8AADD41D4D432B00B63C1B /* SHAboutUsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAboutUsTableViewCell.h; sourceTree = "<group>"; };
 		9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAboutUsTableViewCell.m; sourceTree = "<group>"; };
 		9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHAboutUsTableViewCell.xib; sourceTree = "<group>"; };
+		9D8AADDC1D4EA75F00B63C1B /* SHMarkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMarkButton.h; sourceTree = "<group>"; };
+		9D8AADDD1D4EA75F00B63C1B /* SHMarkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMarkButton.m; sourceTree = "<group>"; };
 		A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
 		A04C1DD81D4B8C2C005A3BAE /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		A04C1DDD1D4B8CC8005A3BAE /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
@@ -519,6 +522,8 @@
 			children = (
 				A0D9CC201D4CF1C50035289D /* SHMessageCell.h */,
 				A0D9CC211D4CF1C50035289D /* SHMessageCell.m */,
+				9D8AADDC1D4EA75F00B63C1B /* SHMarkButton.h */,
+				9D8AADDD1D4EA75F00B63C1B /* SHMarkButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -726,6 +731,7 @@
 				A0D9CBA91D4CB9EF0035289D /* SHLoginManager.m in Sources */,
 				A0D9CBA61D4CB7EE0035289D /* SHCommonFun.m in Sources */,
 				9D8AADD71D4D432B00B63C1B /* SHAboutUsTableViewCell.m in Sources */,
+				9D8AADDE1D4EA75F00B63C1B /* SHMarkButton.m in Sources */,
 				9D8AADC11D4CB6F300B63C1B /* SHOperationViewController.m in Sources */,
 				9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */,
 				A04C1E0C1D4B8E86005A3BAE /* SHSetingItemTextCell.m in Sources */,
