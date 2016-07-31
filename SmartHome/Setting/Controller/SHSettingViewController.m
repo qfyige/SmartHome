@@ -16,6 +16,9 @@
 #import "SHSettingFaceBackTableViewCell.h"
 #import "SHAboutUsTableViewCell.h"
 #import "NSString+getSize.h"
+#import "KLSwitch.h"
+#import "SHSetModel.h"
+#import <SVProgressHUD.h>
 
 @interface SHSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *sumTableView;
@@ -33,6 +36,7 @@
 
 @property (strong, nonatomic) SHHeaderView *headerView;
 
+@property (strong,nonatomic) SHSetModel *setModel;
 
 @end
 
@@ -44,6 +48,11 @@
     [super viewDidLoad];
     _selectIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    [self uiConfig];
+    [self creatInfo];
+}
+
+-(void)uiConfig{
     _sumTableView.delegate = self;
     _sumTableView.dataSource = self;
     _sumTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -55,26 +64,28 @@
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHSettingTextTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSettingTextTableViewCell"];
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHSetingInputTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSetingInputTextCell"];
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHAboutUsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHAboutUsTableViewCell"];
-
+    
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHSettingFaceBackTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SHSettingFaceBackTableViewCell"];
     [_settingTableView registerNib:[UINib nibWithNibName:@"SHSettingTitleView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"SHSettingTitleView"];
-    [self creatInfo];
 }
 
 - (void)creatInfo{
+     _setModel = [SHSetModel shareInstance];
+    
     _sumArr = [NSArray arrayWithObjects:@[@{@"image":@"Home",@"title":@"中控设置"},@{@"image":@"projector_L",@"title":@"监控设置"},@{@"image":@"Phone",@"title":@"对讲设置"},@{@"image":@"Bell",@"title":@"消息设置"}],@[@{@"image":@"Add to group",@"title":@"售后服务"},@{@"image":@"Logout",@"title":@"关于我们"}],nil];
+    
     _operationSettings = @[
-                            @{@"title":@"本地链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写您的端口"}]}
-                            ,@{@"title":@"远程链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写您的端口"}]}
+                            @{@"title":@"本地链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址",@"text":_setModel.localOperationIP},@{@"title":@"端口",@"placeholder":@"请填写您的端口",@"text":_setModel.localOperationPort}]}
+                            ,@{@"title":@"远程链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址",@"text":_setModel.remoteOperationIP},@{@"title":@"端口",@"placeholder":@"请填写您的端口",@"text":_setModel.remoteOperationPort}]}
                             ];
     _monitorSetting = @[
-                           @{@"title":@"本地链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址"},@{@"title":@"端 口",@"placeholder":@"请填写您的端口"},@{@"title":@"用户名",@"placeholder":@"请填写您的用户名"},@{@"title":@"密 码",@"placeholder":@"请填写您的密码"}]}
-                           ,@{@"title":@"远程链接",@"content":@[@{@"title":@"账 号",@"placeholder":@"请填写您的远程账户"},@{@"title":@"密 码",@"placeholder":@"请填写您的远程密码"}]}
+                           @{@"title":@"本地链接",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写您的IP地址",@"text":_setModel.localMonitorIP},@{@"title":@"端 口",@"placeholder":@"请填写您的端口",@"text":_setModel.localMonitorPort},@{@"title":@"用户名",@"placeholder":@"请填写您的用户名",@"text":_setModel.localMonitorUser},@{@"title":@"密 码",@"placeholder":@"请填写您的密码",@"text":_setModel.localMonitorPassword}]}
+                           ,@{@"title":@"远程链接",@"content":@[@{@"title":@"账 号",@"placeholder":@"请填写您的远程账户",@"text":_setModel.remoteMonitoruser},@{@"title":@"密 码",@"placeholder":@"请填写您的远程密码",@"text":_setModel.remoteMonitorPassword}]}
                            ];
 
     _chatSetting = @[
-                           @{@"title":@"门口机一",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机一的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机一的端口"}]}
-                           ,@{@"title":@"门口机二",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机二的IP地址"},@{@"title":@"端口",@"placeholder":@"请填写门口机二的端口"}]}
+                           @{@"title":@"门口机一",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机一的IP地址",@"text":_setModel.mechine1IP},@{@"title":@"端口",@"placeholder":@"请填写门口机一的端口",@"text":_setModel.mechine1port}]}
+                           ,@{@"title":@"门口机二",@"content":@[@{@"title":@"IP地址",@"placeholder":@"请填写门口机二的IP地址",@"text":_setModel.mechine2IP},@{@"title":@"端口",@"placeholder":@"请填写门口机二的端口",@"text":_setModel.mechine2Port}]}
                            ];
     _messageSetting = @[
                         @{@"subtitle":@"已开启",@"title":@"接受新消息通知",@"content":@[@{@"title":@"如果你要关闭或开启联电智能宅的新消息通知，请在设备的“设备”-“通知”功能中，找到应用程序“联电智宅”更改"}]}
@@ -123,10 +134,10 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if(tableView == _sumTableView){
         if(section == 0){
-        _headerView = [[[NSBundle mainBundle] loadNibNamed:@"SHHeaderView" owner:nil options:nil] lastObject];
-        NSLog(@"%@",NSStringFromCGRect([UIScreen mainScreen].bounds));
-        _headerView.frame = CGRectMake(0, 0, ScreenWidth*125/667, ScreenWidth*125/667);
-        return _headerView;
+            _headerView = [[[NSBundle mainBundle] loadNibNamed:@"SHHeaderView" owner:nil options:nil] lastObject];
+            NSLog(@"%@",NSStringFromCGRect([UIScreen mainScreen].bounds));
+            _headerView.frame = CGRectMake(0, 0, ScreenWidth*125/667, ScreenWidth*125/667);
+            return _headerView;
         }else{
             UIView *heightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  ScreenWidth*125/667, 50)];
             heightView.backgroundColor = BackgroundColor;
@@ -137,6 +148,112 @@
         SHSettingTitleView *titleView = [[[NSBundle mainBundle] loadNibNamed:@"SHSettingTitleView" owner:nil options:nil] lastObject];
         titleView.frame =CGRectMake(0, 0, ScreenWidth - ScreenWidth*125/667, 30);
         titleView.showLabel.text = [dic objectForKey:@"title"];
+        titleView.showSwitch.hidden = YES;
+        titleView.subTitleLabel.hidden = YES;
+        titleView.saveButton.hidden = YES;
+        if(_selectIndexPath.row == 3){
+            if (section == 0) {
+                //需显示是否开启
+                titleView.subTitleLabel.hidden = NO;
+            }else{
+                //需显示 是否 开启
+                titleView.showSwitch.hidden = NO;
+                [titleView.showSwitch setDidChangeHandler:^(BOOL isOn) {
+                    NSLog(@"Smallest switch changed to %d", isOn);
+                }];
+            }
+        }else if (_selectIndexPath.section == 0){
+            //保存每一个section的数据
+            titleView.saveButton.hidden = NO;
+            titleView.clickSaveButton = ^(){
+                if(_selectIndexPath.row == 0 && section == 0){
+                    SHSetingInputTextCell *cell1 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                    SHSetingInputTextCell *cell2 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+                    if(cell1.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell1.showLabel.text]];
+                    }else if(cell2.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell2.showLabel.text]];
+                    }else{
+                        _setModel.localOperationIP = cell1.mTextFeild.text;
+                        _setModel.localOperationPort = cell2.mTextFeild.text;
+                        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                    }
+                    
+                }else if(_selectIndexPath.row == 0 && section == 1){
+                    SHSetingInputTextCell *cell1 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+                    SHSetingInputTextCell *cell2 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
+                    if(cell1.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell1.showLabel.text]];
+                    }else if(cell2.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell2.showLabel.text]];
+                    }else{
+                        _setModel.remoteOperationIP = cell1.mTextFeild.text;
+                        _setModel.remoteOperationPort = cell2.mTextFeild.text;
+                        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                    }
+
+                    
+                }else if(_selectIndexPath.row == 1 && section == 0){
+                    SHSetingInputTextCell *cell1 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                    SHSetingInputTextCell *cell2 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+                    SHSetingInputTextCell *cell3 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+                    SHSetingInputTextCell *cell4 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+                    if(cell1.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell1.showLabel.text]];
+                    }else if(cell2.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell2.showLabel.text]];
+                    }else if(cell3.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell3.showLabel.text]];
+                    }else if(cell4.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell4.showLabel.text]];
+                    }else{
+                        _setModel.localMonitorIP = cell1.mTextFeild.text;
+                        _setModel.localMonitorPort = cell2.mTextFeild.text;
+                        _setModel.localMonitorUser = cell3.mTextFeild.text;
+                        _setModel.localMonitorPassword = cell4.mTextFeild.text;
+                        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                    }
+                }else if(_selectIndexPath.row == 1 && section == 1){
+                    SHSetingInputTextCell *cell1 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                    SHSetingInputTextCell *cell2 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+                    if(cell1.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell1.showLabel.text]];
+                    }else if(cell2.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell2.showLabel.text]];
+                    }else{
+                        _setModel.remoteMonitoruser = cell1.mTextFeild.text;
+                        _setModel.remoteMonitorPassword = cell2.mTextFeild.text;
+                        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                    }
+                    
+                }else if(_selectIndexPath.row == 2 && section == 0){
+                    SHSetingInputTextCell *cell1 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                    SHSetingInputTextCell *cell2 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+                    if(cell1.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell1.showLabel.text]];
+                    }else if(cell2.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell2.showLabel.text]];
+                    }else{
+                        _setModel.mechine1IP = cell1.mTextFeild.text;
+                        _setModel.mechine1port = cell2.mTextFeild.text;
+                        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                    }
+                }else if(_selectIndexPath.row == 2 && section == 1){
+                    SHSetingInputTextCell *cell1 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                    SHSetingInputTextCell *cell2 = [_settingTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+                    if(cell1.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell1.showLabel.text]];
+                    }else if(cell2.mTextFeild.text.length == 0){
+                        [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@输入有误",cell2.showLabel.text]];
+                    }else{
+                        _setModel.mechine2IP = cell1.mTextFeild.text;
+                        _setModel.mechine2Port = cell2.mTextFeild.text;
+                        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                    }
+
+                }
+            };
+        }
         return  titleView;
     }
 }
@@ -162,6 +279,7 @@
         NSDictionary *dic = [[[_datasource objectAtIndex:indexPath.section] objectForKey:@"content"] objectAtIndex:indexPath.row];
         SHSettingTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHSettingTextTableViewCell"];
         cell.showLabel.text = [dic objectForKey:@"title"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if(_selectIndexPath.row == 0 && _selectIndexPath.section ==1){
         SHSettingFaceBackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHSettingFaceBackTableViewCell"];
@@ -176,6 +294,7 @@
         SHSetingInputTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHSetingInputTextCell"];
         cell.showLabel.text = [dic objectForKey:@"title"];
         cell.mTextFeild.placeholder = [dic objectForKey:@"placeholder"];
+        cell.mTextFeild.text = [dic objectForKey:@"text"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }

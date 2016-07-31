@@ -10,6 +10,7 @@
 
 @interface SHSetModel : NSObject
 
++(SHSetModel *)shareInstance;
 //中控设置 本地 IP
 @property (copy,nonatomic) NSString *localOperationIP;
 //中控设置 本地 端口
