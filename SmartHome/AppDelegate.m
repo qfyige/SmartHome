@@ -61,7 +61,7 @@
     NSMutableSet *categories = [NSMutableSet set];
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
         UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
-        category.identifier = @"identifier";
+        category.identifier = @"identifier1";
         UIMutableUserNotificationAction *action = [[UIMutableUserNotificationAction alloc] init];
         action.identifier = @"test2";
         action.title = @"test";

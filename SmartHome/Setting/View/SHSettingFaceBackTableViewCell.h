@@ -11,5 +11,5 @@
 @interface SHSettingFaceBackTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextView *showText;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
-
+@property(nonatomic,strong) void(^clickSubmitBlock)();
 @end

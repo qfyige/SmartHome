@@ -158,8 +158,30 @@
             }else{
                 //需显示 是否 开启
                 titleView.showSwitch.hidden = NO;
+                BOOL isequal = NO;
+                if(section == 1){
+                    isequal = [_setModel.isShowMessageDetail isEqualToString:@"yes"];
+                }else if(section == 2){
+                    isequal = [_setModel.isNeedAudio isEqualToString:@"yes"];
+                }
+                if(isequal){
+                    [titleView.showSwitch setOn:YES animated:YES];
+                }
                 [titleView.showSwitch setDidChangeHandler:^(BOOL isOn) {
-                    NSLog(@"Smallest switch changed to %d", isOn);
+                    if(section == 1){
+                        if(isOn){
+                            _setModel.isShowMessageDetail = @"yes";
+                        }else{
+                            _setModel.isShowMessageDetail = @"no";
+                        }
+                    }else if(section == 2){
+                        if(isOn){
+                            _setModel.isNeedAudio = @"yes";
+                        }else{
+                            _setModel.isNeedAudio = @"no";
+                        }
+
+                    }
                 }];
             }
         }else if (_selectIndexPath.section == 0){
@@ -284,6 +306,9 @@
     }else if(_selectIndexPath.row == 0 && _selectIndexPath.section ==1){
         SHSettingFaceBackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHSettingFaceBackTableViewCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.clickSubmitBlock = ^(){
+            [SVProgressHUD showInfoWithStatus:@"请配置接口"];
+        };
         return cell;
     }else if(_selectIndexPath.row == 1 && _selectIndexPath.section ==1){
         SHAboutUsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SHAboutUsTableViewCell"];

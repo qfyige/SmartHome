@@ -19,6 +19,11 @@
 }
 
 
+- (IBAction)clickSubmitButton:(id)sender {
+    if(_clickSubmitBlock){
+        _clickSubmitBlock();
+    }
+}
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

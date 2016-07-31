@@ -31,6 +31,9 @@
                         <state key="normal" title="提交">
                             <color key="titleColor" red="0.98067326570000002" green="0.98067326570000002" blue="0.98067326570000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="clickSubmitButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VSo-Dv-414"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
