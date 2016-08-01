@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SJU-zY-Ech">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SJU-zY-Ech">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -37,8 +37,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anE-Tr-yTt">
-                                <rect key="frame" x="32" y="291" width="17" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anE-Tr-yTt">
+                                <rect key="frame" x="20" y="315" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="oH6-do-ChN"/>
                                     <constraint firstAttribute="height" constant="40" id="thP-dN-JKd"/>
@@ -51,8 +51,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15R-NU-X4p">
                                 <rect key="frame" x="0.0" y="320" width="667" height="55"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zr-mk-dx3">
-                                        <rect key="frame" x="29" y="16" width="22" height="23"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zr-mk-dx3">
+                                        <rect key="frame" x="20" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1zr-mk-dx3" secondAttribute="height" multiplier="1:1" id="vcm-XQ-W8E"/>
                                         </constraints>
@@ -61,8 +61,8 @@
                                             <action selector="peopleCenter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="af7-hf-4rm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt1-UA-pgM">
-                                        <rect key="frame" x="611" y="16" width="22" height="23"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt1-UA-pgM">
+                                        <rect key="frame" x="602" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Tt1-UA-pgM" secondAttribute="height" multiplier="1:1" id="D4Y-7l-rIc"/>
                                             <constraint firstAttribute="width" secondItem="Tt1-UA-pgM" secondAttribute="height" multiplier="1:1" id="nK3-kx-Vzn"/>
@@ -78,8 +78,8 @@
                                             <action selector="clickPhoneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wtG-bl-nal"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djr-Be-jtH">
-                                        <rect key="frame" x="556" y="16" width="22" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djr-Be-jtH">
+                                        <rect key="frame" x="547" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Djr-Be-jtH" secondAttribute="height" multiplier="1:1" id="f0d-Fj-m3G"/>
                                         </constraints>
@@ -93,8 +93,8 @@
                                             <action selector="clickCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rFR-Tb-azd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4D-YK-1kc">
-                                        <rect key="frame" x="501" y="13" width="22" height="23"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4D-YK-1kc">
+                                        <rect key="frame" x="492" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="n4D-YK-1kc" secondAttribute="height" multiplier="1:1" id="Xl4-zE-BMN"/>
                                         </constraints>
@@ -108,8 +108,8 @@
                                             <action selector="clickHomeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AhV-ZL-38z"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZR-Od-MmK">
-                                        <rect key="frame" x="419" y="16" width="76" height="23"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZR-Od-MmK">
+                                        <rect key="frame" x="437" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="uZR-Od-MmK" secondAttribute="height" multiplier="1:1" id="Oav-PW-643"/>
                                         </constraints>
@@ -212,8 +212,8 @@
                                     <constraint firstAttribute="width" secondItem="TPn-v6-RNr" secondAttribute="height" multiplier="1:3" id="GK2-Ln-6ge"/>
                                 </constraints>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJh-71-t5N">
-                                <rect key="frame" x="8" y="10" width="33" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJh-71-t5N">
+                                <rect key="frame" x="10" y="10" width="33" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="BAQ-LP-CIF"/>
                                     <constraint firstAttribute="width" constant="33" id="QP2-RW-Kn7"/>
@@ -223,8 +223,8 @@
                                     <action selector="clickBackButton:" destination="wfc-o0-b0J" eventType="touchUpInside" id="LUv-eo-JRh"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HBI-Lr-Btj">
-                                <rect key="frame" x="126" y="0.0" width="541" height="375"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HBI-Lr-Btj">
+                                <rect key="frame" x="125" y="0.0" width="542" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>

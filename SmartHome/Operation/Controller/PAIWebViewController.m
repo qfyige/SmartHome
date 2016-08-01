@@ -151,7 +151,7 @@
         if([action isEqualToString:@"closePage"]){
             [self dismiss];
         }else if ([action isEqualToString:@"openTrain"]){
-            NSString *idStr = [body objectForKey:@"id"];
+           // NSString *idStr = [body objectForKey:@"id"];
         }
     }
 }
@@ -266,16 +266,15 @@
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
     completionHandler();
     return;
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"%@", message);
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"alert" message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler();
-    }]];
-    
-    [self presentViewController:alert animated:YES completion:NULL];
-    NSLog(@"%@", message);
+//    NSLog(@"%@", message);
+//    
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"alert" message:message preferredStyle:UIAlertControllerStyleAlert];
+//    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        completionHandler();
+//    }]];
+//    
+//    [self presentViewController:alert animated:YES completion:NULL];
+//    NSLog(@"%@", message);
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler {

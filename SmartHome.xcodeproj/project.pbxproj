@@ -2902,3 +2902,1046 @@ fi
 	<string>9D4B04FE1D345E10004FBFA1</string>
 </dict>
 </plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45EB64AE1D4D9DA3001EAA4E /* SHSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */; };
+		45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64B01D4D9DC0001EAA4E /* KLSwitch.m */; };
+		9290D4707E3E489A929F89FF /* libPods-SmartHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BEA5DAC1AFE9EC922D46ED /* libPods-SmartHome.a */; };
+		9D4B050B1D345E10004FBFA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B050A1D345E10004FBFA1 /* main.m */; };
+		9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B050D1D345E10004FBFA1 /* AppDelegate.m */; };
+		9D4B05141D345E10004FBFA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B05121D345E10004FBFA1 /* Main.storyboard */; };
+		9D4B05171D345E10004FBFA1 /* SmartHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05151D345E10004FBFA1 /* SmartHome.xcdatamodeld */; };
+		9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B05181D345E10004FBFA1 /* Assets.xcassets */; };
+		9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B051A1D345E10004FBFA1 /* LaunchScreen.storyboard */; };
+		9D4B05271D345E10004FBFA1 /* SmartHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05261D345E10004FBFA1 /* SmartHomeTests.m */; };
+		9D4B05321D345E10004FBFA1 /* SmartHomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B05311D345E10004FBFA1 /* SmartHomeUITests.m */; };
+		9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADB21D4C1FDC00B63C1B /* SHRequestHelper.m */; };
+		9D8AADBE1D4CB67300B63C1B /* PAIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADBD1D4CB67300B63C1B /* PAIWebViewController.m */; };
+		9D8AADC11D4CB6F300B63C1B /* SHOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADC01D4CB6F300B63C1B /* SHOperationViewController.m */; };
+		9D8AADC41D4D0A9E00B63C1B /* SHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */; };
+		9D8AADC61D4D0F1E00B63C1B /* SHSetingInputTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADC51D4D0F1E00B63C1B /* SHSetingInputTextCell.xib */; };
+		9D8AADCA1D4D229500B63C1B /* SHSettingTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADC81D4D229500B63C1B /* SHSettingTextTableViewCell.m */; };
+		9D8AADCB1D4D229500B63C1B /* SHSettingTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADC91D4D229500B63C1B /* SHSettingTextTableViewCell.xib */; };
+		9D8AADCE1D4D2CF900B63C1B /* NSString+getSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADCD1D4D2CF900B63C1B /* NSString+getSize.m */; };
+		9D8AADD21D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADD01D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m */; };
+		9D8AADD31D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADD11D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib */; };
+		9D8AADD71D4D432B00B63C1B /* SHAboutUsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */; };
+		9D8AADD81D4D432B00B63C1B /* SHAboutUsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */; };
+		9D8AADDE1D4EA75F00B63C1B /* SHMarkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AADDD1D4EA75F00B63C1B /* SHMarkButton.m */; };
+		A04C1DD91D4B8C2C005A3BAE /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */; };
+		A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DDE1D4B8CC8005A3BAE /* DeviceHelper.m */; };
+		A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */; };
+		A04C1DF11D4B8DA5005A3BAE /* SHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DEE1D4B8DA5005A3BAE /* SHLoginViewController.m */; };
+		A04C1E061D4B8E86005A3BAE /* SHSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DF51D4B8E86005A3BAE /* SHSettingViewController.m */; };
+		A04C1E071D4B8E86005A3BAE /* SHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DF91D4B8E86005A3BAE /* SHHeaderView.m */; };
+		A04C1E081D4B8E86005A3BAE /* SHHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1DFA1D4B8E86005A3BAE /* SHHeaderView.xib */; };
+		A04C1E0A1D4B8E86005A3BAE /* SHSetingInputTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1DFE1D4B8E86005A3BAE /* SHSetingInputTextCell.m */; };
+		A04C1E0C1D4B8E86005A3BAE /* SHSetingItemTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1E011D4B8E86005A3BAE /* SHSetingItemTextCell.m */; };
+		A04C1E0D1D4B8E86005A3BAE /* SHSetingItemTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1E021D4B8E86005A3BAE /* SHSetingItemTextCell.xib */; };
+		A04C1E0E1D4B8E86005A3BAE /* SHSettingTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C1E041D4B8E86005A3BAE /* SHSettingTitleView.m */; };
+		A04C1E0F1D4B8E86005A3BAE /* SHSettingTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C1E051D4B8E86005A3BAE /* SHSettingTitleView.xib */; };
+		A0D9CB901D4C5D1C0035289D /* SHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB8F1D4C5D1C0035289D /* SHUserModel.m */; };
+		A0D9CB931D4C5D320035289D /* SHUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB921D4C5D320035289D /* SHUserManager.m */; };
+		A0D9CB9F1D4C63C50035289D /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB9C1D4C63C50035289D /* NSArray+Extension.m */; };
+		A0D9CBA01D4C63C50035289D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB9E1D4C63C50035289D /* UIView+Extension.m */; };
+		A0D9CBA31D4C801F0035289D /* SHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CBA21D4C801F0035289D /* SHRegisterViewController.m */; };
+		A0D9CBA61D4CB7EE0035289D /* SHCommonFun.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CBA51D4CB7EE0035289D /* SHCommonFun.m */; };
+		A0D9CBA91D4CB9EF0035289D /* SHLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CBA81D4CB9EF0035289D /* SHLoginManager.m */; };
+		A0D9CBE41D4CEFA70035289D /* SHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CBAD1D4CEFA70035289D /* SHHomeViewController.m */; };
+		A0D9CC181D4CF02F0035289D /* html in Resources */ = {isa = PBXBuildFile; fileRef = A0D9CC161D4CF02F0035289D /* html */; };
+		A0D9CC191D4CF02F0035289D /* operation.html in Resources */ = {isa = PBXBuildFile; fileRef = A0D9CC171D4CF02F0035289D /* operation.html */; };
+		A0D9CC1C1D4CF1520035289D /* SHMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CC1B1D4CF1520035289D /* SHMessageViewController.m */; };
+		A0D9CC1F1D4CF1B00035289D /* SHMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CC1E1D4CF1B00035289D /* SHMessageModel.m */; };
+		A0D9CC221D4CF1C50035289D /* SHMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CC211D4CF1C50035289D /* SHMessageCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D4B05231D345E10004FBFA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D4B04FE1D345E10004FBFA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D4B05051D345E10004FBFA1;
+			remoteInfo = SmartHome;
+		};
+		9D4B052E1D345E10004FBFA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D4B04FE1D345E10004FBFA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D4B05051D345E10004FBFA1;
+			remoteInfo = SmartHome;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45EB64AC1D4D9DA3001EAA4E /* SHSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetModel.h; sourceTree = "<group>"; };
+		45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetModel.m; sourceTree = "<group>"; };
+		45EB64AF1D4D9DC0001EAA4E /* KLSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLSwitch.h; sourceTree = "<group>"; };
+		45EB64B01D4D9DC0001EAA4E /* KLSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLSwitch.m; sourceTree = "<group>"; };
+		80BEA5DAC1AFE9EC922D46ED /* libPods-SmartHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9589DDE9AC2B19FE22ACCFBA /* Pods-SmartHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome.release.xcconfig"; sourceTree = "<group>"; };
+		9D4B05061D345E10004FBFA1 /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D4B050A1D345E10004FBFA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9D4B050C1D345E10004FBFA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9D4B050D1D345E10004FBFA1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9D4B05131D345E10004FBFA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D4B05161D345E10004FBFA1 /* SmartHome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartHome.xcdatamodel; sourceTree = "<group>"; };
+		9D4B05181D345E10004FBFA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D4B051B1D345E10004FBFA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D4B051D1D345E10004FBFA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D4B05221D345E10004FBFA1 /* SmartHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D4B05261D345E10004FBFA1 /* SmartHomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeTests.m; sourceTree = "<group>"; };
+		9D4B05281D345E10004FBFA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D4B052D1D345E10004FBFA1 /* SmartHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D4B05311D345E10004FBFA1 /* SmartHomeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeUITests.m; sourceTree = "<group>"; };
+		9D4B05331D345E10004FBFA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D8AADB11D4C1FDC00B63C1B /* SHRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRequestHelper.h; sourceTree = "<group>"; };
+		9D8AADB21D4C1FDC00B63C1B /* SHRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRequestHelper.m; sourceTree = "<group>"; };
+		9D8AADBC1D4CB66F00B63C1B /* PAIWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAIWebViewController.h; sourceTree = "<group>"; };
+		9D8AADBD1D4CB67300B63C1B /* PAIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAIWebViewController.m; sourceTree = "<group>"; };
+		9D8AADBF1D4CB6F300B63C1B /* SHOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOperationViewController.h; sourceTree = "<group>"; };
+		9D8AADC01D4CB6F300B63C1B /* SHOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOperationViewController.m; sourceTree = "<group>"; };
+		9D8AADC21D4D0A9E00B63C1B /* SHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHBaseViewController.h; sourceTree = "<group>"; };
+		9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHBaseViewController.m; sourceTree = "<group>"; };
+		9D8AADC51D4D0F1E00B63C1B /* SHSetingInputTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingInputTextCell.xib; sourceTree = "<group>"; };
+		9D8AADC71D4D229500B63C1B /* SHSettingTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingTextTableViewCell.h; sourceTree = "<group>"; };
+		9D8AADC81D4D229500B63C1B /* SHSettingTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingTextTableViewCell.m; sourceTree = "<group>"; };
+		9D8AADC91D4D229500B63C1B /* SHSettingTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingTextTableViewCell.xib; sourceTree = "<group>"; };
+		9D8AADCC1D4D2CF900B63C1B /* NSString+getSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+getSize.h"; sourceTree = "<group>"; };
+		9D8AADCD1D4D2CF900B63C1B /* NSString+getSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+getSize.m"; sourceTree = "<group>"; };
+		9D8AADCF1D4D333100B63C1B /* SHSettingFaceBackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingFaceBackTableViewCell.h; sourceTree = "<group>"; };
+		9D8AADD01D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingFaceBackTableViewCell.m; sourceTree = "<group>"; };
+		9D8AADD11D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingFaceBackTableViewCell.xib; sourceTree = "<group>"; };
+		9D8AADD41D4D432B00B63C1B /* SHAboutUsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAboutUsTableViewCell.h; sourceTree = "<group>"; };
+		9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAboutUsTableViewCell.m; sourceTree = "<group>"; };
+		9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHAboutUsTableViewCell.xib; sourceTree = "<group>"; };
+		9D8AADDC1D4EA75F00B63C1B /* SHMarkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMarkButton.h; sourceTree = "<group>"; };
+		9D8AADDD1D4EA75F00B63C1B /* SHMarkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMarkButton.m; sourceTree = "<group>"; };
+		A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
+		A04C1DD81D4B8C2C005A3BAE /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		A04C1DDD1D4B8CC8005A3BAE /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
+		A04C1DDE1D4B8CC8005A3BAE /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceHelper.m; sourceTree = "<group>"; };
+		A04C1DE01D4B8CC8005A3BAE /* SocketHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketHelper.h; sourceTree = "<group>"; };
+		A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketHelper.m; sourceTree = "<group>"; };
+		A04C1DED1D4B8DA5005A3BAE /* SHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLoginViewController.h; sourceTree = "<group>"; };
+		A04C1DEE1D4B8DA5005A3BAE /* SHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginViewController.m; sourceTree = "<group>"; };
+		A04C1DF41D4B8E86005A3BAE /* SHSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingViewController.h; sourceTree = "<group>"; };
+		A04C1DF51D4B8E86005A3BAE /* SHSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingViewController.m; sourceTree = "<group>"; };
+		A04C1DF81D4B8E86005A3BAE /* SHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHeaderView.h; sourceTree = "<group>"; };
+		A04C1DF91D4B8E86005A3BAE /* SHHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHeaderView.m; sourceTree = "<group>"; };
+		A04C1DFA1D4B8E86005A3BAE /* SHHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHHeaderView.xib; sourceTree = "<group>"; };
+		A04C1DFD1D4B8E86005A3BAE /* SHSetingInputTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetingInputTextCell.h; sourceTree = "<group>"; };
+		A04C1DFE1D4B8E86005A3BAE /* SHSetingInputTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetingInputTextCell.m; sourceTree = "<group>"; };
+		A04C1E001D4B8E86005A3BAE /* SHSetingItemTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetingItemTextCell.h; sourceTree = "<group>"; };
+		A04C1E011D4B8E86005A3BAE /* SHSetingItemTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetingItemTextCell.m; sourceTree = "<group>"; };
+		A04C1E021D4B8E86005A3BAE /* SHSetingItemTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSetingItemTextCell.xib; sourceTree = "<group>"; };
+		A04C1E031D4B8E86005A3BAE /* SHSettingTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingTitleView.h; sourceTree = "<group>"; };
+		A04C1E041D4B8E86005A3BAE /* SHSettingTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingTitleView.m; sourceTree = "<group>"; };
+		A04C1E051D4B8E86005A3BAE /* SHSettingTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingTitleView.xib; sourceTree = "<group>"; };
+		A04C1E181D4B8F2C005A3BAE /* SHDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDefine.h; sourceTree = "<group>"; };
+		A04C1E191D4B8F2C005A3BAE /* SHServerDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHServerDefine.h; sourceTree = "<group>"; };
+		A0D9CB8E1D4C5D1C0035289D /* SHUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserModel.h; sourceTree = "<group>"; };
+		A0D9CB8F1D4C5D1C0035289D /* SHUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserModel.m; sourceTree = "<group>"; };
+		A0D9CB911D4C5D320035289D /* SHUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserManager.h; sourceTree = "<group>"; };
+		A0D9CB921D4C5D320035289D /* SHUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserManager.m; sourceTree = "<group>"; };
+		A0D9CB941D4C5FFD0035289D /* ChangeSeverDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeSeverDefine.h; sourceTree = "<group>"; };
+		A0D9CB991D4C614A0035289D /* SHCommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHCommonHeader.h; sourceTree = "<group>"; };
+		A0D9CB9B1D4C63C50035289D /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		A0D9CB9C1D4C63C50035289D /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
+		A0D9CB9D1D4C63C50035289D /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		A0D9CB9E1D4C63C50035289D /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		A0D9CBA11D4C801F0035289D /* SHRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRegisterViewController.h; sourceTree = "<group>"; };
+		A0D9CBA21D4C801F0035289D /* SHRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRegisterViewController.m; sourceTree = "<group>"; };
+		A0D9CBA41D4CB7EE0035289D /* SHCommonFun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCommonFun.h; sourceTree = "<group>"; };
+		A0D9CBA51D4CB7EE0035289D /* SHCommonFun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCommonFun.m; sourceTree = "<group>"; };
+		A0D9CBA71D4CB9E30035289D /* SHLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLoginManager.h; sourceTree = "<group>"; };
+		A0D9CBA81D4CB9EF0035289D /* SHLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoginManager.m; sourceTree = "<group>"; };
+		A0D9CBAC1D4CEFA70035289D /* SHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHomeViewController.h; sourceTree = "<group>"; };
+		A0D9CBAD1D4CEFA70035289D /* SHHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHomeViewController.m; sourceTree = "<group>"; };
+		A0D9CC161D4CF02F0035289D /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		A0D9CC171D4CF02F0035289D /* operation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = operation.html; sourceTree = "<group>"; };
+		A0D9CC1A1D4CF1520035289D /* SHMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMessageViewController.h; sourceTree = "<group>"; };
+		A0D9CC1B1D4CF1520035289D /* SHMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMessageViewController.m; sourceTree = "<group>"; };
+		A0D9CC1D1D4CF1B00035289D /* SHMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMessageModel.h; sourceTree = "<group>"; };
+		A0D9CC1E1D4CF1B00035289D /* SHMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMessageModel.m; sourceTree = "<group>"; };
+		A0D9CC201D4CF1C50035289D /* SHMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMessageCell.h; sourceTree = "<group>"; };
+		A0D9CC211D4CF1C50035289D /* SHMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMessageCell.m; sourceTree = "<group>"; };
+		CF3B2D3398881A30D2AEAFAD /* Pods-SmartHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D4B05031D345E10004FBFA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04C1DD91D4B8C2C005A3BAE /* jpush-ios-2.1.8.a in Frameworks */,
+				9290D4707E3E489A929F89FF /* libPods-SmartHome.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D4B051F1D345E10004FBFA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D4B052A1D345E10004FBFA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F9A584FBE7A49F15F38B9EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80BEA5DAC1AFE9EC922D46ED /* libPods-SmartHome.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45EB64B21D4D9E3E001EAA4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9D4B04FD1D345E10004FBFA1 = {
+			isa = PBXGroup;
+			children = (
+				9D4B05081D345E10004FBFA1 /* SmartHome */,
+				9D4B05251D345E10004FBFA1 /* SmartHomeTests */,
+				9D4B05301D345E10004FBFA1 /* SmartHomeUITests */,
+				9D4B05071D345E10004FBFA1 /* Products */,
+				BBF66BC7A2E65ED327D88728 /* Pods */,
+				0F9A584FBE7A49F15F38B9EC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9D4B05071D345E10004FBFA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D4B05061D345E10004FBFA1 /* SmartHome.app */,
+				9D4B05221D345E10004FBFA1 /* SmartHomeTests.xctest */,
+				9D4B052D1D345E10004FBFA1 /* SmartHomeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D4B05081D345E10004FBFA1 /* SmartHome */ = {
+			isa = PBXGroup;
+			children = (
+				9D4B050C1D345E10004FBFA1 /* AppDelegate.h */,
+				9D4B050D1D345E10004FBFA1 /* AppDelegate.m */,
+				A04C1DEB1D4B8DA5005A3BAE /* Login */,
+				A0D9CBAA1D4CEFA70035289D /* Home */,
+				A04C1E101D4B8F1B005A3BAE /* Operation */,
+				A04C1DF21D4B8E86005A3BAE /* Setting */,
+				A04C1DDA1D4B8CC8005A3BAE /* Utility */,
+				A04C1DD61D4B8C2C005A3BAE /* Lib */,
+				A0D9CB951D4C603D0035289D /* Common */,
+				A04C1E171D4B8F2C005A3BAE /* Define */,
+				9D4B05121D345E10004FBFA1 /* Main.storyboard */,
+				9D4B05181D345E10004FBFA1 /* Assets.xcassets */,
+				9D4B051A1D345E10004FBFA1 /* LaunchScreen.storyboard */,
+				9D4B051D1D345E10004FBFA1 /* Info.plist */,
+				9D4B05151D345E10004FBFA1 /* SmartHome.xcdatamodeld */,
+				9D4B05091D345E10004FBFA1 /* Supporting Files */,
+			);
+			path = SmartHome;
+			sourceTree = "<group>";
+		};
+		9D4B05091D345E10004FBFA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D4B050A1D345E10004FBFA1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9D4B05251D345E10004FBFA1 /* SmartHomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9D4B05261D345E10004FBFA1 /* SmartHomeTests.m */,
+				9D4B05281D345E10004FBFA1 /* Info.plist */,
+			);
+			path = SmartHomeTests;
+			sourceTree = "<group>";
+		};
+		9D4B05301D345E10004FBFA1 /* SmartHomeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9D4B05311D345E10004FBFA1 /* SmartHomeUITests.m */,
+				9D4B05331D345E10004FBFA1 /* Info.plist */,
+			);
+			path = SmartHomeUITests;
+			sourceTree = "<group>";
+		};
+		A04C1DD61D4B8C2C005A3BAE /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				A04C1DD71D4B8C2C005A3BAE /* jpush-ios-2.1.8.a */,
+				A04C1DD81D4B8C2C005A3BAE /* JPUSHService.h */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		A04C1DDA1D4B8CC8005A3BAE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A04C1DDC1D4B8CC8005A3BAE /* DeviceHelper */,
+				A04C1DDF1D4B8CC8005A3BAE /* SocketHelper */,
+				9D8AADC21D4D0A9E00B63C1B /* SHBaseViewController.h */,
+				9D8AADC31D4D0A9E00B63C1B /* SHBaseViewController.m */,
+				9D8AADCC1D4D2CF900B63C1B /* NSString+getSize.h */,
+				9D8AADCD1D4D2CF900B63C1B /* NSString+getSize.m */,
+				45EB64AF1D4D9DC0001EAA4E /* KLSwitch.h */,
+				45EB64B01D4D9DC0001EAA4E /* KLSwitch.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A04C1DDC1D4B8CC8005A3BAE /* DeviceHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A04C1DDD1D4B8CC8005A3BAE /* DeviceHelper.h */,
+				A04C1DDE1D4B8CC8005A3BAE /* DeviceHelper.m */,
+			);
+			path = DeviceHelper;
+			sourceTree = "<group>";
+		};
+		A04C1DDF1D4B8CC8005A3BAE /* SocketHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A04C1DE01D4B8CC8005A3BAE /* SocketHelper.h */,
+				A04C1DE11D4B8CC8005A3BAE /* SocketHelper.m */,
+				9D8AADB11D4C1FDC00B63C1B /* SHRequestHelper.h */,
+				9D8AADB21D4C1FDC00B63C1B /* SHRequestHelper.m */,
+			);
+			path = SocketHelper;
+			sourceTree = "<group>";
+		};
+		A04C1DEB1D4B8DA5005A3BAE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A04C1DEC1D4B8DA5005A3BAE /* Controller */,
+				A04C1DEF1D4B8DA5005A3BAE /* Model */,
+				A04C1DF01D4B8DA5005A3BAE /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A04C1DEC1D4B8DA5005A3BAE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A04C1DED1D4B8DA5005A3BAE /* SHLoginViewController.h */,
+				A04C1DEE1D4B8DA5005A3BAE /* SHLoginViewController.m */,
+				A0D9CBA11D4C801F0035289D /* SHRegisterViewController.h */,
+				A0D9CBA21D4C801F0035289D /* SHRegisterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A04C1DEF1D4B8DA5005A3BAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CB8E1D4C5D1C0035289D /* SHUserModel.h */,
+				A0D9CB8F1D4C5D1C0035289D /* SHUserModel.m */,
+				A0D9CB911D4C5D320035289D /* SHUserManager.h */,
+				A0D9CB921D4C5D320035289D /* SHUserManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A04C1DF01D4B8DA5005A3BAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A04C1DF21D4B8E86005A3BAE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				45EB64B21D4D9E3E001EAA4E /* Model */,
+				A04C1DF31D4B8E86005A3BAE /* Controller */,
+				A04C1DF71D4B8E86005A3BAE /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		A04C1DF31D4B8E86005A3BAE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A04C1DF41D4B8E86005A3BAE /* SHSettingViewController.h */,
+				A04C1DF51D4B8E86005A3BAE /* SHSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A04C1DF71D4B8E86005A3BAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A04C1DF81D4B8E86005A3BAE /* SHHeaderView.h */,
+				A04C1DF91D4B8E86005A3BAE /* SHHeaderView.m */,
+				A04C1DFA1D4B8E86005A3BAE /* SHHeaderView.xib */,
+				A04C1DFD1D4B8E86005A3BAE /* SHSetingInputTextCell.h */,
+				A04C1DFE1D4B8E86005A3BAE /* SHSetingInputTextCell.m */,
+				9D8AADC51D4D0F1E00B63C1B /* SHSetingInputTextCell.xib */,
+				A04C1E001D4B8E86005A3BAE /* SHSetingItemTextCell.h */,
+				A04C1E011D4B8E86005A3BAE /* SHSetingItemTextCell.m */,
+				A04C1E021D4B8E86005A3BAE /* SHSetingItemTextCell.xib */,
+				A04C1E031D4B8E86005A3BAE /* SHSettingTitleView.h */,
+				A04C1E041D4B8E86005A3BAE /* SHSettingTitleView.m */,
+				A04C1E051D4B8E86005A3BAE /* SHSettingTitleView.xib */,
+				9D8AADC71D4D229500B63C1B /* SHSettingTextTableViewCell.h */,
+				9D8AADC81D4D229500B63C1B /* SHSettingTextTableViewCell.m */,
+				9D8AADC91D4D229500B63C1B /* SHSettingTextTableViewCell.xib */,
+				9D8AADCF1D4D333100B63C1B /* SHSettingFaceBackTableViewCell.h */,
+				9D8AADD01D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m */,
+				9D8AADD11D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib */,
+				9D8AADD41D4D432B00B63C1B /* SHAboutUsTableViewCell.h */,
+				9D8AADD51D4D432B00B63C1B /* SHAboutUsTableViewCell.m */,
+				9D8AADD61D4D432B00B63C1B /* SHAboutUsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A04C1E101D4B8F1B005A3BAE /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CC161D4CF02F0035289D /* html */,
+				A0D9CC171D4CF02F0035289D /* operation.html */,
+				A04C1E111D4B8F1B005A3BAE /* Controller */,
+				A04C1E141D4B8F1B005A3BAE /* Model */,
+				A04C1E151D4B8F1B005A3BAE /* View */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		A04C1E111D4B8F1B005A3BAE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D8AADBC1D4CB66F00B63C1B /* PAIWebViewController.h */,
+				9D8AADBD1D4CB67300B63C1B /* PAIWebViewController.m */,
+				9D8AADBF1D4CB6F300B63C1B /* SHOperationViewController.h */,
+				9D8AADC01D4CB6F300B63C1B /* SHOperationViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A04C1E141D4B8F1B005A3BAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A04C1E151D4B8F1B005A3BAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A04C1E171D4B8F2C005A3BAE /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CB941D4C5FFD0035289D /* ChangeSeverDefine.h */,
+				A04C1E181D4B8F2C005A3BAE /* SHDefine.h */,
+				A04C1E191D4B8F2C005A3BAE /* SHServerDefine.h */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		A0D9CB951D4C603D0035289D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				45EB64AC1D4D9DA3001EAA4E /* SHSetModel.h */,
+				45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */,
+				A0D9CBA41D4CB7EE0035289D /* SHCommonFun.h */,
+				A0D9CBA51D4CB7EE0035289D /* SHCommonFun.m */,
+				A0D9CBA71D4CB9E30035289D /* SHLoginManager.h */,
+				A0D9CBA81D4CB9EF0035289D /* SHLoginManager.m */,
+				A0D9CB991D4C614A0035289D /* SHCommonHeader.h */,
+				A0D9CB9A1D4C63C50035289D /* Category */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A0D9CB9A1D4C63C50035289D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CB9B1D4C63C50035289D /* NSArray+Extension.h */,
+				A0D9CB9C1D4C63C50035289D /* NSArray+Extension.m */,
+				A0D9CB9D1D4C63C50035289D /* UIView+Extension.h */,
+				A0D9CB9E1D4C63C50035289D /* UIView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		A0D9CBAA1D4CEFA70035289D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CBAB1D4CEFA70035289D /* Controller */,
+				A0D9CBE11D4CEFA70035289D /* Model */,
+				A0D9CBE31D4CEFA70035289D /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A0D9CBAB1D4CEFA70035289D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CBAC1D4CEFA70035289D /* SHHomeViewController.h */,
+				A0D9CBAD1D4CEFA70035289D /* SHHomeViewController.m */,
+				A0D9CC1A1D4CF1520035289D /* SHMessageViewController.h */,
+				A0D9CC1B1D4CF1520035289D /* SHMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A0D9CBE11D4CEFA70035289D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CC1D1D4CF1B00035289D /* SHMessageModel.h */,
+				A0D9CC1E1D4CF1B00035289D /* SHMessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0D9CBE31D4CEFA70035289D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CC201D4CF1C50035289D /* SHMessageCell.h */,
+				A0D9CC211D4CF1C50035289D /* SHMessageCell.m */,
+				9D8AADDC1D4EA75F00B63C1B /* SHMarkButton.h */,
+				9D8AADDD1D4EA75F00B63C1B /* SHMarkButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBF66BC7A2E65ED327D88728 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF3B2D3398881A30D2AEAFAD /* Pods-SmartHome.debug.xcconfig */,
+				9589DDE9AC2B19FE22ACCFBA /* Pods-SmartHome.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D4B05051D345E10004FBFA1 /* SmartHome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D4B05361D345E10004FBFA1 /* Build configuration list for PBXNativeTarget "SmartHome" */;
+			buildPhases = (
+				DC6A3F43F6AA9430B35B792D /* [CP] Check Pods Manifest.lock */,
+				9D4B05021D345E10004FBFA1 /* Sources */,
+				9D4B05031D345E10004FBFA1 /* Frameworks */,
+				9D4B05041D345E10004FBFA1 /* Resources */,
+				6AE8A5F6F194A028705120D1 /* [CP] Embed Pods Frameworks */,
+				B2DEEE39501D3A5271F4FCC7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartHome;
+			productName = SmartHome;
+			productReference = 9D4B05061D345E10004FBFA1 /* SmartHome.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9D4B05211D345E10004FBFA1 /* SmartHomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D4B05391D345E10004FBFA1 /* Build configuration list for PBXNativeTarget "SmartHomeTests" */;
+			buildPhases = (
+				9D4B051E1D345E10004FBFA1 /* Sources */,
+				9D4B051F1D345E10004FBFA1 /* Frameworks */,
+				9D4B05201D345E10004FBFA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D4B05241D345E10004FBFA1 /* PBXTargetDependency */,
+			);
+			name = SmartHomeTests;
+			productName = SmartHomeTests;
+			productReference = 9D4B05221D345E10004FBFA1 /* SmartHomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9D4B052C1D345E10004FBFA1 /* SmartHomeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D4B053C1D345E10004FBFA1 /* Build configuration list for PBXNativeTarget "SmartHomeUITests" */;
+			buildPhases = (
+				9D4B05291D345E10004FBFA1 /* Sources */,
+				9D4B052A1D345E10004FBFA1 /* Frameworks */,
+				9D4B052B1D345E10004FBFA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D4B052F1D345E10004FBFA1 /* PBXTargetDependency */,
+			);
+			name = SmartHomeUITests;
+			productName = SmartHomeUITests;
+			productReference = 9D4B052D1D345E10004FBFA1 /* SmartHomeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D4B04FE1D345E10004FBFA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = tong;
+				TargetAttributes = {
+					9D4B05051D345E10004FBFA1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					9D4B05211D345E10004FBFA1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9D4B05051D345E10004FBFA1;
+					};
+					9D4B052C1D345E10004FBFA1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9D4B05051D345E10004FBFA1;
+					};
+				};
+			};
+			buildConfigurationList = 9D4B05011D345E10004FBFA1 /* Build configuration list for PBXProject "SmartHome" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D4B04FD1D345E10004FBFA1;
+			productRefGroup = 9D4B05071D345E10004FBFA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D4B05051D345E10004FBFA1 /* SmartHome */,
+				9D4B05211D345E10004FBFA1 /* SmartHomeTests */,
+				9D4B052C1D345E10004FBFA1 /* SmartHomeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D4B05041D345E10004FBFA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04C1E0D1D4B8E86005A3BAE /* SHSetingItemTextCell.xib in Resources */,
+				9D8AADD31D4D333100B63C1B /* SHSettingFaceBackTableViewCell.xib in Resources */,
+				A0D9CC191D4CF02F0035289D /* operation.html in Resources */,
+				A04C1E0F1D4B8E86005A3BAE /* SHSettingTitleView.xib in Resources */,
+				A04C1E081D4B8E86005A3BAE /* SHHeaderView.xib in Resources */,
+				9D8AADCB1D4D229500B63C1B /* SHSettingTextTableViewCell.xib in Resources */,
+				A0D9CC181D4CF02F0035289D /* html in Resources */,
+				9D8AADC61D4D0F1E00B63C1B /* SHSetingInputTextCell.xib in Resources */,
+				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
+				9D8AADD81D4D432B00B63C1B /* SHAboutUsTableViewCell.xib in Resources */,
+				9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */,
+				9D4B05141D345E10004FBFA1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D4B05201D345E10004FBFA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D4B052B1D345E10004FBFA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AE8A5F6F194A028705120D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2DEEE39501D3A5271F4FCC7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC6A3F43F6AA9430B35B792D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D4B05021D345E10004FBFA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0D9CBA01D4C63C50035289D /* UIView+Extension.m in Sources */,
+				A0D9CBA91D4CB9EF0035289D /* SHLoginManager.m in Sources */,
+				A0D9CBA61D4CB7EE0035289D /* SHCommonFun.m in Sources */,
+				9D8AADD71D4D432B00B63C1B /* SHAboutUsTableViewCell.m in Sources */,
+				9D8AADDE1D4EA75F00B63C1B /* SHMarkButton.m in Sources */,
+				9D8AADC11D4CB6F300B63C1B /* SHOperationViewController.m in Sources */,
+				9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */,
+				A04C1E0C1D4B8E86005A3BAE /* SHSetingItemTextCell.m in Sources */,
+				A0D9CC1C1D4CF1520035289D /* SHMessageViewController.m in Sources */,
+				A04C1DF11D4B8DA5005A3BAE /* SHLoginViewController.m in Sources */,
+				9D8AADD21D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m in Sources */,
+				9D8AADCA1D4D229500B63C1B /* SHSettingTextTableViewCell.m in Sources */,
+				9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */,
+				A0D9CC221D4CF1C50035289D /* SHMessageCell.m in Sources */,
+				9D8AADC41D4D0A9E00B63C1B /* SHBaseViewController.m in Sources */,
+				45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */,
+				45EB64AE1D4D9DA3001EAA4E /* SHSetModel.m in Sources */,
+				A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */,
+				9D8AADBE1D4CB67300B63C1B /* PAIWebViewController.m in Sources */,
+				A04C1E0A1D4B8E86005A3BAE /* SHSetingInputTextCell.m in Sources */,
+				A04C1E0E1D4B8E86005A3BAE /* SHSettingTitleView.m in Sources */,
+				9D4B05171D345E10004FBFA1 /* SmartHome.xcdatamodeld in Sources */,
+				A0D9CBA31D4C801F0035289D /* SHRegisterViewController.m in Sources */,
+				A0D9CB9F1D4C63C50035289D /* NSArray+Extension.m in Sources */,
+				A0D9CB901D4C5D1C0035289D /* SHUserModel.m in Sources */,
+				A0D9CBE41D4CEFA70035289D /* SHHomeViewController.m in Sources */,
+				A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */,
+				9D4B050B1D345E10004FBFA1 /* main.m in Sources */,
+				A0D9CC1F1D4CF1B00035289D /* SHMessageModel.m in Sources */,
+				9D8AADCE1D4D2CF900B63C1B /* NSString+getSize.m in Sources */,
+				A04C1E071D4B8E86005A3BAE /* SHHeaderView.m in Sources */,
+				A04C1E061D4B8E86005A3BAE /* SHSettingViewController.m in Sources */,
+				A0D9CB931D4C5D320035289D /* SHUserManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D4B051E1D345E10004FBFA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D4B05271D345E10004FBFA1 /* SmartHomeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D4B05291D345E10004FBFA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D4B05321D345E10004FBFA1 /* SmartHomeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D4B05241D345E10004FBFA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D4B05051D345E10004FBFA1 /* SmartHome */;
+			targetProxy = 9D4B05231D345E10004FBFA1 /* PBXContainerItemProxy */;
+		};
+		9D4B052F1D345E10004FBFA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D4B05051D345E10004FBFA1 /* SmartHome */;
+			targetProxy = 9D4B052E1D345E10004FBFA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D4B05121D345E10004FBFA1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D4B05131D345E10004FBFA1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9D4B051A1D345E10004FBFA1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D4B051B1D345E10004FBFA1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D4B05341D345E10004FBFA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D4B05351D345E10004FBFA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D4B05371D345E10004FBFA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF3B2D3398881A30D2AEAFAD /* Pods-SmartHome.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SmartHome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHome",
+					"$(PROJECT_DIR)/SmartHome/Lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D4B05381D345E10004FBFA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9589DDE9AC2B19FE22ACCFBA /* Pods-SmartHome.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SmartHome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHome",
+					"$(PROJECT_DIR)/SmartHome/Lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9D4B053A1D345E10004FBFA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmartHomeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = litong.SmartHomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHome.app/SmartHome";
+			};
+			name = Debug;
+		};
+		9D4B053B1D345E10004FBFA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmartHomeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = litong.SmartHomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHome.app/SmartHome";
+			};
+			name = Release;
+		};
+		9D4B053D1D345E10004FBFA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SmartHomeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = litong.SmartHomeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SmartHome;
+			};
+			name = Debug;
+		};
+		9D4B053E1D345E10004FBFA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SmartHomeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = litong.SmartHomeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SmartHome;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D4B05011D345E10004FBFA1 /* Build configuration list for PBXProject "SmartHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D4B05341D345E10004FBFA1 /* Debug */,
+				9D4B05351D345E10004FBFA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D4B05361D345E10004FBFA1 /* Build configuration list for PBXNativeTarget "SmartHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D4B05371D345E10004FBFA1 /* Debug */,
+				9D4B05381D345E10004FBFA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D4B05391D345E10004FBFA1 /* Build configuration list for PBXNativeTarget "SmartHomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D4B053A1D345E10004FBFA1 /* Debug */,
+				9D4B053B1D345E10004FBFA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D4B053C1D345E10004FBFA1 /* Build configuration list for PBXNativeTarget "SmartHomeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D4B053D1D345E10004FBFA1 /* Debug */,
+				9D4B053E1D345E10004FBFA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D4B05151D345E10004FBFA1 /* SmartHome.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D4B05161D345E10004FBFA1 /* SmartHome.xcdatamodel */,
+			);
+			currentVersion = 9D4B05161D345E10004FBFA1 /* SmartHome.xcdatamodel */;
+			path = SmartHome.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9D4B04FE1D345E10004FBFA1 /* Project object */;
+}
+>>>>>>> origin/master
