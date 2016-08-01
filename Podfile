@@ -13,5 +13,7 @@ target 'SmartHome' do
     pod 'SWTableViewCell', '0.3.7'
     pod 'UITableView+FDTemplateLayoutCell', '1.3'
     pod 'UIViewController+KeyboardAnimation', '1.2'
+    pod 'LKDBHelper', '~> 2.1.4'
+    pod 'YYModel', '~> 0.9.0'
 end
 
