@@ -24,6 +24,7 @@
 
 #import "SHCommonFun.h"
 #import "SHLoginManager.h"
+#import "SHRequestHelper.h"
 
 #import "SHBaseViewController.h"
 

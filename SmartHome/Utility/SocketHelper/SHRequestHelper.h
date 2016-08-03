@@ -17,5 +17,4 @@ typedef void(^FailBlock) (NSError *error);
 
 + (void)connectComplete:(CompleteBlock)complete fail:(FailBlock)fail;
 
-
 @end

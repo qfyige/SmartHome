@@ -17,7 +17,6 @@ typedef void(^FailBlock) (NSError *error);
 @property(nonatomic,copy) CompleteBlock complete;
 @property(nonatomic,copy) FailBlock fail;
 
-
 //通过单利创建
 + (SocketHelper *)shareInstance;
 

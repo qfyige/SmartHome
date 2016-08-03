@@ -9,7 +9,6 @@
 #import "SHRequestHelper.h"
 #import "SocketHelper.h"
 
-
 @implementation SHRequestHelper
 
 + (void)connectComplete:(CompleteBlock)complete fail:(FailBlock)fail{
@@ -19,14 +18,11 @@
     [helper setUpWebSocket];
 }
 
-
-
-
 + (void)sendMessage:(id)message complete:(CompleteBlock)complete fail:(FailBlock)fail{
     SocketHelper *helper = [SocketHelper shareInstance];
     helper.complete = complete;
     helper.fail = fail;
-    //待补充message 格式问题 
+    //待补充message 格式问题
     [helper sendMessage:message];
 }
 

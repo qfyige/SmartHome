@@ -216,24 +216,50 @@
 - (void)loginButtonAction:(id)sender
 {
     [self.view endEditing:YES];
-    if ( phoneTextField.text.length == 0 ) {
+    if (phoneTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"账号不能为空"];
         return;
     } else if (passwordTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"密码不能为空"];
         return;
-    } else if (passwordTextField.text.length < 6) {
-        [SVProgressHUD showErrorWithStatus:@"密码应该为6-18位"];
-        return;
     }else{
         [SVProgressHUD showWithStatus:@"登录中..."];
     }
     
-//    NSDictionary *parameters = @{@"account":phoneTextField.text,
-//                                 @"password":passwordTextField.text};
-    [SVProgressHUD dismiss];
-    [self close];
+//    手机端设备向服务器发登录信息
+//    	无需验证
+//    	输入参数
+//    method：指定当前操作类型为login
+//    infopackage : 发送消息内容，具体消息内容是服务端指定格式内容如下。
+//    	举例
+//    {"seckey":"","method":"login","infopackage":{"userId":"2","password":"22","mobile":"","mobModel":"","mobBrand",""}}
+//    
+//    	输出参数
+//result:四位数字，具体信息参考附表“返回结果对照表”
+//backinfo:具体的返回信息。
+//    {"result":"1004","backinfo":[{"seckey":"3B14BD3D080D2234F7008597F1444A57","userId":"2"}],"method":"login"}
+//    {"result":"4010","backinfo":"[]","method":"login"}
+
+//    NSDictionary *parameters = @{@"seckey":@"",@"method":@"login",@"infopackage":@{@"userId":phoneTextField.text,@"password":passwordTextField.text,@"mobile":@"",@"mobModel":@"",@"mobBrand":@""}};
+//    NSString *str = [parameters description];
+    NSString *str = [NSString stringWithFormat:@"{\"seckey\":\"\",\"method\":\"login\",\"infopackage\":{\"userId\":\"%@\",\"password\":\"%@\",\"mobile\":\"\",\"mobModel\":\"\",\"mobBrand\":\"\"}}",phoneTextField.text,passwordTextField.text];
+    [SHRequestHelper sendMessage:str complete:^(NSDictionary *requestDictionary) {
+        NSLog(@"%@",requestDictionary);
+        [SVProgressHUD dismiss];
+        [self close];
+    } fail:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        NSLog(@"%@",error.description);
+    }];
 }
+//
+//- (NSMutableDictionary *)get
+//{
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:1];
+//    NSMutableDictionary *infopackage = [NSMutableDictionary dictionaryWithCapacity:1];
+//    infopackage = 
+//}
 
 #pragma mark -
 #pragma mark - UITextFieldDelegate
