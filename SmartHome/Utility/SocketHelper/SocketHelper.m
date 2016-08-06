@@ -33,7 +33,6 @@
     }
     //ws://101.201.209.42:8080/ldnet/evermobws?fromid=0987654345678agy1&fromtype=m&clienttype=XXX&clientmodel=XXX&authkey=0B51D241121C19364C9D0EC3BC8CA417&appid=appid0001
     NSString *url = [NSString stringWithFormat:@"%@?fromid=0987654345678agy1&fromtype=m&clienttype=XXX&clientmodel=XXX&authkey=0B51D241121C19364C9D0EC3BC8CA417&appid=appid0001",HostUrl];
-//    url = @"ws://wsvr.kemaicrm.com:10011/ws";
     _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     _webSocket.delegate = self;
     [_webSocket open];
@@ -50,20 +49,35 @@
 
 //接收消息 存储数据
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
-//    NSLog(@"%@",message);
+    NSLog(@"didReceiveMessage %@",message);
     if(_complete){
-        _complete(message);
+        if ([message isKindOfClass:[NSString class]]) {
+            NSDictionary *dict = [message JSONObject];
+            SocketRequestModel *requestModel = [[SocketRequestModel alloc] init];
+            if ([dict objectForKey:@"result"]) {
+                requestModel.resultCode = [[dict objectForKey:@"result"] integerValue];
+            }
+            if ([dict objectForKey:@"method"]) {
+                requestModel.method = [NSString stringWithFormat:@"%@",[dict objectForKey:@"method"]];
+            }
+            if ([dict objectForKey:@"backinfo"]) {
+                requestModel.backinfo = [dict objectForKey:@"backinfo"];
+            }
+            _complete(requestModel);
+        }else{
+            _complete(nil);
+        }
     }
 }
 
 //连接成功
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{
-    NSLog(@"connect success");
+    NSLog(@"webSocketDidOpen connect success");
 }
 
 //连接失败
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error{
-    NSLog(@"%@",error.description);
+    NSLog(@"didFailWithError %@",error.description);
     if(_fail){
         _fail(error);
     }
@@ -74,7 +88,7 @@
     if(_fail){
         _fail(nil);
     }
-    NSLog(@"%@code——%ld",reason,code);
+    NSLog(@"didCloseWithCode %@code——%ld",reason,code);
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceivePong:(NSData *)pongPayload{

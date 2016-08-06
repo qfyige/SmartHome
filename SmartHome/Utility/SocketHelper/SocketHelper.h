@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <SRWebSocket.h>
+#import "SHCommonHeader.h"
 
-typedef void(^CompleteBlock) (NSDictionary *requestDictionary);
+typedef void(^CompleteBlock) (SocketRequestModel *requestModel);
 typedef void(^FailBlock) (NSError *error);
 
 @interface SocketHelper : NSObject<SRWebSocketDelegate>

@@ -38,13 +38,13 @@
 //#define REMOTE_UPDATE   3
 //#define REMOTE_DELETE   5
 
-
 #define KM_HTTP_ACTION          @"action"
 
 
-@interface SHDAOModelBase : NSObject 
+@interface SHModelBase : NSObject 
 
 +(LKDBHelper *)getUsingLKDBHelper;
++(LKDBHelper *)getUsingLKDBHelperWith:(NSString *)userID;
 +(void) purgeUsingLKDBHelper;
 
 @end

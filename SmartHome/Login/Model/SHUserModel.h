@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SHModelBase.h"
 
-@interface SHUserModel : NSObject
+@interface SHUserModel : SHModelBase
+
+@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) NSString *seckey;
 
 @end

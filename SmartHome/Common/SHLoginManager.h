@@ -11,22 +11,26 @@
 
 @interface SHLoginManager : NSObject
 
+@property (nonatomic, assign) BOOL isLoginStatus;
+
++ (SHLoginManager *)shareInstance;
+
 /**
  *  查看登录状态
  */
-+ (BOOL)isLogin;
+- (BOOL)isLogin;
 
 /**
  *  登录方法
  *
  *  @param responseObj 登录返回的信息
  */
-+ (void)userLoginDataWith:(NSMutableDictionary *)responseObj;
+- (void)userLoginDataWith:(NSDictionary *)responseObj;
 
 /**
  *  登出
  */
-+ (void)userLogout;
+- (void)userLogout;
 
 /**
  *  跳转到登录页

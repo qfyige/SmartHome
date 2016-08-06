@@ -75,7 +75,7 @@
 }
 
 - (BOOL)isLogin {
-    if ([SHLoginManager isLogin]) {
+    if ([[SHLoginManager shareInstance] isLogin]) {
         return YES;
     }else{
         [SHLoginManager userPresentLogin:self];

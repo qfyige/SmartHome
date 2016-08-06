@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SocketRequestModel.h"
 
-typedef void(^CompleteBlock) (NSDictionary *requestDictionary);
+typedef void(^CompleteBlock) (SocketRequestModel *requestModel);
 typedef void(^FailBlock) (NSError *error);
 
 @interface SHRequestHelper : NSObject

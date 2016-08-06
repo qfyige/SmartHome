@@ -49,4 +49,11 @@
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
+#define IS_NSDictionary(x) ([x isKindOfClass:[NSDictionary class]])
+#define IS_NSArray(x) ([x isKindOfClass:[NSArray class]] && [x count]>0)
+#define IS_NSString(x) ([x isKindOfClass:[NSString class]] && x.length>0)
+#define IS_NSStringEx(x) (!(x==nil || [x isKindOfClass:[NSNull class]]) && [x isKindOfClass:[NSString class]] && x.length>0 && ![x isEqualToString:@"(null)"] && ![x isEqualToString:@"<null>"])
+#define IS_NSMutableDictionary(x) ([x isKindOfClass:[NSMutableDictionary class]])
+#define IS_NSMutableArray(x) ([x isKindOfClass:[NSMutableArray class]] && [x count]>0)
+
 #endif /* SHDefine_h */

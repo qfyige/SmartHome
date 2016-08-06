@@ -24,8 +24,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [self setUpJpushLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].enable = YES;
-    [SHRequestHelper connectComplete:^(NSDictionary *requestDictionary) {
-        NSLog(@"%@",requestDictionary);
+    [SHRequestHelper connectComplete:^(SocketRequestModel *requestModel) {
     } fail:^(NSError *error) {
         NSLog(@"%@",error.description);
     }];

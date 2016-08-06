@@ -6,48 +6,40 @@
 //  Copyright (c) 2015年 minhechen. All rights reserved.
 //
 
-#import "SHDAOModelBase.h"
+#import "SHModelBase.h"
 
-@implementation SHDAOModelBase
+@implementation SHModelBase
 
-static LKDBHelper* lkdbHelper = nil;
+static LKDBHelper *lkdbHelper = nil;
 
-+(LKDBHelper *)getUsingLKDBHelper
++ (LKDBHelper *)getUsingLKDBHelperWith:(NSString *)userID
 {
-//    BOOL isLogin = [[KMUser getInstance] isLogin];
-//    if (isLogin) {
-//        KMUser *kmUser = [KMUser getInstance];
-//        NSString *userID = [kmUser getUserID];
-//        if (IS_NSStringEx(userID)) {
-//            if (lkdbHelper == nil) {
-//                NSString *dbname = [NSString stringWithFormat:@"%@.db",userID];
-//                NSString *dbpath = [DocumentsPath stringByAppendingPathComponent:dbname];
-//                lkdbHelper = [[LKDBHelper alloc] initWithDBPath:dbpath];
-//            }
-//        }
-//    }else{
-//        if (lkdbHelper == nil) {
-//            lkdbHelper = [[LKDBHelper alloc] initWithDBPath:TEMP_DB_PATH];
-//        }
-//    }
-//    return lkdbHelper;
-    if (!lkdbHelper) {
-        lkdbHelper = [[LKDBHelper alloc] init];
+    if (IS_NSStringEx(userID)) {
+        if (lkdbHelper == nil) {
+            NSString *path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:userID];
+            NSString *dbname = [NSString stringWithFormat:@"%@.db",userID];
+            NSString *dbpath = [path stringByAppendingPathComponent:dbname];
+            lkdbHelper = [[LKDBHelper alloc] initWithDBPath:dbpath];
+        }
     }
     return lkdbHelper;
 }
 
-+(void) purgeUsingLKDBHelper
++ (LKDBHelper *)getUsingLKDBHelper
+{
+    return lkdbHelper;
+}
+
++ (void)purgeUsingLKDBHelper
 {
     lkdbHelper = nil;
 }
 
 @end
 
-
 @implementation NSObject(PrintSQL)
 
-+(NSString *)getCreateTableSQL
++ (NSString *)getCreateTableSQL
 {
     LKModelInfos* infos = [self getModelInfos];
     NSString* primaryKey = [self getPrimaryKey];

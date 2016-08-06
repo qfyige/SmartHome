@@ -10,4 +10,14 @@
 
 @implementation SHUserModel
 
++(NSString *)getPrimaryKey
+{
+    return @"userId";
+}
+
++(NSString *)getTableName
+{
+    return @"sh_user";
+}
+
 @end

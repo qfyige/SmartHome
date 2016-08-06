@@ -7,7 +7,6 @@
 //
 
 #import "SHLoginViewController.h"
-#import "SHRegisterViewController.h"
 #import "SHHomeViewController.h"
 
 @interface SHLoginViewController ()<UITextFieldDelegate>
@@ -134,34 +133,34 @@
         make.size.mas_equalTo(CGSizeMake(labelW, lineViewH));
     }];
     
-    UIButton *registerButton = [[UIButton alloc] init];
-    registerButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
-    [registerButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [registerButton setTitle:@"立即注册" forState:UIControlStateNormal];
-    [registerButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-    [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:registerButton];
-    
-    [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(passwordLineView);
-        make.top.equalTo(passwordLineView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
-    }];
-    
-    UIButton *frogetPasswordButton = [[UIButton alloc] init];
-    frogetPasswordButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
-    [frogetPasswordButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [frogetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal];
-    [frogetPasswordButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-    [frogetPasswordButton addTarget:self action:@selector(frogetPasswordButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:frogetPasswordButton];
-    
-    [frogetPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(passwordLineView);
-        make.top.equalTo(passwordLineView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
-    }];
-    
+//    UIButton *registerButton = [[UIButton alloc] init];
+//    registerButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
+//    [registerButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+//    [registerButton setTitle:@"立即注册" forState:UIControlStateNormal];
+//    [registerButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+//    [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:registerButton];
+//    
+//    [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(passwordLineView);
+//        make.top.equalTo(passwordLineView.mas_bottom);
+//        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
+//    }];
+//    
+//    UIButton *frogetPasswordButton = [[UIButton alloc] init];
+//    frogetPasswordButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
+//    [frogetPasswordButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+//    [frogetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal];
+//    [frogetPasswordButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+//    [frogetPasswordButton addTarget:self action:@selector(frogetPasswordButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:frogetPasswordButton];
+//    
+//    [frogetPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(passwordLineView);
+//        make.top.equalTo(passwordLineView.mas_bottom);
+//        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
+//    }];
+//    
     UIButton *loginButton = [[UIButton alloc] init];
     loginButton.backgroundColor = BlackColor;
     loginButton.layer.cornerRadius = 4.0;
@@ -202,16 +201,16 @@
         [passwordTextField resignFirstResponder];
     }
 }
-
-- (void)registerButtonAction
-{
-    SHRegisterViewController *registerVC = [[SHRegisterViewController alloc] init];
-    [self.navigationController pushViewController:registerVC animated:YES];
-}
-
-- (void)frogetPasswordButtonAction
-{
-}
+//
+//- (void)registerButtonAction
+//{
+//    SHRegisterViewController *registerVC = [[SHRegisterViewController alloc] init];
+//    [self.navigationController pushViewController:registerVC animated:YES];
+//}
+//
+//- (void)frogetPasswordButtonAction
+//{
+//}
 
 - (void)loginButtonAction:(id)sender
 {
@@ -225,27 +224,12 @@
     }else{
         [SVProgressHUD showWithStatus:@"登录中..."];
     }
-    
-//    手机端设备向服务器发登录信息
-//    	无需验证
-//    	输入参数
-//    method：指定当前操作类型为login
-//    infopackage : 发送消息内容，具体消息内容是服务端指定格式内容如下。
-//    	举例
-//    {"seckey":"","method":"login","infopackage":{"userId":"2","password":"22","mobile":"","mobModel":"","mobBrand",""}}
-//    
-//    	输出参数
-//result:四位数字，具体信息参考附表“返回结果对照表”
-//backinfo:具体的返回信息。
-//    {"result":"1004","backinfo":[{"seckey":"3B14BD3D080D2234F7008597F1444A57","userId":"2"}],"method":"login"}
-//    {"result":"4010","backinfo":"[]","method":"login"}
-
-//    NSDictionary *parameters = @{@"seckey":@"",@"method":@"login",@"infopackage":@{@"userId":phoneTextField.text,@"password":passwordTextField.text,@"mobile":@"",@"mobModel":@"",@"mobBrand":@""}};
-//    NSString *str = [parameters description];
     NSString *str = [NSString stringWithFormat:@"{\"seckey\":\"\",\"method\":\"login\",\"infopackage\":{\"userId\":\"%@\",\"password\":\"%@\",\"mobile\":\"\",\"mobModel\":\"\",\"mobBrand\":\"\"}}",phoneTextField.text,passwordTextField.text];
-    [SHRequestHelper sendMessage:str complete:^(NSDictionary *requestDictionary) {
-        NSLog(@"%@",requestDictionary);
+    [SHRequestHelper sendMessage:str complete:^(SocketRequestModel *requestModel) {
         [SVProgressHUD dismiss];
+        if (IS_NSArray(requestModel.backinfo)) {
+            [[SHLoginManager shareInstance] userLoginDataWith:requestModel.backinfo[0]];
+        }
         [self close];
     } fail:^(NSError *error) {
         [SVProgressHUD dismiss];
@@ -253,13 +237,6 @@
         NSLog(@"%@",error.description);
     }];
 }
-//
-//- (NSMutableDictionary *)get
-//{
-//    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:1];
-//    NSMutableDictionary *infopackage = [NSMutableDictionary dictionaryWithCapacity:1];
-//    infopackage = 
-//}
 
 #pragma mark -
 #pragma mark - UITextFieldDelegate

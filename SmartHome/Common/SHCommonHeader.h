@@ -16,6 +16,7 @@
 #import "NSArray+Extension.h"
 #import "UIView+Extension.h"
 
+#import "YYModel.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
 #import "LKDBHelper.h"
@@ -25,6 +26,8 @@
 #import "SHCommonFun.h"
 #import "SHLoginManager.h"
 #import "SHRequestHelper.h"
+#import "SHModelBase.h"
+#import "SocketRequestModel.h"
 
 #import "SHBaseViewController.h"
 

@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SHUserModel.h"
 
 @interface SHUserManager : NSObject
+
++ (id)sharedInstance;
+- (SHUserModel *)getUser;
+- (BOOL)addUser:(SHUserModel *)userDataModel;
+- (BOOL)updateUser:(SHUserModel *)userDataModel;
+- (BOOL)deleteUser;
 
 @end
