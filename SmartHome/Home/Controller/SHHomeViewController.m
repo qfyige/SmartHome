@@ -48,20 +48,20 @@
 
 // 消息
 - (IBAction)notification:(id)sender {
-//    if ([self isLogin]) {
-//    }
-    SHMessageViewController *messageVC = [[SHMessageViewController alloc] init];
-    [self.navigationController pushViewController:messageVC animated:YES];
+    if ([self isLogin]) {
+        SHMessageViewController *messageVC = [[SHMessageViewController alloc] init];
+        [self.navigationController pushViewController:messageVC animated:YES];
+    }
 }
 
 //本地连接
 - (IBAction)clickHomeButton:(id)sender {
-//    if ([self isLogin]) {
+    if ([self isLogin]) {
         SHOperationViewController *operation = [[SHOperationViewController alloc] init];
         NSString *url = [[NSBundle mainBundle] pathForResource:@"operation" ofType:@"html"];
         operation.urlString = url;
         [self.navigationController pushViewController:operation animated:YES];
-//    }
+    }
 }
 //远程连接
 - (IBAction)clickCameraButton:(id)sender {

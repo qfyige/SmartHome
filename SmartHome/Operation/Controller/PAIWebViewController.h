@@ -13,8 +13,8 @@
 @interface PAIWebViewController : SHBaseViewController
 
 @property (nonatomic, strong) WKWebView *webView;
-@property (nonatomic,copy) NSString *urlString;
-@property (nonatomic,assign) BOOL isShowNavigation;
+@property (nonatomic, copy) NSString *urlString;
+@property (nonatomic, assign) BOOL isShowNavigation;
 -(void)load;
 //退出当前页面
 - (void)dismiss;

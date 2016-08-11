@@ -23,11 +23,6 @@
             NSURL *fileURL = [NSURL fileURLWithPath:self.urlString];
             [self.webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
         } else {
-            // iOS8. Things can be workaround-ed
-            //   Brave people can do just this
-            //   fileURL = try! pathForBuggyWKWebView8(fileURL)
-            //   webView.loadRequest(NSURLRequest(URL: fileURL))
-            
             NSURL *fileURL = [self fileURLForBuggyWKWebView8:[NSURL fileURLWithPath:self.urlString]];
             NSURLRequest *request = [NSURLRequest requestWithURL:fileURL];
             [self.webView loadRequest:request];
