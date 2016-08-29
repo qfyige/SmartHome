@@ -1,7 +1,7 @@
 //
 //  IQKeyboardReturnKeyHandler.h
 // https://github.com/hackiftekhar/IQKeyboardManager
-// Copyright (c) 2013-15 Iftekhar Qurashi.
+// Copyright (c) 2013-16 Iftekhar Qurashi.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -28,10 +28,6 @@
 
 #import <UIKit/UITextField.h>
 #import <UIKit/UITextView.h>
-
-#if !(__has_feature(objc_instancetype))
-    #define instancetype id
-#endif
 
 @class UITextField,UIView, UIViewController;
 
@@ -64,11 +60,6 @@
 @property(nullable, nonatomic, weak) id<UITextFieldDelegate,UITextViewDelegate> delegate;
 
 /**
- It help to choose the lastTextField instance from sibling responderViews. Default is IQAutoToolbarBySubviews.
- */
-@property(nonatomic, assign) IQAutoToolbarManageBehaviour toolbarManageBehaviour __attribute__ ((deprecated("This property will be removed in future release, from now changing this property have no effect and it will read from [[IQKeyboardManager sharedManager] toolbarManageBehaviour.")));
-
-/**
  Set the last textfield return key type. Default is UIReturnKeyDefault.
  */
 @property(nonatomic, assign) UIReturnKeyType lastTextFieldReturnKeyType;
@@ -78,14 +69,14 @@
 ///----------------------------------------------
 
 /**
- Should pass UITextField/UITextView intance. Assign textFieldView delegate to self, change it's returnKeyType.
+ Should pass UITextField/UITextView instance. Assign textFieldView delegate to self, change it's returnKeyType.
  
  @param textFieldView UITextField/UITextView object to register.
  */
 -(void)addTextFieldView:(nonnull UIView*)textFieldView;
 
 /**
- Should pass UITextField/UITextView intance. Restore it's textFieldView delegate and it's returnKeyType.
+ Should pass UITextField/UITextView instance. Restore it's textFieldView delegate and it's returnKeyType.
 
  @param textFieldView UITextField/UITextView object to unregister.
  */

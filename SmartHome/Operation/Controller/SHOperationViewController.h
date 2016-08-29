@@ -8,6 +8,20 @@
 
 #import "PAIWebViewController.h"
 
-@interface SHOperationViewController : PAIWebViewController
+@interface SHOperationViewController : PAIWebViewController<UIWebViewDelegate,NSURLConnectionDelegate>
+{
+    UIWebView *webView;
+    
+    UIActivityIndicatorView *activityIndicatorView;
+    
+    //当前的url
+    NSURL *_currenURL;
+    NSURLConnection* reUrlConnection;//重发请求
+    NSURLRequest* originRequest;
+    
+}
+
+@property(nonatomic,assign,getter =isAuthed)BOOL authed;
+@property(nonatomic,strong)NSURL *currenURL;
 
 @end
