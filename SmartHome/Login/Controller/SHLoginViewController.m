@@ -79,7 +79,7 @@
     phoneTextField.textColor = BlackColor;
     phoneTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     phoneTextField.textAlignment = NSTextAlignmentCenter;
-    [phoneTextField setKeyboardType:UIKeyboardTypeNumberPad];
+    [phoneTextField setKeyboardType:UIKeyboardTypeASCIICapable];
     NSString *phoneText = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_phone"];
     if (phoneText.length > 0) {
         phoneTextField.text = phoneText;

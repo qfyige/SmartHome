@@ -6,8 +6,9 @@
 //  Copyright © 2016年 tong. All rights reserved.
 //
 
-#import "PAIWebViewController.h"
+#import "SHWebViewController.h"
 
+<<<<<<< Updated upstream
 @interface SHOperationViewController : PAIWebViewController<UIWebViewDelegate,NSURLConnectionDelegate>
 {
     UIWebView *webView;
@@ -23,5 +24,8 @@
 
 @property(nonatomic,assign,getter =isAuthed)BOOL authed;
 @property(nonatomic,strong)NSURL *currenURL;
+=======
+@interface SHOperationViewController : SHWebViewController
+>>>>>>> Stashed changes
 
 @end

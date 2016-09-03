@@ -80,8 +80,8 @@
     self.progressView.frame = self.view.bounds;
     [self.view addSubview:self.progressView];
     self.progressView.backgroundColor = [UIColor redColor];
-    
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 //    if(self.navigationController && self.isShowNavigation== NO){
@@ -131,7 +131,6 @@
             
         }];
     }
-
 }
 
 - (void)gofarward {

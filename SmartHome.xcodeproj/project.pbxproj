@@ -46,6 +46,8 @@
 		A08AB7A51D4EE73000E4AD7C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A08AB7A41D4EE73000E4AD7C /* libz.tbd */; };
 		A08AB7A71D4EE74000E4AD7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08AB7A61D4EE74000E4AD7C /* Foundation.framework */; };
 		A08AB7A91D4EEBAC00E4AD7C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08AB7A81D4EEBAC00E4AD7C /* CoreTelephony.framework */; };
+		A0D5F65F1D7A9AF100A3FED5 /* SHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D5F65E1D7A9AF100A3FED5 /* SHWebViewController.m */; };
+		A0D5F6621D7AA33C00A3FED5 /* client.p12 in Resources */ = {isa = PBXBuildFile; fileRef = A0D5F6611D7AA33C00A3FED5 /* client.p12 */; };
 		A0D9CB901D4C5D1C0035289D /* SHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB8F1D4C5D1C0035289D /* SHUserModel.m */; };
 		A0D9CB931D4C5D320035289D /* SHUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB921D4C5D320035289D /* SHUserManager.m */; };
 		A0D9CB9F1D4C63C50035289D /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CB9C1D4C63C50035289D /* NSArray+Extension.m */; };
@@ -150,6 +152,9 @@
 		A08AB7A41D4EE73000E4AD7C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A08AB7A61D4EE74000E4AD7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A08AB7A81D4EEBAC00E4AD7C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A0D5F65D1D7A9AF100A3FED5 /* SHWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHWebViewController.h; sourceTree = "<group>"; };
+		A0D5F65E1D7A9AF100A3FED5 /* SHWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHWebViewController.m; sourceTree = "<group>"; };
+		A0D5F6611D7AA33C00A3FED5 /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = client.p12; sourceTree = "<group>"; };
 		A0D9CB8E1D4C5D1C0035289D /* SHUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserModel.h; sourceTree = "<group>"; };
 		A0D9CB8F1D4C5D1C0035289D /* SHUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserModel.m; sourceTree = "<group>"; };
 		A0D9CB911D4C5D320035289D /* SHUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserManager.h; sourceTree = "<group>"; };
@@ -277,6 +282,7 @@
 				9D4B051A1D345E10004FBFA1 /* LaunchScreen.storyboard */,
 				9D4B051D1D345E10004FBFA1 /* Info.plist */,
 				9D4B05151D345E10004FBFA1 /* SmartHome.xcdatamodeld */,
+				A0D5F6611D7AA33C00A3FED5 /* client.p12 */,
 				9D4B05091D345E10004FBFA1 /* Supporting Files */,
 			);
 			path = SmartHome;
@@ -468,6 +474,8 @@
 				9D8AADBD1D4CB67300B63C1B /* PAIWebViewController.m */,
 				9D8AADBF1D4CB6F300B63C1B /* SHOperationViewController.h */,
 				9D8AADC01D4CB6F300B63C1B /* SHOperationViewController.m */,
+				A0D5F65D1D7A9AF100A3FED5 /* SHWebViewController.h */,
+				A0D5F65E1D7A9AF100A3FED5 /* SHWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -679,6 +687,7 @@
 				9D8AADC61D4D0F1E00B63C1B /* SHSetingInputTextCell.xib in Resources */,
 				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
 				9D8AADD81D4D432B00B63C1B /* SHAboutUsTableViewCell.xib in Resources */,
+				A0D5F6621D7AA33C00A3FED5 /* client.p12 in Resources */,
 				9D4B05191D345E10004FBFA1 /* Assets.xcassets in Resources */,
 				9D4B05141D345E10004FBFA1 /* Main.storyboard in Resources */,
 			);
@@ -766,6 +775,7 @@
 				9D8AADD21D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m in Sources */,
 				9D8AADCA1D4D229500B63C1B /* SHSettingTextTableViewCell.m in Sources */,
 				9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */,
+				A0D5F65F1D7A9AF100A3FED5 /* SHWebViewController.m in Sources */,
 				A0D9CC221D4CF1C50035289D /* SHMessageCell.m in Sources */,
 				9D8AADC41D4D0A9E00B63C1B /* SHBaseViewController.m in Sources */,
 				45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */,
@@ -945,7 +955,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+<<<<<<< Updated upstream
 				TARGETED_DEVICE_FAMILY = 1;
+=======
+				TARGETED_DEVICE_FAMILY = "1,2";
+>>>>>>> Stashed changes
 			};
 			name = Debug;
 		};
@@ -967,7 +981,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+<<<<<<< Updated upstream
 				TARGETED_DEVICE_FAMILY = 1;
+=======
+				TARGETED_DEVICE_FAMILY = "1,2";
+>>>>>>> Stashed changes
 			};
 			name = Release;
 		};
