@@ -955,11 +955,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-<<<<<<< Updated upstream
-				TARGETED_DEVICE_FAMILY = 1;
-=======
 				TARGETED_DEVICE_FAMILY = "1,2";
->>>>>>> Stashed changes
 			};
 			name = Debug;
 		};
@@ -981,11 +977,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-<<<<<<< Updated upstream
-				TARGETED_DEVICE_FAMILY = 1;
-=======
 				TARGETED_DEVICE_FAMILY = "1,2";
->>>>>>> Stashed changes
 			};
 			name = Release;
 		};
