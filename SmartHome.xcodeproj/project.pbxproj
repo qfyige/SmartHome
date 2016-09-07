@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4543396D1D7FF487004DC4F1 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 4543394B1D7FF486004DC4F1 /* aescrypt.c */; };
+		4543396E1D7FF487004DC4F1 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = 4543394C1D7FF486004DC4F1 /* aeskey.c */; };
+		4543396F1D7FF487004DC4F1 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 4543394E1D7FF486004DC4F1 /* aestab.c */; };
+		454339701D7FF487004DC4F1 /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339521D7FF486004DC4F1 /* entropy.c */; };
+		454339711D7FF487004DC4F1 /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339541D7FF486004DC4F1 /* fileenc.c */; };
+		454339721D7FF487004DC4F1 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339561D7FF486004DC4F1 /* hmac.c */; };
+		454339731D7FF487004DC4F1 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339581D7FF486004DC4F1 /* prng.c */; };
+		454339741D7FF487004DC4F1 /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = 4543395A1D7FF486004DC4F1 /* pwd2key.c */; };
+		454339751D7FF487004DC4F1 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 4543395C1D7FF486004DC4F1 /* sha1.c */; };
+		454339761D7FF487004DC4F1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4543395F1D7FF486004DC4F1 /* Info.plist */; };
+		454339771D7FF487004DC4F1 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339621D7FF486004DC4F1 /* ioapi.c */; };
+		454339781D7FF487004DC4F1 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339641D7FF486004DC4F1 /* mztools.c */; };
+		454339791D7FF487004DC4F1 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339661D7FF486004DC4F1 /* unzip.c */; };
+		4543397A1D7FF487004DC4F1 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339681D7FF486004DC4F1 /* zip.c */; };
+		4543397B1D7FF487004DC4F1 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4543396B1D7FF486004DC4F1 /* SSZipArchive.m */; };
+		454339821D7FF61C004DC4F1 /* SHDownLoadZipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 454339811D7FF61C004DC4F1 /* SHDownLoadZipManager.m */; };
 		45EB64AE1D4D9DA3001EAA4E /* SHSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */; };
 		45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64B01D4D9DC0001EAA4E /* KLSwitch.m */; };
 		53D5AE6EAD75A8D5CA49624D /* libPods-SmartHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550FE544FB1D1FA3D903599 /* libPods-SmartHome.a */; };
@@ -86,6 +102,43 @@
 		1550FE544FB1D1FA3D903599 /* libPods-SmartHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D3B00A1B66314A4BDCFB8E /* Pods-SmartHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome.debug.xcconfig"; sourceTree = "<group>"; };
 		4356BDD4DEDDEC334E06F046 /* Pods-SmartHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHome/Pods-SmartHome.release.xcconfig"; sourceTree = "<group>"; };
+		454339491D7FF486004DC4F1 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		4543394A1D7FF486004DC4F1 /* aes_via_ace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_via_ace.h; sourceTree = "<group>"; };
+		4543394B1D7FF486004DC4F1 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
+		4543394C1D7FF486004DC4F1 /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
+		4543394D1D7FF486004DC4F1 /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
+		4543394E1D7FF486004DC4F1 /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
+		4543394F1D7FF486004DC4F1 /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
+		454339501D7FF486004DC4F1 /* brg_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
+		454339511D7FF486004DC4F1 /* brg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
+		454339521D7FF486004DC4F1 /* entropy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = entropy.c; sourceTree = "<group>"; };
+		454339531D7FF486004DC4F1 /* entropy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entropy.h; sourceTree = "<group>"; };
+		454339541D7FF486004DC4F1 /* fileenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fileenc.c; sourceTree = "<group>"; };
+		454339551D7FF486004DC4F1 /* fileenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
+		454339561D7FF486004DC4F1 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		454339571D7FF486004DC4F1 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		454339581D7FF486004DC4F1 /* prng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
+		454339591D7FF486004DC4F1 /* prng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
+		4543395A1D7FF486004DC4F1 /* pwd2key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pwd2key.c; sourceTree = "<group>"; };
+		4543395B1D7FF486004DC4F1 /* pwd2key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pwd2key.h; sourceTree = "<group>"; };
+		4543395C1D7FF486004DC4F1 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		4543395D1D7FF486004DC4F1 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		4543395E1D7FF486004DC4F1 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		4543395F1D7FF486004DC4F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		454339611D7FF486004DC4F1 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		454339621D7FF486004DC4F1 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		454339631D7FF486004DC4F1 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		454339641D7FF486004DC4F1 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		454339651D7FF486004DC4F1 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		454339661D7FF486004DC4F1 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		454339671D7FF486004DC4F1 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		454339681D7FF486004DC4F1 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		454339691D7FF486004DC4F1 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		4543396A1D7FF486004DC4F1 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		4543396B1D7FF486004DC4F1 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		4543396C1D7FF486004DC4F1 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		454339801D7FF61C004DC4F1 /* SHDownLoadZipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHDownLoadZipManager.h; path = "../../../../../Downloads/Export 4/LECInteractionLiveSDKDemo/LECInteractionLiveSDKDemo/ViewControllers/SHDownLoadZipManager.h"; sourceTree = "<group>"; };
+		454339811D7FF61C004DC4F1 /* SHDownLoadZipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHDownLoadZipManager.m; path = "../../../../../Downloads/Export 4/LECInteractionLiveSDKDemo/LECInteractionLiveSDKDemo/ViewControllers/SHDownLoadZipManager.m"; sourceTree = "<group>"; };
 		45EB64AC1D4D9DA3001EAA4E /* SHSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetModel.h; sourceTree = "<group>"; };
 		45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetModel.m; sourceTree = "<group>"; };
 		45EB64AF1D4D9DC0001EAA4E /* KLSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLSwitch.h; sourceTree = "<group>"; };
@@ -230,6 +283,71 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		454339471D7FF486004DC4F1 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				454339481D7FF486004DC4F1 /* aes */,
+				4543395E1D7FF486004DC4F1 /* Common.h */,
+				4543395F1D7FF486004DC4F1 /* Info.plist */,
+				454339601D7FF486004DC4F1 /* minizip */,
+				4543396A1D7FF486004DC4F1 /* SSZipArchive.h */,
+				4543396B1D7FF486004DC4F1 /* SSZipArchive.m */,
+				4543396C1D7FF486004DC4F1 /* ZipArchive.h */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		454339481D7FF486004DC4F1 /* aes */ = {
+			isa = PBXGroup;
+			children = (
+				454339491D7FF486004DC4F1 /* aes.h */,
+				4543394A1D7FF486004DC4F1 /* aes_via_ace.h */,
+				4543394B1D7FF486004DC4F1 /* aescrypt.c */,
+				4543394C1D7FF486004DC4F1 /* aeskey.c */,
+				4543394D1D7FF486004DC4F1 /* aesopt.h */,
+				4543394E1D7FF486004DC4F1 /* aestab.c */,
+				4543394F1D7FF486004DC4F1 /* aestab.h */,
+				454339501D7FF486004DC4F1 /* brg_endian.h */,
+				454339511D7FF486004DC4F1 /* brg_types.h */,
+				454339521D7FF486004DC4F1 /* entropy.c */,
+				454339531D7FF486004DC4F1 /* entropy.h */,
+				454339541D7FF486004DC4F1 /* fileenc.c */,
+				454339551D7FF486004DC4F1 /* fileenc.h */,
+				454339561D7FF486004DC4F1 /* hmac.c */,
+				454339571D7FF486004DC4F1 /* hmac.h */,
+				454339581D7FF486004DC4F1 /* prng.c */,
+				454339591D7FF486004DC4F1 /* prng.h */,
+				4543395A1D7FF486004DC4F1 /* pwd2key.c */,
+				4543395B1D7FF486004DC4F1 /* pwd2key.h */,
+				4543395C1D7FF486004DC4F1 /* sha1.c */,
+				4543395D1D7FF486004DC4F1 /* sha1.h */,
+			);
+			path = aes;
+			sourceTree = "<group>";
+		};
+		454339601D7FF486004DC4F1 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				454339611D7FF486004DC4F1 /* crypt.h */,
+				454339621D7FF486004DC4F1 /* ioapi.c */,
+				454339631D7FF486004DC4F1 /* ioapi.h */,
+				454339641D7FF486004DC4F1 /* mztools.c */,
+				454339651D7FF486004DC4F1 /* mztools.h */,
+				454339661D7FF486004DC4F1 /* unzip.c */,
+				454339671D7FF486004DC4F1 /* unzip.h */,
+				454339681D7FF486004DC4F1 /* zip.c */,
+				454339691D7FF486004DC4F1 /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		4543397F1D7FF5E6004DC4F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		45EB64B21D4D9E3E001EAA4E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +457,7 @@
 		A04C1DDA1D4B8CC8005A3BAE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				454339471D7FF486004DC4F1 /* SSZipArchive */,
 				A04C1DDC1D4B8CC8005A3BAE /* DeviceHelper */,
 				A04C1DDF1D4B8CC8005A3BAE /* SocketHelper */,
 				9D8AADC21D4D0A9E00B63C1B /* SHBaseViewController.h */,
@@ -465,8 +584,8 @@
 				A0D9CC161D4CF02F0035289D /* html */,
 				A0D9CC171D4CF02F0035289D /* operation.html */,
 				A04C1E111D4B8F1B005A3BAE /* Controller */,
+				4543397F1D7FF5E6004DC4F1 /* View */,
 				A04C1E141D4B8F1B005A3BAE /* Model */,
-				A04C1E151D4B8F1B005A3BAE /* View */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -487,15 +606,10 @@
 		A04C1E141D4B8F1B005A3BAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				454339801D7FF61C004DC4F1 /* SHDownLoadZipManager.h */,
+				454339811D7FF61C004DC4F1 /* SHDownLoadZipManager.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A04C1E151D4B8F1B005A3BAE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A04C1E171D4B8F2C005A3BAE /* Define */ = {
@@ -687,6 +801,7 @@
 				A04C1E0F1D4B8E86005A3BAE /* SHSettingTitleView.xib in Resources */,
 				A04C1E081D4B8E86005A3BAE /* SHHeaderView.xib in Resources */,
 				9D8AADCB1D4D229500B63C1B /* SHSettingTextTableViewCell.xib in Resources */,
+				454339761D7FF487004DC4F1 /* Info.plist in Resources */,
 				A0D9CC181D4CF02F0035289D /* html in Resources */,
 				9D8AADC61D4D0F1E00B63C1B /* SHSetingInputTextCell.xib in Resources */,
 				9D4B051C1D345E10004FBFA1 /* LaunchScreen.storyboard in Resources */,
@@ -767,15 +882,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0D9CBA01D4C63C50035289D /* UIView+Extension.m in Sources */,
+				454339791D7FF487004DC4F1 /* unzip.c in Sources */,
 				A0D9CBA91D4CB9EF0035289D /* SHLoginManager.m in Sources */,
 				A0D9CBA61D4CB7EE0035289D /* SHCommonFun.m in Sources */,
 				9D8AADD71D4D432B00B63C1B /* SHAboutUsTableViewCell.m in Sources */,
 				9D8AADC11D4CB6F300B63C1B /* SHOperationViewController.m in Sources */,
+				454339701D7FF487004DC4F1 /* entropy.c in Sources */,
 				9D8AADB31D4C1FDC00B63C1B /* SHRequestHelper.m in Sources */,
 				A04C1E0C1D4B8E86005A3BAE /* SHSetingItemTextCell.m in Sources */,
+				4543397A1D7FF487004DC4F1 /* zip.c in Sources */,
+				454339741D7FF487004DC4F1 /* pwd2key.c in Sources */,
+				454339711D7FF487004DC4F1 /* fileenc.c in Sources */,
+				4543397B1D7FF487004DC4F1 /* SSZipArchive.m in Sources */,
 				A0D9CC1C1D4CF1520035289D /* SHMessageViewController.m in Sources */,
 				A04099ED1D4E39C500903210 /* SHModelBase.m in Sources */,
 				A04C1DF11D4B8DA5005A3BAE /* SHLoginViewController.m in Sources */,
+				454339731D7FF487004DC4F1 /* prng.c in Sources */,
+				454339781D7FF487004DC4F1 /* mztools.c in Sources */,
+				4543396E1D7FF487004DC4F1 /* aeskey.c in Sources */,
 				9D8AADD21D4D333100B63C1B /* SHSettingFaceBackTableViewCell.m in Sources */,
 				9D8AADCA1D4D229500B63C1B /* SHSettingTextTableViewCell.m in Sources */,
 				9D4B050E1D345E10004FBFA1 /* AppDelegate.m in Sources */,
@@ -785,14 +909,18 @@
 				45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */,
 				45EB64AE1D4D9DA3001EAA4E /* SHSetModel.m in Sources */,
 				A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */,
+				454339821D7FF61C004DC4F1 /* SHDownLoadZipManager.m in Sources */,
+				454339771D7FF487004DC4F1 /* ioapi.c in Sources */,
 				9D8AADBE1D4CB67300B63C1B /* PAIWebViewController.m in Sources */,
 				A04C1E0A1D4B8E86005A3BAE /* SHSetingInputTextCell.m in Sources */,
 				A0DD2CB31D541CCC0069438D /* SocketRequestModel.m in Sources */,
 				A04C1E0E1D4B8E86005A3BAE /* SHSettingTitleView.m in Sources */,
+				454339751D7FF487004DC4F1 /* sha1.c in Sources */,
 				9D4B05171D345E10004FBFA1 /* SmartHome.xcdatamodeld in Sources */,
 				A0D9CBA31D4C801F0035289D /* SHRegisterViewController.m in Sources */,
 				A0D9CB9F1D4C63C50035289D /* NSArray+Extension.m in Sources */,
 				A0D9CB901D4C5D1C0035289D /* SHUserModel.m in Sources */,
+				454339721D7FF487004DC4F1 /* hmac.c in Sources */,
 				A0D9CBE41D4CEFA70035289D /* SHHomeViewController.m in Sources */,
 				A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */,
 				9D4B050B1D345E10004FBFA1 /* main.m in Sources */,
@@ -800,7 +928,9 @@
 				9D8AADCE1D4D2CF900B63C1B /* NSString+getSize.m in Sources */,
 				A04C1E071D4B8E86005A3BAE /* SHHeaderView.m in Sources */,
 				A04C1E061D4B8E86005A3BAE /* SHSettingViewController.m in Sources */,
+				4543396D1D7FF487004DC4F1 /* aescrypt.c in Sources */,
 				A0D9CB931D4C5D320035289D /* SHUserManager.m in Sources */,
+				4543396F1D7FF487004DC4F1 /* aestab.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
