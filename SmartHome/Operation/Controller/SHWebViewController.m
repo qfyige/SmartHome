@@ -64,7 +64,7 @@
     SHSetModel *model = [SHSetModel shareInstance];
     NSString *netenv = @"";
     NSString *devip = @"";
-    if (IS_NSString(model.localMonitorIP)) {
+    if (IS_NSString(model.localOperationIP)) {
         netenv = @"lan";
         devip = model.localOperationIP;
     }
