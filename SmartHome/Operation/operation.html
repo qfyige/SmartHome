@@ -146,8 +146,10 @@
 	</style>
 	<script>
 	window.onload=function(){
-
-		var ws=null;
+        var IDInfasdo = getIDInfo();
+        alert(IDInfasdo);
+        
+        var ws=null;
 		var seckey='';
 		var debugInfoNum=0;
 		var wssAddr='ws://101.201.209.42:8080/ldnet/evermobws';

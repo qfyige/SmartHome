@@ -25,7 +25,7 @@
  *
  *  @param responseObj 登录返回的信息
  */
-- (void)userLoginDataWith:(NSDictionary *)responseObj;
+- (void)userLoginDataWith:(NSDictionary *)responseObj password:(NSString *)password;
 
 /**
  *  登出

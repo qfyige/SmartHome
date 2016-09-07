@@ -58,7 +58,9 @@
 - (IBAction)clickHomeButton:(id)sender {
     if ([self isLogin]) {
         SHOperationViewController *operation = [[SHOperationViewController alloc] init];
-        operation.urlString = @"https://101.201.209.42:8443/ldnet/loginPage.action";
+        NSString *urlString = [[NSBundle mainBundle] pathForResource:@"operation" ofType:@"html"];
+//        operation.urlString = @"https://101.201.209.42:8443/ldnet/loginPage.action";
+        operation.urlString = urlString;
         [self.navigationController pushViewController:operation animated:YES];
     }
 }

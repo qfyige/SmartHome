@@ -7,6 +7,9 @@
 //
 
 #import "SHWebViewController.h"
+#import "SHCommonHeader.h"
+#import "SHUserModel.h"
+#import "SHUserManager.h"
 
 @implementation SHWebViewController
 
@@ -18,18 +21,19 @@
 
 - (void)initWebView
 {
-    myWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    myWebView.delegate = self;
-    myWebView.scalesPageToFit = YES;
-    [self.view addSubview:myWebView];
-    
-    activityIndicatorView = [[UIActivityIndicatorView alloc]
-                             initWithFrame :CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)] ;
-    [activityIndicatorView setCenter:self.view.center] ;
-    [activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray] ;
-    [self.view addSubview :activityIndicatorView];
-    
-    if (self.urlString) {
+    if(self.urlString){
+        self.urlString = [self.urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        myWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+        myWebView.delegate = self;
+        myWebView.scalesPageToFit = YES;
+        [self.view addSubview:myWebView];
+        
+        activityIndicatorView = [[UIActivityIndicatorView alloc]
+                                 initWithFrame :CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)] ;
+        [activityIndicatorView setCenter:self.view.center] ;
+        [activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray] ;
+        [self.view addSubview :activityIndicatorView];
+        
         NSURL *url = [NSURL URLWithString:self.urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [myWebView loadRequest:request];
@@ -47,6 +51,50 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [activityIndicatorView startAnimating] ;
+    context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    __block typeof(self) weakSelf = self;
+    context[@"getIDInfo"] = ^id(NSString *param){
+        return [weakSelf getIDInfoStr];
+    };
+}
+
+- (NSString *)getIDInfoStr
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:1];
+    SHSetModel *model = [SHSetModel shareInstance];
+    NSString *netenv = @"";
+    NSString *devip = @"";
+    if (IS_NSString(model.localMonitorIP)) {
+        netenv = @"lan";
+        devip = model.localOperationIP;
+    }
+    if (IS_NSString(model.remoteOperationIP)) {
+        netenv = @"internet";
+        devip = model.remoteOperationIP;
+    }
+    [dict setObject:netenv forKey:@"netenv"];
+    [dict setObject:devip forKey:@"devip"];
+    
+    NSMutableDictionary *wss = [NSMutableDictionary dictionaryWithCapacity:1];
+    SHUserModel *userModel = [[SHUserManager sharedInstance] getUser];
+    [wss setObject:userModel.seckey forKey:@"seckey"];
+    [wss setObject:userModel.userId forKey:@"user"];
+    [wss setObject:userModel.password forKey:@"password"];
+    [wss setObject:@"" forKey:@"devid"];
+    [dict setObject:wss forKey:@"wss"];
+    
+    //    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:1];
+    //    [dict setObject:@"internet" forKey:@"netenv"];
+    //    [dict setObject:@"http://192.168.0.111/" forKey:@"devip"];
+    //    NSMutableDictionary *wss = [NSMutableDictionary dictionaryWithCapacity:1];
+    //    [wss setObject:@"2" forKey:@"seckey"];
+    //    [wss setObject:@"1" forKey:@"user"];
+    //    [wss setObject:@"23" forKey:@"password"];
+    //    [wss setObject:@"2" forKey:@"devid"];
+    //    [dict setObject:wss forKey:@"wss"];
+    NSString *str = [dict description];
+    NSLog(@"getIDInfoStr str is %@",str);
+    return str;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView

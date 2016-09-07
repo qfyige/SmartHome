@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SHWebViewController.h"
 #import "SHBaseViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
 @interface SHWebViewController : SHBaseViewController<UIWebViewDelegate,NSURLConnectionDelegate>
 {
@@ -18,6 +19,7 @@
     //当前的url
     NSURLConnection *reUrlConnection;//重发请求
     NSURLRequest *originRequest;
+    JSContext *context;
 }
 
 @property (nonatomic,assign,getter =isAuthed) BOOL authed;

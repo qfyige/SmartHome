@@ -228,7 +228,7 @@
     [SHRequestHelper sendMessage:str complete:^(SocketRequestModel *requestModel) {
         [SVProgressHUD dismiss];
         if (IS_NSArray(requestModel.backinfo)) {
-            [[SHLoginManager shareInstance] userLoginDataWith:requestModel.backinfo[0]];
+            [[SHLoginManager shareInstance] userLoginDataWith:requestModel.backinfo[0] password:passwordTextField.text];
         }
         [self close];
     } fail:^(NSError *error) {

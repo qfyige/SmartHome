@@ -62,6 +62,7 @@
 		A0D9CC1F1D4CF1B00035289D /* SHMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CC1E1D4CF1B00035289D /* SHMessageModel.m */; };
 		A0D9CC221D4CF1C50035289D /* SHMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CC211D4CF1C50035289D /* SHMessageCell.m */; };
 		A0DD2CB31D541CCC0069438D /* SocketRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD2CB21D541CCC0069438D /* SocketRequestModel.m */; };
+		A505BA611D8004D300619B2E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A505BA601D8004D300619B2E /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		A0D9CC211D4CF1C50035289D /* SHMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMessageCell.m; sourceTree = "<group>"; };
 		A0DD2CB11D541CCC0069438D /* SocketRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRequestModel.h; sourceTree = "<group>"; };
 		A0DD2CB21D541CCC0069438D /* SocketRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketRequestModel.m; sourceTree = "<group>"; };
+		A505BA601D8004D300619B2E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A505BA611D8004D300619B2E /* JavaScriptCore.framework in Frameworks */,
 				A08AB7A91D4EEBAC00E4AD7C /* CoreTelephony.framework in Frameworks */,
 				A08AB7A71D4EE74000E4AD7C /* Foundation.framework in Frameworks */,
 				A08AB7A51D4EE73000E4AD7C /* libz.tbd in Frameworks */,
@@ -218,6 +221,7 @@
 		0F9A584FBE7A49F15F38B9EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A505BA601D8004D300619B2E /* JavaScriptCore.framework */,
 				A08AB7A81D4EEBAC00E4AD7C /* CoreTelephony.framework */,
 				A08AB7A61D4EE74000E4AD7C /* Foundation.framework */,
 				A08AB7A41D4EE73000E4AD7C /* libz.tbd */,

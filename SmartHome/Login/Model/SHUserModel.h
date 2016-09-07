@@ -13,5 +13,6 @@
 
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *seckey;
+@property (nonatomic, copy) NSString *password;
 
 @end
