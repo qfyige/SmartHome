@@ -68,7 +68,8 @@
         netenv = @"lan";
         devip = model.localOperationIP;
     }
-    if (IS_NSString(model.remoteOperationIP)) {
+    //有限使用局域网
+    if (IS_NSString(model.remoteOperationIP) || !IS_NSString(model.localOperationIP)) {
         netenv = @"internet";
         devip = model.remoteOperationIP;
     }
