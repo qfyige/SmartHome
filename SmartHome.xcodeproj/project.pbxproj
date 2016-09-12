@@ -22,7 +22,6 @@
 		454339791D7FF487004DC4F1 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339661D7FF486004DC4F1 /* unzip.c */; };
 		4543397A1D7FF487004DC4F1 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339681D7FF486004DC4F1 /* zip.c */; };
 		4543397B1D7FF487004DC4F1 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4543396B1D7FF486004DC4F1 /* SSZipArchive.m */; };
-		454339821D7FF61C004DC4F1 /* SHDownLoadZipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 454339811D7FF61C004DC4F1 /* SHDownLoadZipManager.m */; };
 		45EB64AE1D4D9DA3001EAA4E /* SHSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */; };
 		45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64B01D4D9DC0001EAA4E /* KLSwitch.m */; };
 		53D5AE6EAD75A8D5CA49624D /* libPods-SmartHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550FE544FB1D1FA3D903599 /* libPods-SmartHome.a */; };
@@ -80,6 +79,7 @@
 		A0DD2CB31D541CCC0069438D /* SocketRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD2CB21D541CCC0069438D /* SocketRequestModel.m */; };
 		A505BA611D8004D300619B2E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A505BA601D8004D300619B2E /* JavaScriptCore.framework */; };
 		A54BDF4C1D864C0400EB61C4 /* SHHttpsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BDF4B1D864C0400EB61C4 /* SHHttpsHelper.m */; };
+		A54BDF4F1D864ED000EB61C4 /* SHDownLoadZipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BDF4E1D864ED000EB61C4 /* SHDownLoadZipManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,8 +138,6 @@
 		4543396A1D7FF486004DC4F1 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		4543396B1D7FF486004DC4F1 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		4543396C1D7FF486004DC4F1 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
-		454339801D7FF61C004DC4F1 /* SHDownLoadZipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHDownLoadZipManager.h; path = "../../../../../Downloads/Export 4/LECInteractionLiveSDKDemo/LECInteractionLiveSDKDemo/ViewControllers/SHDownLoadZipManager.h"; sourceTree = "<group>"; };
-		454339811D7FF61C004DC4F1 /* SHDownLoadZipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHDownLoadZipManager.m; path = "../../../../../Downloads/Export 4/LECInteractionLiveSDKDemo/LECInteractionLiveSDKDemo/ViewControllers/SHDownLoadZipManager.m"; sourceTree = "<group>"; };
 		45EB64AC1D4D9DA3001EAA4E /* SHSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetModel.h; sourceTree = "<group>"; };
 		45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetModel.m; sourceTree = "<group>"; };
 		45EB64AF1D4D9DC0001EAA4E /* KLSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLSwitch.h; sourceTree = "<group>"; };
@@ -241,6 +239,8 @@
 		A505BA601D8004D300619B2E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		A54BDF4A1D864C0400EB61C4 /* SHHttpsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHttpsHelper.h; sourceTree = "<group>"; };
 		A54BDF4B1D864C0400EB61C4 /* SHHttpsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHttpsHelper.m; sourceTree = "<group>"; };
+		A54BDF4D1D864ED000EB61C4 /* SHDownLoadZipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDownLoadZipManager.h; sourceTree = "<group>"; };
+		A54BDF4E1D864ED000EB61C4 /* SHDownLoadZipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDownLoadZipManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -610,8 +610,8 @@
 		A04C1E141D4B8F1B005A3BAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				454339801D7FF61C004DC4F1 /* SHDownLoadZipManager.h */,
-				454339811D7FF61C004DC4F1 /* SHDownLoadZipManager.m */,
+				A54BDF4D1D864ED000EB61C4 /* SHDownLoadZipManager.h */,
+				A54BDF4E1D864ED000EB61C4 /* SHDownLoadZipManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -922,7 +922,6 @@
 				45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */,
 				45EB64AE1D4D9DA3001EAA4E /* SHSetModel.m in Sources */,
 				A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */,
-				454339821D7FF61C004DC4F1 /* SHDownLoadZipManager.m in Sources */,
 				454339771D7FF487004DC4F1 /* ioapi.c in Sources */,
 				9D8AADBE1D4CB67300B63C1B /* PAIWebViewController.m in Sources */,
 				A04C1E0A1D4B8E86005A3BAE /* SHSetingInputTextCell.m in Sources */,
@@ -940,6 +939,7 @@
 				9D4B050B1D345E10004FBFA1 /* main.m in Sources */,
 				A0D9CC1F1D4CF1B00035289D /* SHMessageModel.m in Sources */,
 				9D8AADCE1D4D2CF900B63C1B /* NSString+getSize.m in Sources */,
+				A54BDF4F1D864ED000EB61C4 /* SHDownLoadZipManager.m in Sources */,
 				A04C1E071D4B8E86005A3BAE /* SHHeaderView.m in Sources */,
 				A04C1E061D4B8E86005A3BAE /* SHSettingViewController.m in Sources */,
 				4543396D1D7FF487004DC4F1 /* aescrypt.c in Sources */,
