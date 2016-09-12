@@ -79,6 +79,7 @@
 		A0D9CC221D4CF1C50035289D /* SHMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9CC211D4CF1C50035289D /* SHMessageCell.m */; };
 		A0DD2CB31D541CCC0069438D /* SocketRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD2CB21D541CCC0069438D /* SocketRequestModel.m */; };
 		A505BA611D8004D300619B2E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A505BA601D8004D300619B2E /* JavaScriptCore.framework */; };
+		A54BDF4C1D864C0400EB61C4 /* SHHttpsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BDF4B1D864C0400EB61C4 /* SHHttpsHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +239,8 @@
 		A0DD2CB11D541CCC0069438D /* SocketRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRequestModel.h; sourceTree = "<group>"; };
 		A0DD2CB21D541CCC0069438D /* SocketRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketRequestModel.m; sourceTree = "<group>"; };
 		A505BA601D8004D300619B2E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		A54BDF4A1D864C0400EB61C4 /* SHHttpsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHttpsHelper.h; sourceTree = "<group>"; };
+		A54BDF4B1D864C0400EB61C4 /* SHHttpsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHttpsHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +460,7 @@
 		A04C1DDA1D4B8CC8005A3BAE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A54BDF491D864BED00EB61C4 /* HttpsHelper */,
 				454339471D7FF486004DC4F1 /* SSZipArchive */,
 				A04C1DDC1D4B8CC8005A3BAE /* DeviceHelper */,
 				A04C1DDF1D4B8CC8005A3BAE /* SocketHelper */,
@@ -686,6 +690,15 @@
 				A0D9CC211D4CF1C50035289D /* SHMessageCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A54BDF491D864BED00EB61C4 /* HttpsHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A54BDF4A1D864C0400EB61C4 /* SHHttpsHelper.h */,
+				A54BDF4B1D864C0400EB61C4 /* SHHttpsHelper.m */,
+			);
+			path = HttpsHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -920,6 +933,7 @@
 				A0D9CBA31D4C801F0035289D /* SHRegisterViewController.m in Sources */,
 				A0D9CB9F1D4C63C50035289D /* NSArray+Extension.m in Sources */,
 				A0D9CB901D4C5D1C0035289D /* SHUserModel.m in Sources */,
+				A54BDF4C1D864C0400EB61C4 /* SHHttpsHelper.m in Sources */,
 				454339721D7FF487004DC4F1 /* hmac.c in Sources */,
 				A0D9CBE41D4CEFA70035289D /* SHHomeViewController.m in Sources */,
 				A04C1DE31D4B8CC8005A3BAE /* SocketHelper.m in Sources */,
