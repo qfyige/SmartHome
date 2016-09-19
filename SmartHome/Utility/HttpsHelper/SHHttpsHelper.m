@@ -10,47 +10,94 @@
 
 @implementation SHHttpsHelper
 
-+ (AFSecurityPolicy *)customSecurityPolicy
+static  NSMutableDictionary *dict;
+
++ (void)setBackInfo:(NSMutableDictionary *)backInfo
 {
-    // /先导入证书
-    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"client" ofType:@"p12"];
-//    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"hgcang" ofType:@"cer"];//证书的路径
-    NSData *certData = [NSData dataWithContentsOfFile:cerPath];
-    // AFSSLPinningModeCertificate 使用证书验证模式
-    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-    // allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
-    // 如果是需要验证自建证书，需要设置为YES
-    securityPolicy.allowInvalidCertificates = YES;
-    //validatesDomainName 是否需要验证域名，默认为YES；
-    //假如证书的域名与你请求的域名不一致，需把该项设置为NO；如设成NO的话，即服务器使用其他可信任机构颁发的证书，也可以建立连接，这个非常危险，建议打开。
-    //置为NO，主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。
-    //如置为NO，建议自己添加对应域名的校验逻辑。
-    securityPolicy.validatesDomainName = NO;
-    NSSet *set = [NSSet setWithArray:@[certData]];
-    securityPolicy.pinnedCertificates = set;
-    return securityPolicy;
+    if (backInfo) {
+        dict = backInfo;
+    }
 }
 
-+ (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)downLoadZip
 {
-    // 1.获得请求管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    // 2.申明返回的结果是text/html类型
-    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
-    // 加上这行代码，https ssl 验证。
-    [mgr setSecurityPolicy:[self customSecurityPolicy]];
-    // 3.发送POST请求
-    [mgr POST:url parameters:params
-     progress:^(NSProgress * _Nonnull uploadProgress) {
-     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-         if (success) {
-             success(responseObject);
-         }
-     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-         if (failure) {
-             failure(error);
-         }
-     } ];
+    NSString *url = dict[@"downloadUrl"];
+    if (IS_NSStringEx(url)) {
+        [SVProgressHUD showWithStatus:@"下载中..."];
+        NSString *zipName = [url lastPathComponent];
+//            NSURL *httpsUrl = [NSURL URLWithString:@"https://101.201.209.42:8443/ldnet/upload/controlPage/html.zip"];//访问路径
+        NSURL *httpsUrl = [NSURL URLWithString:url];//访问路径
+        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:httpsUrl];
+        SecIdentityRef identity = NULL;
+        SecTrustRef trust = NULL;
+        //绑定证书，证书放在Resources文件夹中
+        NSData *PKCS12Data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"client" ofType:@"p12"]];//证书文件名和文件类型
+        [self extractIdentity:&identity andTrust:&trust fromPKCS12Data:PKCS12Data];
+        [request setClientCertificateIdentity:identity];//设定访问路径
+        [request setValidatesSecureCertificate:NO];//是否验证服务器端证书，如果此项为yes那么服务器端证书必须为合法的证书机构颁发的，而不能是自己用openssl 或java生成的证书
+        //初始化保存ZIP文件路径
+        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+        NSString *savePath = [path stringByAppendingPathComponent:zipName];
+        NSLog(@"hui-->savePath-->%@",savePath);
+        //初始化临时文件路径
+        NSString *tempPath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.temp",zipName]];
+        NSLog(@"hui-->tempPath-->%@",tempPath);
+        //设置文件保存路径
+        [request setDownloadDestinationPath:savePath];
+        //设置临时文件路径
+        [request setTemporaryFileDownloadPath:tempPath];
+        //设置是是否支持断点下载
+        [request setAllowResumeForFileDownloads:YES];
+        [request startSynchronous];
+        NSError *error = [request error];
+        if (!error) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showSuccessWithStatus:@"下载成功"];
+            NSString *response = [request responseString];
+            NSLog(@"response is : %@",response);
+            SHUserModel *userModel = [[SHUserManager sharedInstance] getUser];
+            path = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/",userModel.userId]];
+            BOOL success = [SSZipArchive unzipFileAtPath:savePath toDestination:path];
+            if (success) {
+                [[NSFileManager defaultManager] removeItemAtPath:savePath error:nil];
+                NSLog(@"unzipFileAtPath is success");
+                [SVProgressHUD showSuccessWithStatus:@"解压成功"];
+            }
+        } else {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:@"下载失败"];
+            NSLog(@"Failed to save to data store: %@", [error localizedDescription]);
+            NSLog(@"%@",[error userInfo]);
+        }
+    }
+}
+
++ (BOOL)extractIdentity:(SecIdentityRef *)outIdentity andTrust:(SecTrustRef*)outTrust fromPKCS12Data:(NSData *)inPKCS12Data {
+    OSStatus securityError = errSecSuccess;
+    
+    CFStringRef password = CFSTR("ever@01"); //证书密码
+    const void *keys[] =   { kSecImportExportPassphrase };
+    const void *values[] = { password };
+    
+    CFDictionaryRef optionsDictionary = CFDictionaryCreate(NULL, keys,values, 1,NULL, NULL);
+    
+    CFArrayRef items = CFArrayCreate(NULL, 0, 0, NULL);
+    //securityError = SecPKCS12Import((CFDataRef)inPKCS12Data,(CFDictionaryRef)optionsDictionary,&items);
+    securityError = SecPKCS12Import((CFDataRef)inPKCS12Data,optionsDictionary,&items);
+    
+    if (securityError == 0) {
+        CFDictionaryRef myIdentityAndTrust = CFArrayGetValueAtIndex (items, 0);
+        const void *tempIdentity = NULL;
+        tempIdentity = CFDictionaryGetValue (myIdentityAndTrust, kSecImportItemIdentity);
+        *outIdentity = (SecIdentityRef)tempIdentity;
+        const void *tempTrust = NULL;
+        tempTrust = CFDictionaryGetValue (myIdentityAndTrust, kSecImportItemTrust);
+        *outTrust = (SecTrustRef)tempTrust;
+    } else {
+        NSLog(@"Failed with error code %d",(int)securityError);
+        return NO;
+    }
+    return YES;
 }
 
 @end

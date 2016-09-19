@@ -1,7 +1,7 @@
 //
 //  JSONModel.m
 //
-//  @version 1.4
+//  @version 1.4.2
 //  @author Marin Todorov (http://www.underplot.com) and contributors
 //
 
@@ -692,6 +692,34 @@ static JSONKeyMapper* globalKeyMapper = nil;
             if (p && ![propertyIndex objectForKey:p.name]) {
                 [propertyIndex setValue:p forKey:p.name];
             }
+
+            // generate custom setters and getter
+            if (p)
+            {
+                NSString *name = [p.name stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[p.name substringToIndex:1].uppercaseString];
+
+                // getter
+                SEL getter = NSSelectorFromString([NSString stringWithFormat:@"JSONObjectFor%@", name]);
+
+                if ([self respondsToSelector:getter])
+                    p.customGetter = getter;
+
+                // setters
+                p.customSetters = [NSMutableDictionary new];
+
+                for (Class type in allowedJSONTypes)
+                {
+                    NSString *class = NSStringFromClass([JSONValueTransformer classByResolvingClusterClasses:type]);
+
+                    if (p.customSetters[class])
+                        continue;
+
+                    SEL setter = NSSelectorFromString([NSString stringWithFormat:@"set%@With%@:", name, class]);
+
+                    if ([self respondsToSelector:setter])
+                        p.customSetters[class] = [NSValue valueWithBytes:&setter objCType:@encode(SEL)];
+                }
+            }
         }
 
         free(properties);
@@ -830,71 +858,35 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 #pragma mark - custom transformations
--(BOOL)__customSetValue:(id<NSObject>)value forProperty:(JSONModelClassProperty*)property
+- (BOOL)__customSetValue:(id <NSObject>)value forProperty:(JSONModelClassProperty *)property
 {
-    if (!property.customSetters)
-        property.customSetters = [NSMutableDictionary new];
+    NSString *class = NSStringFromClass([JSONValueTransformer classByResolvingClusterClasses:[value class]]);
 
-    NSString *className = NSStringFromClass([JSONValueTransformer classByResolvingClusterClasses:[value class]]);
+    SEL setter = nil;
+    [property.customSetters[class] getValue:&setter];
 
-    if (!property.customSetters[className]) {
-        //check for a custom property setter method
-        NSString* ucfirstName = [property.name stringByReplacingCharactersInRange:NSMakeRange(0,1)
-                                                                       withString:[[property.name substringToIndex:1] uppercaseString]];
-        NSString* selectorName = [NSString stringWithFormat:@"set%@With%@:", ucfirstName, className];
+    if (!setter)
+        return NO;
 
-        SEL customPropertySetter = NSSelectorFromString(selectorName);
+    IMP imp = [self methodForSelector:setter];
+    void (*func)(id, SEL, id <NSObject>) = (void *)imp;
+    func(self, setter, value);
 
-        //check if there's a custom selector like this
-        if (![self respondsToSelector: customPropertySetter]) {
-            property.customSetters[className] = [NSNull null];
-            return NO;
-        }
-
-        //cache the custom setter selector
-        property.customSetters[className] = selectorName;
-    }
-
-    if (property.customSetters[className] != [NSNull null]) {
-        //call the custom setter
-        //https://github.com/steipete
-        SEL selector = NSSelectorFromString(property.customSetters[className]);
-        ((void (*) (id, SEL, id))objc_msgSend)(self, selector, value);
-        return YES;
-    }
-
-    return NO;
+    return YES;
 }
 
--(BOOL)__customGetValue:(id<NSObject>*)value forProperty:(JSONModelClassProperty*)property
+- (BOOL)__customGetValue:(id *)value forProperty:(JSONModelClassProperty *)property
 {
-    if (property.getterType == kNotInspected) {
-        //check for a custom property getter method
-        NSString* ucfirstName = [property.name stringByReplacingCharactersInRange: NSMakeRange(0,1)
-                                                                       withString: [[property.name substringToIndex:1] uppercaseString]];
-        NSString* selectorName = [NSString stringWithFormat:@"JSONObjectFor%@", ucfirstName];
+    SEL getter = property.customGetter;
 
-        SEL customPropertyGetter = NSSelectorFromString(selectorName);
-        if (![self respondsToSelector: customPropertyGetter]) {
-            property.getterType = kNo;
-            return NO;
-        }
+    if (!getter)
+        return NO;
 
-        property.getterType = kCustom;
-        property.customGetter = customPropertyGetter;
+    IMP imp = [self methodForSelector:getter];
+    id (*func)(id, SEL) = (void *)imp;
+    *value = func(self, getter);
 
-    }
-
-    if (property.getterType==kCustom) {
-        //call the custom getter
-        #pragma clang diagnostic push
-        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        *value = [self performSelector:property.customGetter];
-        #pragma clang diagnostic pop
-        return YES;
-    }
-
-    return NO;
+    return YES;
 }
 
 #pragma mark - persistance
@@ -1387,7 +1379,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 -(instancetype)initWithCoder:(NSCoder *)decoder
 {
     NSString* json;
-    
+
     if ([decoder respondsToSelector:@selector(decodeObjectOfClass:forKey:)]) {
         json = [decoder decodeObjectOfClass:[NSString class] forKey:@"json"];
     } else {

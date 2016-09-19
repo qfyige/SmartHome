@@ -14,7 +14,7 @@ static LKDBHelper *lkdbHelper = nil;
 
 + (LKDBHelper *)getUsingLKDBHelperWith:(NSString *)userID
 {
-    if (IS_NSStringEx(userID)) {
+    if (userID) {
         if (lkdbHelper == nil) {
             NSString *path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:userID];
             NSString *dbname = [NSString stringWithFormat:@"%@.db",userID];

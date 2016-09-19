@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
+#import "ASIHTTPRequest.h"
+#import "SHCommonHeader.h"
+#import "SHUserModel.h"
+#import "SHUserManager.h"
+#import "SSZipArchive.h"
 
 @interface SHHttpsHelper : NSObject
 
-+ (AFSecurityPolicy *)customSecurityPolicy;
-+ (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure;
++ (void)setBackInfo:(NSMutableDictionary *)backInfo;
++ (void)downLoadZip;
 
 @end

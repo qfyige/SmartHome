@@ -8,6 +8,7 @@
 
 #import "SHLoginViewController.h"
 #import "SHHomeViewController.h"
+#import "SHHttpsHelper.h"
 
 @interface SHLoginViewController ()<UITextFieldDelegate>
 {
@@ -133,34 +134,34 @@
         make.size.mas_equalTo(CGSizeMake(labelW, lineViewH));
     }];
     
-//    UIButton *registerButton = [[UIButton alloc] init];
-//    registerButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
-//    [registerButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-//    [registerButton setTitle:@"立即注册" forState:UIControlStateNormal];
-//    [registerButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-//    [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:registerButton];
-//    
-//    [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(passwordLineView);
-//        make.top.equalTo(passwordLineView.mas_bottom);
-//        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
-//    }];
-//    
-//    UIButton *frogetPasswordButton = [[UIButton alloc] init];
-//    frogetPasswordButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
-//    [frogetPasswordButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-//    [frogetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal];
-//    [frogetPasswordButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-//    [frogetPasswordButton addTarget:self action:@selector(frogetPasswordButtonAction) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:frogetPasswordButton];
-//    
-//    [frogetPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.equalTo(passwordLineView);
-//        make.top.equalTo(passwordLineView.mas_bottom);
-//        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
-//    }];
-//    
+    //    UIButton *registerButton = [[UIButton alloc] init];
+    //    registerButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
+    //    [registerButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    //    [registerButton setTitle:@"立即注册" forState:UIControlStateNormal];
+    //    [registerButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+    //    [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.view addSubview:registerButton];
+    //
+    //    [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.left.equalTo(passwordLineView);
+    //        make.top.equalTo(passwordLineView.mas_bottom);
+    //        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
+    //    }];
+    //
+    //    UIButton *frogetPasswordButton = [[UIButton alloc] init];
+    //    frogetPasswordButton.titleLabel.font = SH_SYSTEM_FONT_(fontNum);
+    //    [frogetPasswordButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    //    [frogetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal];
+    //    [frogetPasswordButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    //    [frogetPasswordButton addTarget:self action:@selector(frogetPasswordButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.view addSubview:frogetPasswordButton];
+    //
+    //    [frogetPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.right.equalTo(passwordLineView);
+    //        make.top.equalTo(passwordLineView.mas_bottom);
+    //        make.size.mas_equalTo(CGSizeMake(labelW/3, labelH));
+    //    }];
+    //
     UIButton *loginButton = [[UIButton alloc] init];
     loginButton.backgroundColor = BlackColor;
     loginButton.layer.cornerRadius = 4.0;
@@ -224,13 +225,34 @@
     }else{
         [SVProgressHUD showWithStatus:@"登录中..."];
     }
-    NSString *str = [NSString stringWithFormat:@"{\"seckey\":\"\",\"method\":\"login\",\"infopackage\":{\"userId\":\"%@\",\"password\":\"%@\",\"mobile\":\"\",\"mobModel\":\"\",\"mobBrand\":\"\"}}",phoneTextField.text,passwordTextField.text];
+    //系统类型:1:IPHONE,2:ANDROID,3IPAD
+    NSString *mobModel = @"";
+    if (IS_IPAD) {
+        mobModel = @"3";
+    }else{
+        mobModel = @"1";
+    }
+    NSString *str = [NSString stringWithFormat:@"{\"seckey\":\"\",\"method\":\"login\",\"infopackage\":{\"userId\":\"%@\",\"password\":\"%@\",\"mobile\":\"\",\"mobModel\":\"%@\",\"mobBrand\":\"\"}}",phoneTextField.text,passwordTextField.text,mobModel];
     [SHRequestHelper sendMessage:str complete:^(SocketRequestModel *requestModel) {
         [SVProgressHUD dismiss];
-        if (IS_NSArray(requestModel.backinfo)) {
-            [[SHLoginManager shareInstance] userLoginDataWith:requestModel.backinfo[0] password:passwordTextField.text];
+        NSString *method = requestModel.method;
+        if ([method isEqualToString:@"appHtml5Update"]) {
+            NSMutableDictionary *backInfo = (NSMutableDictionary *)requestModel.backinfo;
+            if (backInfo[@"downloadUrl"]) {
+                [SHHttpsHelper setBackInfo:backInfo];
+            }
+        }else if([method isEqualToString:@"login"]){
+            if (IS_NSArray(requestModel.backinfo)) {
+                [SVProgressHUD showWithStatus:@"下载中..."];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [[SHLoginManager shareInstance] userLoginDataWith:requestModel.backinfo[0] password:passwordTextField.text];
+                        [SHHttpsHelper downLoadZip];
+                        [self close];
+                    });
+                });
+            }
         }
-        [self close];
     } fail:^(NSError *error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:@"登录失败"];
