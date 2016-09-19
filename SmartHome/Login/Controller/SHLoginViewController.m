@@ -236,21 +236,14 @@
     [SHRequestHelper sendMessage:str complete:^(SocketRequestModel *requestModel) {
         [SVProgressHUD dismiss];
         NSString *method = requestModel.method;
-        if ([method isEqualToString:@"appHtml5Update"]) {
-            NSMutableDictionary *backInfo = (NSMutableDictionary *)requestModel.backinfo;
-            if (backInfo[@"downloadUrl"]) {
-                [SHHttpsHelper setBackInfo:backInfo];
-            }
-        }else if([method isEqualToString:@"login"]){
-            if (IS_NSArray(requestModel.backinfo)) {
-                [SVProgressHUD showWithStatus:@"下载中..."];
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    dispatch_sync(dispatch_get_main_queue(), ^{
-                        [[SHLoginManager shareInstance] userLoginDataWith:requestModel.backinfo[0] password:passwordTextField.text];
-                        [SHHttpsHelper downLoadZip];
-                        [self close];
-                    });
-                });
+        if([method isEqualToString:@"login"]){
+            if (requestModel.resultCode == 1004) {
+                if (IS_NSArray(requestModel.backinfo)) {
+                    [[SHLoginManager shareInstance] userLoginDataWith:requestModel.backinfo[0] password:passwordTextField.text];
+                    [self close];
+                }
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"登录失败"];
             }
         }
     } fail:^(NSError *error) {

@@ -63,6 +63,9 @@
             if ([dict objectForKey:@"backinfo"]) {
                 requestModel.backinfo = [dict objectForKey:@"backinfo"];
             }
+            if ([requestModel.method isEqualToString:@"appHtml5Update"]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"appHtml5Update" object:requestModel];
+            }
             _complete(requestModel);
         }else{
             _complete(nil);

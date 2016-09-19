@@ -10,10 +10,11 @@
 #import "SHRequestHelper.h"
 #import "JPUSHService.h"
 #import <IQKeyboardManager.h>
+#import "SHHttpsHelper.h"
 
 #import "SHLoginViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UIAlertViewDelegate>
 
 @end
 
@@ -28,6 +29,7 @@
     } fail:^(NSError *error) {
         NSLog(@"%@",error.description);
     }];
+    [self addNot];
     return YES;
 }
 
@@ -56,7 +58,6 @@
 }
 
 - (void)setUpJpushLaunchOptions:(NSDictionary *)launchOptions{
-    
     NSMutableSet *categories = [NSMutableSet set];
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
         UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
@@ -84,6 +85,41 @@
     }
     [JPUSHService setupWithOption:launchOptions appKey:@"b97094dc63a06b00b81aefe1" channel:@"AppStore" apsForProduction:YES];
 }
+
+- (void)addNot
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appHtml5Update:) name:@"appHtml5Update" object:nil];
+}
+
+- (void)appHtml5Update:(NSNotification *)not
+{
+    if (not.object) {
+        SocketRequestModel *requestModel = (SocketRequestModel *)not.object;
+        NSMutableDictionary *backInfo = (NSMutableDictionary *)requestModel.backinfo;
+        if (backInfo[@"downloadUrl"]) {
+            [SHHttpsHelper setBackInfo:backInfo];
+        }
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"发现新版界面，请更新！" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        [alertView show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD showWithStatus:@"下载中..."];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [SHHttpsHelper downLoadZip];
+                });
+            });
+        });
+    }
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
