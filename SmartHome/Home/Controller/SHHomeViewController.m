@@ -62,9 +62,9 @@
         NSString *path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:userModel.userId];
         NSString *urlString = @"";
         if (IS_IPAD) {
-            urlString = [NSString stringWithFormat:@"%@html/iPad.html",path];
+            urlString = [NSString stringWithFormat:@"%@/html/iPad.html",path];
         }else{
-            urlString = [NSString stringWithFormat:@"%@html/iTouch.html",path];
+            urlString = [NSString stringWithFormat:@"%@/html/iTouch.html",path];
         }
 //        NSString *urlString = [[NSBundle mainBundle] pathForResource:@"operation" ofType:@"html"];
 //        operation.urlString = @"https://101.201.209.42:8443/ldnet/loginPage.action";
