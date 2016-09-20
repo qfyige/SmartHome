@@ -14,5 +14,6 @@
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *seckey;
 @property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *pictureUrl;
 
 @end
