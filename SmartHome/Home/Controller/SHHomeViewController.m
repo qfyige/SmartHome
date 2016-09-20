@@ -66,8 +66,6 @@
         }else{
             urlString = [NSString stringWithFormat:@"%@/html/iTouch.html",path];
         }
-//        NSString *urlString = [[NSBundle mainBundle] pathForResource:@"operation" ofType:@"html"];
-//        operation.urlString = @"https://101.201.209.42:8443/ldnet/loginPage.action";
         operation.urlString = urlString;
         [self.navigationController pushViewController:operation animated:YES];
     }
@@ -91,6 +89,7 @@
         return NO;
     }
 }
+
 - (IBAction)clickMenuButton:(id)sender {
     [UIView animateWithDuration:0.3f animations:^{
         self.barView.y = self.view.maxY - self.barView.height;

@@ -17,6 +17,7 @@ typedef void(^FailBlock) (NSError *error);
 
 @property(nonatomic,copy) CompleteBlock complete;
 @property(nonatomic,copy) FailBlock fail;
+@property(nonatomic,assign) BOOL isOpenSocket;
 
 //通过单利创建
 + (SocketHelper *)shareInstance;

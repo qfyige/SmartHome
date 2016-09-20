@@ -36,6 +36,7 @@
         NSString *userId = responseObj[@"userId"];
         if (IS_NSStringEx(userId)) {
             [SHModelBase getUsingLKDBHelperWith:userId];
+            [[NSUserDefaults standardUserDefaults] setObject:userId forKey:@"userId"];
             SHUserModel *userModel = [SHUserModel yy_modelWithJSON:responseObj];
             if (IS_NSString(password)) {
                 userModel.password = password;
@@ -52,6 +53,7 @@
 
 - (void)userLogout
 {
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"userId"];
     [SHModelBase purgeUsingLKDBHelper];
     self.isLoginStatus = NO;
 }

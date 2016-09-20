@@ -76,6 +76,9 @@
 //连接成功
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{
     NSLog(@"webSocketDidOpen connect success");
+    if (self.isOpenSocket) {
+        _complete(nil);
+    }
 }
 
 //连接失败
