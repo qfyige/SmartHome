@@ -944,7 +944,6 @@
 				TargetAttributes = {
 					9D4B05051D345E10004FBFA1 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = K867SEEEL3;
 					};
 					9D4B05211D345E10004FBFA1 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1213,8 +1212,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wang rui (5ZKUS9W43X)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wang rui (5ZKUS9W43X)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1259,8 +1258,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wang rui (5ZKUS9W43X)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wang rui (5ZKUS9W43X)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1316,7 +1315,7 @@
 					"$(PROJECT_DIR)/SmartHome",
 					"$(PROJECT_DIR)/SmartHome/Lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letv.store.iphone.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1358,7 +1357,7 @@
 					"$(PROJECT_DIR)/SmartHome",
 					"$(PROJECT_DIR)/SmartHome/Lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letv.store.iphone.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

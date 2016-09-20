@@ -25,7 +25,7 @@
 
 - (UIButton *)backButton{
     if(_backButton == nil){
-        _backButton = [[ UIButton alloc] initWithFrame:CGRectMake(0,20, 50, 50)];
+        _backButton = [[ UIButton alloc] initWithFrame:CGRectMake(0,20, 40, 40)];
         [_backButton setImage:[UIImage imageNamed:@"Arrowleft"] forState:UIControlStateNormal];
         [_backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     }

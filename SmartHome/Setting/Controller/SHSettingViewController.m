@@ -19,6 +19,10 @@
 #import "KLSwitch.h"
 #import "SHSetModel.h"
 #import <SVProgressHUD.h>
+#import "SHLoginManager.h"
+#import "SHUserManager.h"
+#import "SHUserModel.h"
+#import <UIImageView+WebCache.h>
 
 @interface SHSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *sumTableView;
@@ -137,6 +141,16 @@
             _headerView = [[[NSBundle mainBundle] loadNibNamed:@"SHHeaderView" owner:nil options:nil] lastObject];
             NSLog(@"%@",NSStringFromCGRect([UIScreen mainScreen].bounds));
             _headerView.frame = CGRectMake(0, 0, ScreenWidth*125/667, ScreenWidth*125/667);
+            if([[SHLoginManager shareInstance] isLogin]){
+                SHUserModel *usermodel = [[SHUserManager sharedInstance] getUser];
+                _headerView.name.text = usermodel.userId;
+                [_headerView.headerimage sd_setImageWithURL:[NSURL URLWithString: usermodel.pictureUrl ] placeholderImage:[UIImage imageNamed:@"Avatar.png"]];
+                
+            }else{
+                _headerView.name.text = @"未登录";
+                _headerView.headerimage = [UIImage imageNamed:@"Avatar.png"];
+                
+            }
             return _headerView;
         }else{
             UIView *heightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  ScreenWidth*125/667, 50)];

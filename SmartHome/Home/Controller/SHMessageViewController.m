@@ -101,6 +101,7 @@
 
 - (void)initView
 {
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = WhiteColor;
     [self initMainTableView];
     [self addBackButton];
