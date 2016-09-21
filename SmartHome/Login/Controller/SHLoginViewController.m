@@ -176,7 +176,7 @@
     
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(ws.view);
-        make.bottom.equalTo(ws.view).offset(-top);
+        make.bottom.equalTo(ws.view).offset(-top*2);
         make.size.mas_equalTo(CGSizeMake(labelW, labelH));
     }];
     

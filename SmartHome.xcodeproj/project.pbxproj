@@ -944,6 +944,8 @@
 				TargetAttributes = {
 					9D4B05051D345E10004FBFA1 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = K867SEEEL3;
+						ProvisioningStyle = Automatic;
 					};
 					9D4B05211D345E10004FBFA1 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1287,6 +1289,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = K867SEEEL3;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1315,7 +1318,7 @@
 					"$(PROJECT_DIR)/SmartHome",
 					"$(PROJECT_DIR)/SmartHome/Lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.letv.store.iphone.client;
+				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1329,6 +1332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = K867SEEEL3;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1357,7 +1361,7 @@
 					"$(PROJECT_DIR)/SmartHome",
 					"$(PROJECT_DIR)/SmartHome/Lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.letv.store.iphone.client;
+				PRODUCT_BUNDLE_IDENTIFIER = smarthome.ldnet.assem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
