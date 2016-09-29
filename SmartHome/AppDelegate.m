@@ -29,7 +29,7 @@
     [SHRequestHelper connectComplete:^(SocketRequestModel *requestModel) {
         [self autoLogin];
     } fail:^(NSError *error) {
-        NSLog(@"%@",error.description);
+        NSLog(@"socket connect error %@",error.description);
     }];
     [self addNot];
     return YES;

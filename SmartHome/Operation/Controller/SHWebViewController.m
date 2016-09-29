@@ -45,6 +45,12 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc
+{
+    myWebView.delegate = nil;
+    myWebView = nil;
+}
+
 #pragma mark -
 #pragma mark - UIWebViewDelegate
 
@@ -81,7 +87,8 @@
     [wss setObject:userModel.seckey forKey:@"seckey"];
     [wss setObject:userModel.userId forKey:@"user"];
     [wss setObject:userModel.password forKey:@"password"];
-    [wss setObject:@"" forKey:@"devid"];
+#warning test fromid 需要修改唯一标识
+    [wss setObject:@"ldsh" forKey:@"devid"];
     [dict setObject:wss forKey:@"wss"];
     
     //    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:1];
@@ -93,9 +100,24 @@
     //    [wss setObject:@"23" forKey:@"password"];
     //    [wss setObject:@"2" forKey:@"devid"];
     //    [dict setObject:wss forKey:@"wss"];
-    NSString *str = [dict description];
+    NSString *str = [self DataTOjsonString:dict];
     NSLog(@"getIDInfoStr str is %@",str);
     return str;
+}
+
+-(NSString*)DataTOjsonString:(id)object
+{
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView

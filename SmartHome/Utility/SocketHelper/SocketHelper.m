@@ -32,7 +32,8 @@
         _webSocket.delegate = nil;
     }
     //ws://101.201.209.42:8080/ldnet/evermobws?fromid=0987654345678agy1&fromtype=m&clienttype=XXX&clientmodel=XXX&authkey=0B51D241121C19364C9D0EC3BC8CA417&appid=appid0001
-    NSString *url = [NSString stringWithFormat:@"%@?fromid=0987654345678agy1&fromtype=m&clienttype=XXX&clientmodel=XXX&authkey=0B51D241121C19364C9D0EC3BC8CA417&appid=appid0001",HostUrl];
+#warning test fromid 需要修改唯一标识
+    NSString *url = [NSString stringWithFormat:@"%@?fromid=ldsh&fromtype=m&clienttype=XXX&clientmodel=XXX&authkey=0B51D241121C19364C9D0EC3BC8CA417&appid=appid0001",HostUrl];
     _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     _webSocket.delegate = self;
     [_webSocket open];
