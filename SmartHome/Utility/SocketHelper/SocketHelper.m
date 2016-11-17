@@ -88,10 +88,12 @@
             }
             if ([dict objectForKey:@"backinfo"]) {
                 requestModel.backinfo = [dict objectForKey:@"backinfo"];
-                if([requestModel isKindOfClass:[NSDictionary class]] && requestModel.backinfo && requestModel.backinfo.count >0){
-//                    NSDictionary *smallDic = [requestModel.backinfo firstObject];
-//                    NSString *seckey = [smallDic objectForKey:@"seckey"];
-//                    [[NSUserDefaults standardUserDefaults] setObject:seckey forKey:Seckey];
+                if(requestModel.backinfo && requestModel.backinfo.count >0){
+                    NSDictionary *smallDic = [requestModel.backinfo firstObject];
+                    NSString *seckey = [smallDic objectForKey:@"seckey"];
+                    if(seckey){
+                        [[NSUserDefaults standardUserDefaults] setObject:seckey forKey:Seckey];
+                    }
                 }
             }
             if ([requestModel.method isEqualToString:@"appHtml5Update"]) {
