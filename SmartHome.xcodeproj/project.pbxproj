@@ -22,6 +22,9 @@
 		454339791D7FF487004DC4F1 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339661D7FF486004DC4F1 /* unzip.c */; };
 		4543397A1D7FF487004DC4F1 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 454339681D7FF486004DC4F1 /* zip.c */; };
 		4543397B1D7FF487004DC4F1 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4543396B1D7FF486004DC4F1 /* SSZipArchive.m */; };
+		45A219BB1DD0721800C50CF2 /* JDES.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A219BA1DD0721800C50CF2 /* JDES.m */; };
+		45B0354D1DC0502100D26BD5 /* DESHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0354C1DC0502100D26BD5 /* DESHelper.m */; };
+		45B035521DC050A100D26BD5 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B035501DC050A100D26BD5 /* GTMBase64.m */; };
 		45EB64AE1D4D9DA3001EAA4E /* SHSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */; };
 		45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64B01D4D9DC0001EAA4E /* KLSwitch.m */; };
 		53D5AE6EAD75A8D5CA49624D /* libPods-SmartHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550FE544FB1D1FA3D903599 /* libPods-SmartHome.a */; };
@@ -163,6 +166,14 @@
 		4543396A1D7FF486004DC4F1 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		4543396B1D7FF486004DC4F1 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		4543396C1D7FF486004DC4F1 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		45A219B91DD0721800C50CF2 /* JDES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDES.h; sourceTree = "<group>"; };
+		45A219BA1DD0721800C50CF2 /* JDES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDES.m; sourceTree = "<group>"; };
+		45B0354B1DC0502100D26BD5 /* DESHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESHelper.h; sourceTree = "<group>"; };
+		45B0354C1DC0502100D26BD5 /* DESHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESHelper.m; sourceTree = "<group>"; };
+		45B0354F1DC050A100D26BD5 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		45B035501DC050A100D26BD5 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		45B035511DC050A100D26BD5 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		45B035531DC057DE00D26BD5 /* SmartHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartHome.entitlements; sourceTree = "<group>"; };
 		45EB64AC1D4D9DA3001EAA4E /* SHSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetModel.h; sourceTree = "<group>"; };
 		45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetModel.m; sourceTree = "<group>"; };
 		45EB64AF1D4D9DC0001EAA4E /* KLSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLSwitch.h; sourceTree = "<group>"; };
@@ -433,6 +444,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		45B0354E1DC050A100D26BD5 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				45B0354F1DC050A100D26BD5 /* GTMBase64.h */,
+				45B035501DC050A100D26BD5 /* GTMBase64.m */,
+				45B035511DC050A100D26BD5 /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
 		45EB64B21D4D9E3E001EAA4E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +495,7 @@
 		9D4B05081D345E10004FBFA1 /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
+				45B035531DC057DE00D26BD5 /* SmartHome.entitlements */,
 				9D4B050C1D345E10004FBFA1 /* AppDelegate.h */,
 				9D4B050D1D345E10004FBFA1 /* AppDelegate.m */,
 				A04C1DEB1D4B8DA5005A3BAE /* Login */,
@@ -542,6 +564,9 @@
 		A04C1DDA1D4B8CC8005A3BAE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				45A219B91DD0721800C50CF2 /* JDES.h */,
+				45A219BA1DD0721800C50CF2 /* JDES.m */,
+				45B0354E1DC050A100D26BD5 /* GTMBase64 */,
 				A54BDF491D864BED00EB61C4 /* HttpsHelper */,
 				454339471D7FF486004DC4F1 /* SSZipArchive */,
 				A04C1DDC1D4B8CC8005A3BAE /* DeviceHelper */,
@@ -552,6 +577,8 @@
 				9D8AADCD1D4D2CF900B63C1B /* NSString+getSize.m */,
 				45EB64AF1D4D9DC0001EAA4E /* KLSwitch.h */,
 				45EB64B01D4D9DC0001EAA4E /* KLSwitch.m */,
+				45B0354B1DC0502100D26BD5 /* DESHelper.h */,
+				45B0354C1DC0502100D26BD5 /* DESHelper.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -946,6 +973,11 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = K867SEEEL3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					9D4B05211D345E10004FBFA1 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1086,10 +1118,12 @@
 				454339741D7FF487004DC4F1 /* pwd2key.c in Sources */,
 				454339711D7FF487004DC4F1 /* fileenc.c in Sources */,
 				4543397B1D7FF487004DC4F1 /* SSZipArchive.m in Sources */,
+				45A219BB1DD0721800C50CF2 /* JDES.m in Sources */,
 				A54BDF941D8683BC00EB61C4 /* ASICloudFilesRequest.m in Sources */,
 				A0D9CC1C1D4CF1520035289D /* SHMessageViewController.m in Sources */,
 				A04099ED1D4E39C500903210 /* SHModelBase.m in Sources */,
 				A04C1DF11D4B8DA5005A3BAE /* SHLoginViewController.m in Sources */,
+				45B0354D1DC0502100D26BD5 /* DESHelper.m in Sources */,
 				454339731D7FF487004DC4F1 /* prng.c in Sources */,
 				454339781D7FF487004DC4F1 /* mztools.c in Sources */,
 				4543396E1D7FF487004DC4F1 /* aeskey.c in Sources */,
@@ -1106,6 +1140,7 @@
 				A04C1DE21D4B8CC8005A3BAE /* DeviceHelper.m in Sources */,
 				A54BDF8D1D8683BC00EB61C4 /* ASIWebPageRequest.m in Sources */,
 				A54BDF8C1D8683BC00EB61C4 /* ASINetworkQueue.m in Sources */,
+				45B035521DC050A100D26BD5 /* GTMBase64.m in Sources */,
 				454339771D7FF487004DC4F1 /* ioapi.c in Sources */,
 				9D8AADBE1D4CB67300B63C1B /* PAIWebViewController.m in Sources */,
 				A04C1E0A1D4B8E86005A3BAE /* SHSetingInputTextCell.m in Sources */,
@@ -1287,6 +1322,7 @@
 			baseConfigurationReference = 40D3B00A1B66314A4BDCFB8E /* Pods-SmartHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartHome/SmartHome.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = K867SEEEL3;
@@ -1330,6 +1366,7 @@
 			baseConfigurationReference = 4356BDD4DEDDEC334E06F046 /* Pods-SmartHome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartHome/SmartHome.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = K867SEEEL3;

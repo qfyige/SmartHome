@@ -7,9 +7,11 @@
 //
 
 #import "SocketHelper.h"
+#import "JDES.h"
 
 #define HostUrl @"ws://101.201.209.42:8080/ldnet/evermobws"
 #define authkey @"0B51D241121C19364C9D0EC3BC8CA417"
+#define Fromid @"0987654345678agy1"
 
 @implementation SocketHelper
 {
@@ -50,10 +52,33 @@
 
 //接收消息 存储数据
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
-    NSLog(@"didReceiveMessage %@",message);
+
     if(_complete){
         if ([message isKindOfClass:[NSString class]]) {
-            NSDictionary *dict = [message JSONObject];
+           NSDictionary* dict = [self dictionaryWithJsonString:message];
+
+            //用fromid 解密第一次
+            if(dict == nil){
+                NSString *json = [JDES AES128Decrypt:message WithGkey:@"ldshldshldshldsh" gIv:@"ldshldshldshldsh"];
+               NSString* headerData = [json stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];  //去除掉首尾的空白字符和换行字符
+                headerData = [headerData stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+                headerData = [headerData stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+                headerData = [headerData stringByReplacingOccurrencesOfString:@"\0" withString:@""];
+                dict = [self dictionaryWithJsonString:headerData];
+            }
+            
+            if(dict == nil){
+                NSString *seckey = [[NSUserDefaults standardUserDefaults] objectForKey:Seckey];
+                NSString *json = [JDES AES128Decrypt:message WithGkey:[seckey substringToIndex:16] gIv:[seckey substringToIndex:16]];
+                NSString* headerData = [json stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];  //去除掉首尾的空白字符和换行字符
+                headerData = [headerData stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+                headerData = [headerData stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+                headerData = [headerData stringByReplacingOccurrencesOfString:@" " withString:@""];
+                dict = [self dictionaryWithJsonString:headerData];
+
+            }
+            
+            NSLog(@"dict___%@",dict);
             SocketRequestModel *requestModel = [[SocketRequestModel alloc] init];
             if ([dict objectForKey:@"result"]) {
                 requestModel.resultCode = [[dict objectForKey:@"result"] integerValue];
@@ -63,6 +88,11 @@
             }
             if ([dict objectForKey:@"backinfo"]) {
                 requestModel.backinfo = [dict objectForKey:@"backinfo"];
+                if([requestModel isKindOfClass:[NSDictionary class]] && requestModel.backinfo && requestModel.backinfo.count >0){
+//                    NSDictionary *smallDic = [requestModel.backinfo firstObject];
+//                    NSString *seckey = [smallDic objectForKey:@"seckey"];
+//                    [[NSUserDefaults standardUserDefaults] setObject:seckey forKey:Seckey];
+                }
             }
             if ([requestModel.method isEqualToString:@"appHtml5Update"]) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"appHtml5Update" object:requestModel];
@@ -101,5 +131,23 @@
 - (void)webSocket:(SRWebSocket *)webSocket didReceivePong:(NSData *)pongPayload{
     NSLog(@"didReceivePong");
 }
+
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
 
 @end

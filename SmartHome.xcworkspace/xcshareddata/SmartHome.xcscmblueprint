@@ -3,14 +3,19 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "35cdecd5-fae8-4418-af02-33ed1aebaa12++2300" : {
 
+    },
+    "35cdecd5-fae8-4418-af02-33ed1aebaa12++8515" : {
+
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "35cdecd5-fae8-4418-af02-33ed1aebaa12++8515" : 0,
     "297B48278A327B8E31233E214640C5BED05662CB" : 0,
     "35cdecd5-fae8-4418-af02-33ed1aebaa12++2300" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "112469FC-951D-4FC7-9353-AF36B8FBA48F",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "35cdecd5-fae8-4418-af02-33ed1aebaa12++8515" : "SmartHome\/SmartHome\/Utility\/SSZipArchive\/aes\/",
     "297B48278A327B8E31233E214640C5BED05662CB" : "SmartHome\/",
     "35cdecd5-fae8-4418-af02-33ed1aebaa12++2300" : "SmartHome\/SmartHome\/Utility\/SSZipArchive\/"
   },
@@ -27,6 +32,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.letv.cn\/lemall",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "35cdecd5-fae8-4418-af02-33ed1aebaa12++2300"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.letv.cn\/lemall",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "35cdecd5-fae8-4418-af02-33ed1aebaa12++8515"
     }
   ]
 }

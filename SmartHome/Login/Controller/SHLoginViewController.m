@@ -9,6 +9,7 @@
 #import "SHLoginViewController.h"
 #import "SHHomeViewController.h"
 #import "SHHttpsHelper.h"
+#import "JDES.h"
 
 @interface SHLoginViewController ()<UITextFieldDelegate>
 {
@@ -233,7 +234,8 @@
         mobModel = @"1";
     }
     NSString *str = [NSString stringWithFormat:@"{\"seckey\":\"\",\"method\":\"login\",\"infopackage\":{\"userId\":\"%@\",\"password\":\"%@\",\"mobile\":\"\",\"mobModel\":\"%@\",\"mobBrand\":\"\"}}",phoneTextField.text,passwordTextField.text,mobModel];
-    [SHRequestHelper sendMessage:str complete:^(SocketRequestModel *requestModel) {
+    NSString *encrityKey = [JDES AES128Encrypt:str WithGkey:@"ldshldshldshldsh" gIv:@"ldshldshldshldsh"];
+    [SHRequestHelper sendMessage:encrityKey complete:^(SocketRequestModel *requestModel) {
         [SVProgressHUD dismiss];
         NSString *method = requestModel.method;
         if([method isEqualToString:@"login"]){

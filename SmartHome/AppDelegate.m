@@ -14,6 +14,8 @@
 #import "SHUserModel.h"
 #import "SHUserManager.h"
 #import "SHLoginViewController.h"
+#import "JDES.h"
+
 
 @interface AppDelegate ()<UIAlertViewDelegate>
 
@@ -27,6 +29,7 @@
     [self setUpJpushLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].enable = YES;
     [SHRequestHelper connectComplete:^(SocketRequestModel *requestModel) {
+        NSLog(@"%@",requestModel);
         [self autoLogin];
     } fail:^(NSError *error) {
         NSLog(@"socket connect error %@",error.description);
@@ -34,6 +37,8 @@
     [self addNot];
     return YES;
 }
+
+
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     /// Required -    DeviceToken
@@ -164,7 +169,9 @@
                 mobModel = @"1";
             }
             NSString *str = [NSString stringWithFormat:@"{\"seckey\":\"\",\"method\":\"login\",\"infopackage\":{\"userId\":\"%@\",\"password\":\"%@\",\"mobile\":\"\",\"mobModel\":\"%@\",\"mobBrand\":\"\"}}",model.userId,model.password,mobModel];
-            [SHRequestHelper sendMessage:str complete:^(SocketRequestModel *requestModel) {
+            NSString *encrityKey = [JDES AES128Encrypt:str WithGkey:@"ldshldshldshldsh" gIv:@"ldshldshldshldsh"];
+
+            [SHRequestHelper sendMessage:encrityKey complete:^(SocketRequestModel *requestModel) {
                 NSString *method = requestModel.method;
                 if([method isEqualToString:@"login"]){
                     if (requestModel.resultCode == 1004) {
