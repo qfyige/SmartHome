@@ -73,7 +73,7 @@
                 NSString* headerData = [json stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];  //去除掉首尾的空白字符和换行字符
                 headerData = [headerData stringByReplacingOccurrencesOfString:@"\r" withString:@""];
                 headerData = [headerData stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                headerData = [headerData stringByReplacingOccurrencesOfString:@" " withString:@""];
+                headerData = [headerData stringByReplacingOccurrencesOfString:@"\0" withString:@""];
                 dict = [self dictionaryWithJsonString:headerData];
 
             }
