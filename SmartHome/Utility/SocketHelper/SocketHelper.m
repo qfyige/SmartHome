@@ -57,8 +57,9 @@
         if ([message isKindOfClass:[NSString class]]) {
            NSDictionary* dict = [self dictionaryWithJsonString:message];
 
-            //用fromid 解密第一次
+            //连接服务器 用fromid 解密第一次
             if(dict == nil){
+            
                 NSString *json = [JDES AES128Decrypt:message WithGkey:@"ldshldshldshldsh" gIv:@"ldshldshldshldsh"];
                NSString* headerData = [json stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];  //去除掉首尾的空白字符和换行字符
                 headerData = [headerData stringByReplacingOccurrencesOfString:@"\r" withString:@""];
@@ -66,7 +67,7 @@
                 headerData = [headerData stringByReplacingOccurrencesOfString:@"\0" withString:@""];
                 dict = [self dictionaryWithJsonString:headerData];
             }
-            
+            //连接成功登陆服务器用 sever 返回的seckey 解密
             if(dict == nil){
                 NSString *seckey = [[NSUserDefaults standardUserDefaults] objectForKey:Seckey];
                 NSString *json = [JDES AES128Decrypt:message WithGkey:[seckey substringToIndex:16] gIv:[seckey substringToIndex:16]];
@@ -89,6 +90,7 @@
             if ([dict objectForKey:@"backinfo"]) {
                 requestModel.backinfo = [dict objectForKey:@"backinfo"];
                 if(requestModel.backinfo && requestModel.backinfo.count >0){
+                    //获取key 并保存
                     NSDictionary *smallDic = [requestModel.backinfo firstObject];
                     NSString *seckey = [smallDic objectForKey:@"seckey"];
                     if(seckey){
