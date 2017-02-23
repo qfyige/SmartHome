@@ -15,7 +15,7 @@
 #import "SHUserManager.h"
 #import "SHLoginViewController.h"
 #import "JDES.h"
-
+#import "LSNetworkConnectObsever.h"
 
 @interface AppDelegate ()<UIAlertViewDelegate>
 
@@ -35,6 +35,7 @@
         NSLog(@"socket connect error %@",error.description);
     }];
     [self addNot];
+    [[LSNetworkConnectObsever shareInstance] starNotifier];
     return YES;
 }
 

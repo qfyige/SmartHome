@@ -25,6 +25,7 @@
 		45A219BB1DD0721800C50CF2 /* JDES.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A219BA1DD0721800C50CF2 /* JDES.m */; };
 		45B0354D1DC0502100D26BD5 /* DESHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B0354C1DC0502100D26BD5 /* DESHelper.m */; };
 		45B035521DC050A100D26BD5 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B035501DC050A100D26BD5 /* GTMBase64.m */; };
+		45C5C1551DE42D9E00C27A62 /* LSNetworkConnectObsever.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C5C1541DE42D9E00C27A62 /* LSNetworkConnectObsever.m */; };
 		45EB64AE1D4D9DA3001EAA4E /* SHSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */; };
 		45EB64B11D4D9DC0001EAA4E /* KLSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB64B01D4D9DC0001EAA4E /* KLSwitch.m */; };
 		53D5AE6EAD75A8D5CA49624D /* libPods-SmartHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550FE544FB1D1FA3D903599 /* libPods-SmartHome.a */; };
@@ -174,6 +175,8 @@
 		45B035501DC050A100D26BD5 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		45B035511DC050A100D26BD5 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		45B035531DC057DE00D26BD5 /* SmartHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartHome.entitlements; sourceTree = "<group>"; };
+		45C5C1531DE42D9E00C27A62 /* LSNetworkConnectObsever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNetworkConnectObsever.h; sourceTree = "<group>"; };
+		45C5C1541DE42D9E00C27A62 /* LSNetworkConnectObsever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNetworkConnectObsever.m; sourceTree = "<group>"; };
 		45EB64AC1D4D9DA3001EAA4E /* SHSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSetModel.h; sourceTree = "<group>"; };
 		45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSetModel.m; sourceTree = "<group>"; };
 		45EB64AF1D4D9DC0001EAA4E /* KLSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLSwitch.h; sourceTree = "<group>"; };
@@ -738,6 +741,8 @@
 		A0D9CB951D4C603D0035289D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				45C5C1531DE42D9E00C27A62 /* LSNetworkConnectObsever.h */,
+				45C5C1541DE42D9E00C27A62 /* LSNetworkConnectObsever.m */,
 				45EB64AC1D4D9DA3001EAA4E /* SHSetModel.h */,
 				45EB64AD1D4D9DA3001EAA4E /* SHSetModel.m */,
 				A0D9CBA41D4CB7EE0035289D /* SHCommonFun.h */,
@@ -1090,7 +1095,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1101,6 +1106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0D9CBA01D4C63C50035289D /* UIView+Extension.m in Sources */,
+				45C5C1551DE42D9E00C27A62 /* LSNetworkConnectObsever.m in Sources */,
 				454339791D7FF487004DC4F1 /* unzip.c in Sources */,
 				A0D9CBA91D4CB9EF0035289D /* SHLoginManager.m in Sources */,
 				A0D9CBA61D4CB7EE0035289D /* SHCommonFun.m in Sources */,
